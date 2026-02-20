@@ -1,0 +1,66 @@
+{
+  "zip_code": "73018",
+  "market_summary": {
+    "median_sale_price_jan_2026": 169000,
+    "median_price_per_sqft": 125,
+    "yoy_increase": 25.5
+  },
+  "neighborhood_tiers": {
+    "Brash Green": {
+      "criteria": "ARV potential > $140/sqft, School > 6, Low Crime",
+      "status": "Premier Investment Zone",
+      "locations": ["University Heights (Southwest)", "Grand Ave area"]
+    },
+    "Brash Yellow": {
+      "criteria": "$110-$140/sqft, School 4-6, Moderate Crime",
+      "status": "Growth / Value Add Zone",
+      "locations": ["Sparks 1st & 2nd", "West Hill"]
+    },
+    "Brash Red": {
+      "criteria": "< $110/sqft, School < 4, High Crime/Vacancy",
+      "status": "Speculative / High Risk Opportunity",
+      "locations": ["Downtown Core", "Northern Industrial Edges"]
+    }
+  },
+  "portfolio_plot": [
+    {
+      "address": "1922 S 21st St",
+      "tier": "Brash Yellow",
+      "comps": [
+        {"address": "2326 S 22nd St", "price": 240000, "sqft": 1446, "pps": 162.52, "date": "2026-01-08"},
+        {"address": "1621 Park Ave", "price": 200000, "sqft": 1620, "pps": 123.46, "date": "2025-09-30"}
+      ]
+    },
+    {
+      "address": "728 S 17th St",
+      "tier": "Brash Yellow",
+      "comps": [
+        {"address": "810 S 17th St", "price": 498000, "sqft": 1478, "pps": 336.94, "date": "2025-07-07", "note": "Possible multi-parcel or outlier"},
+        {"address": "1627 W Dakota Ave", "price": 159000, "sqft": 1256, "pps": 126.59, "date": "2025-02-27"}
+      ]
+    },
+    {
+      "address": "925 S 3rd St",
+      "tier": "Brash Red",
+      "comps": [
+        {"address": "928 S 2nd St", "price": 163000, "sqft": 1108, "pps": 147.11, "date": "2025-12-01"},
+        {"address": "1016 S 4th St", "price": 70000, "sqft": 924, "pps": 75.76, "date": "2025-10-07"}
+      ]
+    },
+    {
+      "address": "1219 W Colorado",
+      "tier": "Brash Red",
+      "note": "Public data limited, proximity to lower PPS zones suggests Tier Red."
+    }
+  ],
+  "schools": [
+    {"name": "Pioneer Public School", "rating": 9},
+    {"name": "Grand Avenue Elementary", "rating": 8},
+    {"name": "Chickasha Middle School", "rating": 6},
+    {"name": "Chickasha High School", "rating": 5}
+  ],
+  "crime": {
+    "status": "High property crime (burglary predominant)",
+    "risk": "1 in 39 for property crime"
+  }
+}
