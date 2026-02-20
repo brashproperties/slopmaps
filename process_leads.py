@@ -1,11 +1,6 @@
 import json
 
-def generate_tactical_data():
-    # Tactical Colors (Hoodmaps style)
-    # RED: Crime/Risk/Industrial
-    # YELLOW: Core Growth/Transitional/Speculative
-    # GREEN: Elite/Yield/University
-    
+def generate_block_data():
     COLORS = {
         "ELITE": "#2ed573",       # Green
         "CORE_GROWTH": "#ffa502", # Yellow/Gold
@@ -18,53 +13,45 @@ def generate_tactical_data():
 
     features = []
 
-    # 1. DEFINE ZONES (Polygons)
-    # ELITE (South-West Pioneer)
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "Elite Zone", "color": COLORS["ELITE"], "label": "<b>ELITE (Pioneer)</b><br>High owner-occupancy. Low risk."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.965, 35.035], [-97.945, 35.035], [-97.945, 35.020], [-97.965, 35.020], [-97.965, 35.035]
-        ]]}
-    })
+    # Helper to generate a grid of "blocks"
+    def add_grid(lon_start, lon_end, lat_start, lat_end, steps_x, steps_y, color, name, label):
+        dx = (lon_end - lon_start) / steps_x
+        dy = (lat_end - lat_start) / steps_y
+        for i in range(steps_x):
+            for j in range(steps_y):
+                x = lon_start + i * dx
+                y = lat_start + j * dy
+                # Add slight padding to look like "blocks" with gaps
+                gap = 0.0002
+                coords = [[
+                    [x + gap, y + gap],
+                    [x + dx - gap, y + gap],
+                    [x + dx - gap, y + dy - gap],
+                    [x + gap, y + dy - gap],
+                    [x + gap, y + gap]
+                ]]
+                features.append({
+                    "type": "Feature",
+                    "properties": {"name": name, "color": color, "label": label},
+                    "geometry": {"type": "Polygon", "coordinates": coords}
+                })
 
-    # UNIVERSITY HALO
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "USAO Halo", "color": COLORS["STABILITY"], "label": "<b>STABILITY (Uni)</b><br>Student/Faculty anchor. Low vacancy."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.955, 35.045], [-97.935, 35.045], [-97.935, 35.035], [-97.955, 35.035], [-97.955, 35.045]
-        ]]}
-    })
+    # 1. ELITE (South-West) - High density blocks
+    add_grid(-97.965, -97.940, 35.015, 35.035, 10, 8, COLORS["ELITE"], "Elite Block", "<b>ELITE</b><br>South-West Pioneer area.")
 
-    # CORE GROWTH (Hwy 62 Corridor)
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "Core Growth", "color": COLORS["CORE_GROWTH"], "label": "<b>CORE GROWTH</b><br>Stable mid-market. Sweet spot for rentals."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.935, 35.055], [-97.915, 35.055], [-97.915, 35.040], [-97.935, 35.040], [-97.935, 35.055]
-        ]]}
-    })
+    # 2. USAO HALO (Stability)
+    add_grid(-97.955, -97.935, 35.035, 35.048, 8, 5, COLORS["STABILITY"], "Stability Block", "<b>STABILITY</b><br>University district.")
 
-    # SPECULATIVE (North/Transitional)
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "Speculative Zone", "color": COLORS["SPECULATIVE"], "label": "<b>SPECULATIVE</b><br>Rehab dependent. Block-by-block variance."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.965, 35.065], [-97.935, 35.065], [-97.935, 35.055], [-97.965, 35.055], [-97.965, 35.065]
-        ]]}
-    })
+    # 3. CORE GROWTH (Mid-town)
+    add_grid(-97.940, -97.915, 35.040, 35.060, 10, 8, COLORS["CORE_GROWTH"], "Core Block", "<b>CORE GROWTH</b><br>Stable mid-market.")
 
-    # HIGH RISK (3rd St Strip / East Side)
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "High Risk Zone", "color": COLORS["HIGH_RISK"], "label": "<b>HIGH RISK / YIELD</b><br>Industrial blight. Management intensive."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.925, 35.075], [-97.900, 35.075], [-97.900, 35.045], [-97.925, 35.045], [-97.925, 35.075]
-        ]]}
-    })
+    # 4. SPECULATIVE (North)
+    add_grid(-97.965, -97.930, 35.060, 35.075, 12, 6, COLORS["SPECULATIVE"], "Speculative Block", "<b>SPECULATIVE</b><br>North-side transition.")
 
-    # 2. DEFINE PORTFOLIO (Points)
+    # 5. HIGH RISK (East/Industrial)
+    add_grid(-97.915, -97.895, 35.035, 35.075, 8, 15, COLORS["HIGH_RISK"], "High Risk Block", "<b>HIGH RISK</b><br>East side / Industrial.")
+
+    # 6. PORTFOLIO (Points)
     PORTFOLIO = [
         {"name": "1922 S 21st St", "coords": [-97.958, 35.028], "type": "portfolio", "zone": "ELITE"},
         {"name": "728 S 17th St", "coords": [-97.952, 35.042], "type": "portfolio", "zone": "CORE_GROWTH"},
@@ -84,22 +71,17 @@ def generate_tactical_data():
             "geometry": {"type": "Point", "coordinates": p["coords"]}
         })
 
-    # 3. DEFINE POIS (Tags)
+    # 7. POIS (Tags)
     POIS = [
         {"name": "USAO University", "coords": [-97.9472, 35.0381]},
         {"name": "Leg Lamp", "coords": [-97.9252, 35.0518]},
         {"name": "Walmart", "coords": [-97.9180, 35.0650]},
-        {"name": "Shannon Springs Park", "coords": [-97.9355, 35.0395]},
-        {"name": "Airport Industrial", "coords": [-97.9680, 35.0920]}
+        {"name": "Shannon Springs Park", "coords": [-97.9355, 35.0395]}
     ]
-
     for poi in POIS:
         features.append({
             "type": "Feature",
-            "properties": {
-                "name": poi["name"],
-                "type": "poi"
-            },
+            "properties": {"name": poi["name"], "type": "poi"},
             "geometry": {"type": "Point", "coordinates": poi["coords"]}
         })
 
@@ -108,4 +90,4 @@ def generate_tactical_data():
         json.dump(collection, f, indent=2)
 
 if __name__ == "__main__":
-    generate_tactical_data()
+    generate_block_data()

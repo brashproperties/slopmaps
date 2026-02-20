@@ -147,8 +147,9 @@
                         if (feature.geometry.type === 'Polygon') {
                             return {
                                 fillColor: feature.properties.color,
-                                weight: 0,
-                                fillOpacity: 0.45,
+                                color: '#000',
+                                weight: 0.5,
+                                fillOpacity: 0.6,
                                 pane: 'slopPane'
                             };
                         }
