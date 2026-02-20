@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chickasha Slopmap 🧙‍♂️</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff; }
+        #map { height: 100vh; width: 100vw; }
+        
+        /* Hoodmaps Style UI */
+        .ui-overlay {
+            position: absolute; z-index: 1000; background: white; 
+            padding: 10px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header { top: 10px; left: 50%; transform: translateX(-50%); width: 300px; text-align: center; }
+        .header h1 { margin: 0; font-size: 18px; color: #333; }
+        
+        .legend { bottom: 30px; left: 10px; border: 1px solid #ddd; }
+        .legend-item { display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; }
+        .legend-item:hover { opacity: 0.8; }
+        .swatch { width: 20px; height: 20px; margin-right: 10px; border-radius: 2px; }
+        
+        .poi-label { 
+            background: white; border: 1px solid #999; border-radius: 3px; 
+            padding: 2px 5px; font-size: 11px; font-weight: bold; white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui-overlay header">
+        <h1>CHICKASHA HOODMAP 🧙‍♂️</h1>
+        <small>Real estate slop & tactical zones</small>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="ui-overlay legend">
+        <div class="legend-item"><div class="swatch" style="background: #ff6b6b;"></div> Tourists</div>
+        <div class="legend-item"><div class="swatch" style="background: #feca57;"></div> Rich</div>
+        <div class="legend-item"><div class="swatch" style="background: #96c93d;"></div> Uni</div>
+        <div class="legend-item"><div class="swatch" style="background: #45b7d1;"></div> Suits</div>
+        <div class="legend-item"><div class="swatch" style="background: #54a0ff;"></div> Normies</div>
+        <div class="legend-item"><div class="swatch" style="background: #5f27cd;"></div> Crime</div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Hoodmaps uses a clean light-mode map
+        const map = L.map('map', { zoomControl: false }).setView([35.0526, -97.9364], 14); 
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap &copy; CARTO'
+        }).addTo(map);
+
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    style: (feature) => {
+                        if (feature.geometry.type === 'Polygon') {
+                            return {
+                                fillColor: feature.properties.color,
+                                weight: 1,
+                                opacity: 0.3,
+                                color: '#fff',
+                                fillOpacity: 0.6
+                            };
+                        }
+                    },
+                    pointToLayer: (feature, latlng) => {
+                        if (feature.properties.type === 'poi') {
+                            // Create a custom text label like Hoodmaps tags
+                            const label = L.divIcon({
+                                className: 'poi-label-container',
+                                html: `<div class="poi-label">${feature.properties.name}</div>`,
+                                iconSize: [100, 20]
+                            });
+                            return L.marker(latlng, { icon: label });
+                        }
+                    },
+                    onEachFeature: (feature, layer) => {
+                        if (feature.properties.label) {
+                            layer.bindPopup(feature.properties.label);
+                        }
+                    }
+                }).addTo(map);
+            })
+            .catch(err => console.error('Error loading data:', err));
+    </script>
+</body>
+</html>
