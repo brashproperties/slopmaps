@@ -43,7 +43,7 @@
 <body>
     <div class="ui-overlay header">
         <h1>CHICKASHA MAP 🧙‍♂️</h1>
-        <small>Tactical Slop Logic v0.8</small>
+        <small>Tactical Slop Logic v0.8.1</small>
     </div>
 
     <div id="map"></div>
@@ -66,26 +66,10 @@
             attributionControl: false 
         }).setView([35.045, -97.935], 14); 
 
-        // Hoodmaps Palette (Stealing the CSS filter logic for the tiles)
-        // Background: Highway = Yellow, Water = Blue, Land = White
+        // Simplified tile layer for stability
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-            maxZoom: 19,
-            className: 'hoodmaps-filter'
+            maxZoom: 19
         }).addTo(map);
-
-        // Inject the CSS filter to steal the Hoodmaps palette
-        const style = document.createElement('style');
-        style.innerHTML = `
-            .hoodmaps-filter {
-                filter: contrast(1.2) brightness(1.1) saturate(1.1);
-            }
-            /* Leaflet tile layer color hacking */
-            .leaflet-tile-pane {
-                /* Highway Yellow & Water Blue simulation via background and blend mode */
-                background: #fff;
-            }
-        `;
-        document.head.appendChild(style);
 
         map.createPane('slopPane');
         map.getPane('slopPane').style.zIndex = 400;
@@ -129,7 +113,7 @@
                         const iconClass = isPortfolio ? 'fa-briefcase' : getIcon(feature.properties.name);
                         const label = L.divIcon({
                             className: 'poi-tag-container',
-                            html: \`<div class="poi-tag \${isPortfolio ? 'portfolio-tag' : ''}"><i class="fas \${iconClass}"></i>\${feature.properties.name}</div>\`,
+                            html: '<div class="poi-tag ' + (isPortfolio ? 'portfolio-tag' : '') + '"><i class="fas ' + iconClass + '"></i>' + feature.properties.name + '</div>',
                             iconSize: null,
                             iconAnchor: [0, 0]
                         });
