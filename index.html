@@ -48,6 +48,12 @@
             box-shadow: 6px 6px 0px rgba(0,0,0,1);
             z-index: 2000;
         }
+        .portfolio-tag {
+            background: #000 !important;
+            color: #fff !important;
+            border: 2px solid #fff !important;
+            box-shadow: 4px 4px 0px rgba(255,255,255,0.5) !important;
+        }
         .poi-tag i {
             margin-right: 6px;
             font-size: 14px;
@@ -128,6 +134,8 @@
             if (name.includes('stadium')) return 'fa-stadium';
             if (name.includes('school')) return 'fa-school';
             if (name.includes('walmart')) return 'fa-cart-shopping';
+            if (name.includes('st')) return 'fa-house-chimney';
+            if (name.includes('colorado')) return 'fa-house-chimney';
             return 'fa-location-dot';
         };
 
@@ -140,22 +148,22 @@
                             return {
                                 fillColor: feature.properties.color,
                                 weight: 0,
-                                fillOpacity: 0.4,
+                                fillOpacity: 0.45,
                                 pane: 'slopPane'
                             };
                         }
                     },
                     pointToLayer: (feature, latlng) => {
-                        if (feature.properties.type === 'poi') {
-                            const iconClass = getIcon(feature.properties.name);
-                            const label = L.divIcon({
-                                className: 'poi-tag-container',
-                                html: `<div class="poi-tag"><i class="fas ${iconClass}"></i>${feature.properties.name}</div>`,
-                                iconSize: null,
-                                iconAnchor: [0, 0]
-                            });
-                            return L.marker(latlng, { icon: label, zIndexOffset: 1000 });
-                        }
+                        const isPortfolio = feature.properties.type === 'portfolio';
+                        const iconClass = isPortfolio ? 'fa-briefcase' : getIcon(feature.properties.name);
+                        
+                        const label = L.divIcon({
+                            className: 'poi-tag-container',
+                            html: `<div class="poi-tag ${isPortfolio ? 'portfolio-tag' : ''}"><i class="fas ${iconClass}"></i>${feature.properties.name}</div>`,
+                            iconSize: null,
+                            iconAnchor: [0, 0]
+                        });
+                        return L.marker(latlng, { icon: label, zIndexOffset: isPortfolio ? 2000 : 1000 });
                     },
                     onEachFeature: (feature, layer) => {
                         if (feature.properties.label) {
