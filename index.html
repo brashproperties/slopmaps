@@ -74,7 +74,7 @@
 <body>
     <div class="ui-overlay header">
         <h1>CHICKASHA MAP 🧙‍♂️</h1>
-        <small>Tactical Slop Logic v0.3</small>
+        <small>Tactical Slop Logic v0.6</small>
     </div>
 
     <div id="map"></div>
@@ -82,9 +82,10 @@
     <div class="ui-overlay legend">
         <div class="legend-title">Tactical Layers</div>
         <div class="legend-item"><div class="swatch" style="background: #ff4757;"></div> <span class="legend-label">Avoid / High Crime</span></div>
-        <div class="legend-item"><div class="swatch" style="background: #2ed573;"></div> <span class="legend-label">Cash Flow / Yield</span></div>
-        <div class="legend-item"><div class="swatch" style="background: #ffa502;"></div> <span class="legend-label">Appreciation / Rich</span></div>
-        <div class="legend-item"><div class="swatch" style="background: #1e90ff;"></div> <span class="legend-label">Normies</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #ffa502;"></div> <span class="legend-label">Cash Flow / Yield</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #2ed573;"></div> <span class="legend-label">Appreciation / Rich</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #1e90ff;"></div> <span class="legend-label">Normies (Stable Mid)</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #ff7f50;"></div> <span class="legend-label">Speculative</span></div>
         <div class="legend-item"><div class="swatch" style="background: #5f27cd;"></div> <span class="legend-label">Uni / Students</span></div>
         <div class="legend-item"><div class="swatch" style="background: #2f3542;"></div> <span class="legend-label">Industrial Slop</span></div>
     </div>
@@ -98,32 +99,25 @@
         const map = L.map('map', { 
             zoomControl: true,
             attributionControl: false 
-        }).setView([35.0526, -97.9364], 14); 
+        }).setView([35.045, -97.935], 14); 
 
-        // 1. BASE LAYER (Water, Parks, etc. - Low Z-Index)
-        // We use CartoDB Positron No Labels to get the clean background but keep it under our shading.
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
             maxZoom: 19,
             pane: 'tilePane'
         }).addTo(map);
 
-        // 2. CREATE PANES for Layer Sandwiches
         map.createPane('slopPane');
-        map.getPane('slopPane').style.zIndex = 400; // Above base tiles
-        map.getPane('slopPane').style.pointerEvents = 'none';
+        map.getPane('slopPane').style.zIndex = 400;
 
         map.createPane('labelPane');
-        map.getPane('labelPane').style.zIndex = 650; // Above shading but below POI tags
+        map.getPane('labelPane').style.zIndex = 650;
         map.getPane('labelPane').style.pointerEvents = 'none';
 
-        // 3. STREET LABELS (Top Layer of Sandwich)
-        // This ensures streets are ALWAYS readable.
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
             maxZoom: 19,
             pane: 'labelPane'
         }).addTo(map);
 
-        // Icon mapping for Hoodmaps-style tags
         const getIcon = (name) => {
             name = name.toLowerCase();
             if (name.includes('university') || name.includes('usao')) return 'fa-graduation-cap';
@@ -148,8 +142,8 @@
                             return {
                                 fillColor: feature.properties.color,
                                 color: '#000',
-                                weight: 0.5,
-                                fillOpacity: 0.6,
+                                weight: 1,
+                                fillOpacity: 0.35,
                                 pane: 'slopPane'
                             };
                         }
@@ -172,8 +166,7 @@
                         }
                     }
                 }).addTo(map);
-            })
-            .catch(err => console.error('Error loading data:', err));
+            });
             
         map.zoomControl.setPosition('topright');
     </script>

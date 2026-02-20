@@ -1,77 +1,103 @@
 import json
 
-def generate_block_data():
+def generate_tactical_data():
     COLORS = {
-        "ELITE": "#2ed573",       # Green
-        "CORE_GROWTH": "#ffa502", # Yellow/Gold
-        "STABILITY": "#5f27cd",    # Purple (Uni)
-        "SPECULATIVE": "#ff7f50",  # Coral/Orange
-        "HIGH_RISK": "#ff4757",    # Red
-        "NORMIE": "#1e90ff",       # Blue
-        "INDUSTRIAL": "#2f3542"    # Dark Grey
+        "ELITE": "#2ed573",       # Green (Appreciation / Rich)
+        "CORE_GROWTH": "#ffa502", # Yellow (Cash Flow / Yield)
+        "STABILITY": "#5f27cd",    # Purple (Uni / Students)
+        "SPECULATIVE": "#ff7f50",  # Orange (Speculative)
+        "HIGH_RISK": "#ff4757",    # Red (Avoid / High Crime)
+        "NORMIE": "#1e90ff",       # Blue (Owner-Occupant / Stable)
+        "INDUSTRIAL": "#2f3542"    # Grey (Industrial Slop)
     }
 
     features = []
 
-    # Helper to generate a grid of "blocks"
-    def add_grid(lon_start, lon_end, lat_start, lat_end, steps_x, steps_y, color, name, label):
-        dx = (lon_end - lon_start) / steps_x
-        dy = (lat_end - lat_start) / steps_y
-        for i in range(steps_x):
-            for j in range(steps_y):
-                x = lon_start + i * dx
-                y = lat_start + j * dy
-                # Add slight padding to look like "blocks" with gaps
-                gap = 0.0002
-                coords = [[
-                    [x + gap, y + gap],
-                    [x + dx - gap, y + gap],
-                    [x + dx - gap, y + dy - gap],
-                    [x + gap, y + dy - gap],
-                    [x + gap, y + gap]
-                ]]
-                features.append({
-                    "type": "Feature",
-                    "properties": {"name": name, "color": color, "label": label},
-                    "geometry": {"type": "Polygon", "coordinates": coords}
-                })
-
-    # 1. ELITE (South-West) - High density blocks
-    add_grid(-97.965, -97.940, 35.015, 35.035, 10, 8, COLORS["ELITE"], "Elite Block", "<b>ELITE</b><br>South-West Pioneer area.")
+    # 1. ELITE (Pioneer/Southwest)
+    # Boundaries: South of Alabama Ave, West of 17th St down to Country Club Rd
+    features.append({
+        "type": "Feature",
+        "properties": {"name": "Elite (Pioneer)", "color": COLORS["ELITE"], "label": "<b>ELITE</b><br>High owner-occupancy. Best schools. Low risk."},
+        "geometry": {"type": "Polygon", "coordinates": [[
+            [-97.970, 35.035], [-97.945, 35.035], [-97.945, 35.015], [-97.970, 35.015], [-97.970, 35.035]
+        ]]}
+    })
 
     # 2. USAO HALO (Stability)
-    add_grid(-97.955, -97.935, 35.035, 35.048, 8, 5, COLORS["STABILITY"], "Stability Block", "<b>STABILITY</b><br>University district.")
+    # Boundaries: Around 17th to 9th, Iowa to Grand
+    features.append({
+        "type": "Feature",
+        "properties": {"name": "USAO / University District", "color": COLORS["STABILITY"], "label": "<b>STABILITY (Uni)</b><br>Student/Faculty anchor. Reliable rental demand."},
+        "geometry": {"type": "Polygon", "coordinates": [[
+            [-97.955, 35.045], [-97.935, 35.045], [-97.935, 35.035], [-97.955, 35.035], [-97.955, 35.045]
+        ]]}
+    })
 
-    # 3. CORE GROWTH (Mid-town)
-    add_grid(-97.940, -97.915, 35.040, 35.060, 10, 8, COLORS["CORE_GROWTH"], "Core Block", "<b>CORE GROWTH</b><br>Stable mid-market.")
+    # 3. CORE GROWTH (Downtown/Mid-Market)
+    # Boundaries: Grand Ave to Choctaw Ave, 9th St to 1st St
+    features.append({
+        "type": "Feature",
+        "properties": {"name": "Core Growth (Downtown)", "color": COLORS["CORE_GROWTH"], "label": "<b>CORE GROWTH</b><br>Revitalization zone. High rental yield potential."},
+        "geometry": {"type": "Polygon", "coordinates": [[
+            [-97.935, 35.055], [-97.925, 35.055], [-97.925, 35.040], [-97.935, 35.040], [-97.935, 35.055]
+        ]]}
+    })
 
-    # 4. SPECULATIVE (North)
-    add_grid(-97.965, -97.930, 35.060, 35.075, 12, 6, COLORS["SPECULATIVE"], "Speculative Block", "<b>SPECULATIVE</b><br>North-side transition.")
+    # 4. NORMIE (Owner-Occupant / Middle Class)
+    # Boundaries: West of 17th, North of Alabama up to Colorado
+    features.append({
+        "type": "Feature",
+        "properties": {"name": "Normie Belt", "color": COLORS["NORMIE"], "label": "<b>NORMIES</b><br>Standard middle-class neighborhoods. Low appreciation, high stability."},
+        "geometry": {"type": "Polygon", "coordinates": [[
+            [-97.965, 35.050], [-97.945, 35.050], [-97.945, 35.035], [-97.965, 35.035], [-97.965, 35.050]
+        ]]}
+    })
 
-    # 5. HIGH RISK (East/Industrial)
-    add_grid(-97.915, -97.895, 35.035, 35.075, 8, 15, COLORS["HIGH_RISK"], "High Risk Block", "<b>HIGH RISK</b><br>East side / Industrial.")
+    # 5. SPECULATIVE (North Chickasha)
+    # Boundaries: North of Grand Ave, West side of town
+    features.append({
+        "type": "Feature",
+        "properties": {"name": "Speculative North", "color": COLORS["SPECULATIVE"], "label": "<b>SPECULATIVE</b><br>Rehab heavy. Block-by-block risk/reward."},
+        "geometry": {"type": "Polygon", "coordinates": [[
+            [-97.965, 35.065], [-97.935, 35.065], [-97.935, 35.055], [-97.965, 35.055], [-97.965, 35.065]
+        ]]}
+    })
 
-    # 6. PORTFOLIO (Points)
+    # 6. HIGH RISK (3rd St Corridor / East)
+    # Boundaries: East of 4th St, North of Choctaw
+    features.append({
+        "type": "Feature",
+        "properties": {"name": "High Risk / 3rd St", "color": COLORS["HIGH_RISK"], "label": "<b>HIGH RISK</b><br>Heavy blight. High crime indicators. Avoid or extreme yield."},
+        "geometry": {"type": "Polygon", "coordinates": [[
+            [-97.925, 35.075], [-97.910, 35.075], [-97.910, 35.045], [-97.925, 35.045], [-97.925, 35.075]
+        ]]}
+    })
+
+    # 7. INDUSTRIAL SLOP
+    # Boundaries: Far East side near tracks/turnpike
+    features.append({
+        "type": "Feature",
+        "properties": {"name": "Industrial Slop", "color": COLORS["INDUSTRIAL"], "label": "<b>INDUSTRIAL SLOP</b><br>Non-residential/Commercial blight."},
+        "geometry": {"type": "Polygon", "coordinates": [[
+            [-97.910, 35.075], [-97.895, 35.075], [-97.895, 35.045], [-97.910, 35.045], [-97.910, 35.075]
+        ]]}
+    })
+
+    # 8. PORTFOLIO
     PORTFOLIO = [
         {"name": "1922 S 21st St", "coords": [-97.958, 35.028], "type": "portfolio", "zone": "ELITE"},
         {"name": "728 S 17th St", "coords": [-97.952, 35.042], "type": "portfolio", "zone": "CORE_GROWTH"},
         {"name": "1219 W Colorado", "coords": [-97.948, 35.058], "type": "portfolio", "zone": "SPECULATIVE"},
         {"name": "925 S 3rd St", "coords": [-97.918, 35.048], "type": "portfolio", "zone": "HIGH_RISK"}
     ]
-
     for p in PORTFOLIO:
         features.append({
             "type": "Feature",
-            "properties": {
-                "name": p["name"],
-                "color": "#000000",
-                "type": "portfolio",
-                "label": f"<b>PORTFOLIO: {p['name']}</b><br>Zone: {p['zone']}"
-            },
+            "properties": {"name": p["name"], "color": "#000", "type": "portfolio", "label": f"<b>PORTFOLIO: {p['name']}</b><br>Zone: {p['zone']}"},
             "geometry": {"type": "Point", "coordinates": p["coords"]}
         })
 
-    # 7. POIS (Tags)
+    # 9. POIS
     POIS = [
         {"name": "USAO University", "coords": [-97.9472, 35.0381]},
         {"name": "Leg Lamp", "coords": [-97.9252, 35.0518]},
@@ -85,9 +111,8 @@ def generate_block_data():
             "geometry": {"type": "Point", "coordinates": poi["coords"]}
         })
 
-    collection = {"type": "FeatureCollection", "features": features}
     with open('projects/maps/data.json', 'w') as f:
-        json.dump(collection, f, indent=2)
+        json.dump({"type": "FeatureCollection", "features": features}, f, indent=2)
 
 if __name__ == "__main__":
-    generate_block_data()
+    generate_tactical_data()
