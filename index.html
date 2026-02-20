@@ -74,7 +74,7 @@
 <body>
     <div class="ui-overlay header">
         <h1>CHICKASHA MAP 🧙‍♂️</h1>
-        <small>Tactical Slop Logic v0.6</small>
+        <small>Tactical Slop Logic v0.7</small>
     </div>
 
     <div id="map"></div>
@@ -133,7 +133,7 @@
             return 'fa-location-dot';
         };
 
-        fetch('data.json')
+        fetch('data.json?t=' + new Date().getTime())
             .then(res => res.json())
             .then(data => {
                 L.geoJSON(data, {
