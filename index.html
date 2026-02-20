@@ -31,9 +31,46 @@
             color: #000; white-space: nowrap; box-shadow: 4px 4px 0px rgba(0,0,0,1);
             transform: rotate(-1deg); transition: all 0.2s;
         }
-        .portfolio-tag {
-            background: #000 !important; color: #fff !important; border: 2px solid #fff !important;
-            box-shadow: 4px 4px 0px rgba(255,255,255,0.5) !important;
+        /* PORTFOLIO PIN STYLING */
+        .portfolio-marker {
+            position: relative;
+            width: 40px;
+            height: 40px;
+        }
+        .pin-body {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 32px;
+            background: #000;
+            border: 3px solid #fff;
+            border-radius: 50% 50% 50% 0;
+            transform: translateX(-50%) rotate(-45deg);
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pin-body i {
+            transform: rotate(45deg);
+            color: #fff;
+            font-size: 16px;
+        }
+        .pin-address {
+            position: absolute;
+            left: 40px;
+            top: -5px;
+            background: #000;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 800;
+            white-space: nowrap;
+            border: 2px solid #fff;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
         }
         .poi-tag i { margin-right: 6px; font-size: 14px; }
 
@@ -43,7 +80,7 @@
 <body>
     <div class="ui-overlay header">
         <h1>CHICKASHA MAP 🧙‍♂️</h1>
-        <small>Tactical Slop Logic v0.9</small>
+        <small>Tactical Slop Logic v1.0</small>
     </div>
 
     <div id="map"></div>
@@ -109,15 +146,24 @@
                         }
                     },
                     pointToLayer: (feature, latlng) => {
-                        const isPortfolio = feature.properties.type === 'portfolio';
-                        const iconClass = isPortfolio ? 'fa-briefcase' : getIcon(feature.properties.name);
+                        if (feature.properties.type === 'portfolio') {
+                            const icon = L.divIcon({
+                                className: 'portfolio-marker',
+                                html: '<div class="pin-body"><i class="fas fa-briefcase"></i></div><div class="pin-address">' + feature.properties.name + '</div>',
+                                iconSize: [40, 40],
+                                iconAnchor: [20, 40]
+                            });
+                            return L.marker(latlng, { icon: icon, zIndexOffset: 2000 });
+                        }
+                        
+                        const iconClass = getIcon(feature.properties.name);
                         const label = L.divIcon({
                             className: 'poi-tag-container',
-                            html: '<div class="poi-tag ' + (isPortfolio ? 'portfolio-tag' : '') + '"><i class="fas ' + iconClass + '"></i>' + feature.properties.name + '</div>',
+                            html: '<div class="poi-tag"><i class="fas ' + iconClass + '"></i>' + feature.properties.name + '</div>',
                             iconSize: null,
                             iconAnchor: [0, 0]
                         });
-                        return L.marker(latlng, { icon: label, zIndexOffset: isPortfolio ? 2000 : 1000 });
+                        return L.marker(latlng, { icon: label, zIndexOffset: 1000 });
                     }
                 }).addTo(map);
             });
