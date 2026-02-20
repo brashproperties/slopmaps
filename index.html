@@ -15,9 +15,21 @@
             padding: 12px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             border: 1px solid rgba(0,0,0,0.05);
         }
-        .header { top: 20px; left: 20px; width: 260px; }
+        .header { top: 20px; left: 20px; width: 300px; }
         .header h1 { margin: 0; font-size: 20px; font-weight: 900; letter-spacing: -0.5px; color: #000; text-transform: uppercase; }
         .header small { color: #666; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* SEARCH BAR */
+        .search-container { margin-top: 12px; display: flex; gap: 8px; }
+        #address-input { 
+            flex: 1; padding: 8px; border: 2px solid #000; border-radius: 4px; 
+            font-size: 12px; font-weight: 700; outline: none;
+        }
+        #search-btn {
+            background: #000; color: #fff; border: none; padding: 0 12px; 
+            border-radius: 4px; cursor: pointer; font-weight: 800; font-size: 12px;
+        }
+        #search-btn:hover { background: #333; }
         
         .legend { bottom: 40px; left: 20px; min-width: 180px; }
         .legend-title { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #999; margin-bottom: 10px; letter-spacing: 1px; }
@@ -80,7 +92,11 @@
 <body>
     <div class="ui-overlay header">
         <h1>CHICKASHA MAP 🧙‍♂️</h1>
-        <small>Tactical Slop Logic v1.0</small>
+        <small>Tactical Slop Logic v1.1</small>
+        <div class="search-container">
+            <input type="text" id="address-input" placeholder="Enter address...">
+            <button id="search-btn">SCAN</button>
+        </div>
     </div>
 
     <div id="map"></div>
@@ -169,6 +185,60 @@
             });
             
         map.zoomControl.setPosition('topright');
+
+        // SEARCH LOGIC
+        const searchInput = document.getElementById('address-input');
+        const searchBtn = document.getElementById('search-btn');
+        let tempMarker = null;
+
+        const scanVibe = (lat, lng) => {
+            // Find the tactical zone at this coordinate
+            let vibe = "UNKNOWN SLOP";
+            let color = "#666";
+            
+            // Simple spatial check against our major zones (approximate)
+            if (lng < -97.945 && lat < 35.035) { vibe = "ELITE (Pioneer)"; color = "#2ed573"; }
+            else if (lng > -97.925 && lat > 35.045) { vibe = "HIGH RISK (3rd St)"; color = "#ff4757"; }
+            else if (lat > 35.035 && lat < 35.048 && lng > -97.955 && lng < -97.935) { vibe = "STABILITY (Uni)"; color = "#5f27cd"; }
+            else if (lat > 35.055) { vibe = "SPECULATIVE (North)"; color = "#ff7f50"; }
+            else { vibe = "CORE GROWTH / NORMIE"; color = "#ffa502"; }
+
+            return { vibe, color };
+        };
+
+        searchBtn.onclick = () => {
+            const addr = searchInput.value;
+            if (!addr) return;
+            
+            // Geocode via Nominatim (Free)
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(addr + ' Chickasha OK')}`)
+                .then(res => res.json())
+                .then(results => {
+                    if (results.length > 0) {
+                        const top = results[0];
+                        const lat = parseFloat(top.lat);
+                        const lon = parseFloat(top.lon);
+                        
+                        if (tempMarker) map.removeLayer(tempMarker);
+                        
+                        const info = scanVibe(lat, lon);
+                        
+                        tempMarker = L.marker([lat, lon], {
+                            icon: L.divIcon({
+                                className: 'poi-tag-container',
+                                html: `<div class="poi-tag" style="background:${info.color}; color:#fff;"><i class="fas fa-crosshairs"></i>SCAN: ${info.vibe}</div>`,
+                                iconSize: null,
+                                iconAnchor: [0, 0]
+                            })
+                        }).addTo(map);
+                        
+                        map.setView([lat, lon], 16);
+                        tempMarker.bindPopup(`<strong>VIBE CHECK:</strong><br>${info.vibe}`).openPopup();
+                    } else {
+                        alert("Address not found in Chickasha logic.");
+                    }
+                });
+        };
     </script>
 </body>
 </html>
