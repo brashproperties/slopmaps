@@ -5,54 +5,115 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff; }
-        #map { height: 100vh; width: 100vw; }
+        body { margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; overflow: hidden; }
+        #map { height: 100vh; width: 100vw; background: #f8f9fa; }
         
         /* Hoodmaps Style UI */
         .ui-overlay {
             position: absolute; z-index: 1000; background: white; 
-            padding: 10px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 12px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.05);
         }
-        .header { top: 10px; left: 50%; transform: translateX(-50%); width: 300px; text-align: center; }
-        .header h1 { margin: 0; font-size: 18px; color: #333; }
+        .header { top: 20px; left: 20px; width: 260px; }
+        .header h1 { margin: 0; font-size: 20px; font-weight: 900; letter-spacing: -0.5px; color: #000; text-transform: uppercase; }
+        .header small { color: #666; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         
-        .legend { bottom: 30px; left: 10px; border: 1px solid #ddd; }
-        .legend-item { display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; }
-        .legend-item:hover { opacity: 0.8; }
-        .swatch { width: 20px; height: 20px; margin-right: 10px; border-radius: 2px; }
+        .legend { bottom: 40px; left: 20px; min-width: 180px; }
+        .legend-title { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #999; margin-bottom: 10px; letter-spacing: 1px; }
+        .legend-item { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; transition: transform 0.1s; }
+        .legend-item:hover { transform: translateX(5px); }
+        .swatch { width: 14px; height: 14px; margin-right: 12px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); }
+        .legend-label { font-size: 13px; font-weight: 600; color: #333; }
         
-        .poi-label { 
-            background: white; border: 1px solid #999; border-radius: 3px; 
-            padding: 2px 5px; font-size: 11px; font-weight: bold; white-space: nowrap;
+        /* HOODMAPS TAGS */
+        .poi-tag {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 2px solid #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #000;
+            white-space: nowrap;
+            box-shadow: 4px 4px 0px rgba(0,0,0,1);
+            transform: rotate(-2deg);
+            transition: all 0.2s;
         }
+        .poi-tag:hover {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 6px 6px 0px rgba(0,0,0,1);
+            z-index: 2000;
+        }
+        .poi-tag i {
+            margin-right: 6px;
+            font-size: 14px;
+        }
+
+        /* FAB for adding logic (Visual only) */
+        .fab {
+            position: absolute; bottom: 40px; right: 20px; z-index: 1000;
+            background: #000; color: #fff; width: 56px; height: 56px; border-radius: 28px;
+            display: flex; align-items: center; justify-content: center; font-size: 24px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3); cursor: pointer;
+        }
+
+        /* Leaflet Overrides */
+        .leaflet-container { background: #f8f9fa !important; }
+        .leaflet-bar { border: none !important; box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important; }
+        .leaflet-bar a { border-bottom: 1px solid #f4f4f4 !important; }
     </style>
 </head>
 <body>
     <div class="ui-overlay header">
-        <h1>CHICKASHA HOODMAP 🧙‍♂️</h1>
-        <small>Real estate slop & tactical zones</small>
+        <h1>CHICKASHA MAP 🧙‍♂️</h1>
+        <small>Tactical Slop Logic v0.2</small>
     </div>
 
     <div id="map"></div>
 
     <div class="ui-overlay legend">
-        <div class="legend-item"><div class="swatch" style="background: #ff6b6b;"></div> Tourists</div>
-        <div class="legend-item"><div class="swatch" style="background: #feca57;"></div> Rich</div>
-        <div class="legend-item"><div class="swatch" style="background: #96c93d;"></div> Uni</div>
-        <div class="legend-item"><div class="swatch" style="background: #45b7d1;"></div> Suits</div>
-        <div class="legend-item"><div class="swatch" style="background: #54a0ff;"></div> Normies</div>
-        <div class="legend-item"><div class="swatch" style="background: #5f27cd;"></div> Crime</div>
+        <div class="legend-title">Tactical Layers</div>
+        <div class="legend-item"><div class="swatch" style="background: #ff4757;"></div> <span class="legend-label">Avoid / High Crime</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #2ed573;"></div> <span class="legend-label">Cash Flow / Yield</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #ffa502;"></div> <span class="legend-label">Appreciation / Rich</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #1e90ff;"></div> <span class="legend-label">Normies</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #5f27cd;"></div> <span class="legend-label">Uni / Students</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #2f3542;"></div> <span class="legend-label">Industrial Slop</span></div>
+    </div>
+
+    <div class="fab">
+        <i class="fas fa-plus"></i>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // Hoodmaps uses a clean light-mode map
-        const map = L.map('map', { zoomControl: false }).setView([35.0526, -97.9364], 14); 
+        const map = L.map('map', { 
+            zoomControl: true,
+            attributionControl: false 
+        }).setView([35.0526, -97.9364], 14); 
 
+        // Hoodmaps-style clean tile layer
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; OpenStreetMap &copy; CARTO'
+            maxZoom: 19
         }).addTo(map);
+
+        // Icon mapping for Hoodmaps-style tags
+        const getIcon = (name) => {
+            name = name.toLowerCase();
+            if (name.includes('university') || name.includes('usao')) return 'fa-graduation-cap';
+            if (name.includes('lamp')) return 'fa-lightbulb';
+            if (name.includes('hospital')) return 'fa-hospital';
+            if (name.includes('park')) return 'fa-tree';
+            if (name.includes('airport')) return 'fa-plane';
+            if (name.includes('stadium')) return 'fa-stadium';
+            if (name.includes('school')) return 'fa-school';
+            if (name.includes('walmart')) return 'fa-cart-shopping';
+            return 'fa-location-dot';
+        };
 
         fetch('data.json')
             .then(res => res.json())
@@ -62,32 +123,36 @@
                         if (feature.geometry.type === 'Polygon') {
                             return {
                                 fillColor: feature.properties.color,
-                                weight: 1,
-                                opacity: 0.3,
-                                color: '#fff',
-                                fillOpacity: 0.6
+                                weight: 0.5,
+                                opacity: 0.2,
+                                color: '#000',
+                                fillOpacity: 0.55
                             };
                         }
                     },
                     pointToLayer: (feature, latlng) => {
                         if (feature.properties.type === 'poi') {
-                            // Create a custom text label like Hoodmaps tags
+                            const iconClass = getIcon(feature.properties.name);
                             const label = L.divIcon({
-                                className: 'poi-label-container',
-                                html: `<div class="poi-label">${feature.properties.name}</div>`,
-                                iconSize: [100, 20]
+                                className: 'poi-tag-container',
+                                html: `<div class="poi-tag"><i class="fas ${iconClass}"></i>${feature.properties.name}</div>`,
+                                iconSize: null,
+                                iconAnchor: [0, 0]
                             });
                             return L.marker(latlng, { icon: label });
                         }
                     },
                     onEachFeature: (feature, layer) => {
                         if (feature.properties.label) {
-                            layer.bindPopup(feature.properties.label);
+                            layer.bindPopup(`<strong>${feature.properties.name}</strong><br>${feature.properties.label}`);
                         }
                     }
                 }).addTo(map);
             })
             .catch(err => console.error('Error loading data:', err));
+            
+        // Move zoom control to top right
+        map.zoomControl.setPosition('topright');
     </script>
 </body>
 </html>
