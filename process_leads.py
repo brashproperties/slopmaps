@@ -1,87 +1,61 @@
 import json
 
-def generate_tactical_data():
+def generate_hybrid_data():
     COLORS = {
-        "ELITE": "#2ed573",       # Green (Appreciation / Rich)
-        "CORE_GROWTH": "#ffa502", # Yellow (Cash Flow / Yield)
-        "STABILITY": "#5f27cd",    # Purple (Uni / Students)
-        "SPECULATIVE": "#ff7f50",  # Orange (Speculative)
-        "HIGH_RISK": "#ff4757",    # Red (Avoid / High Crime)
-        "NORMIE": "#1e90ff",       # Blue (Owner-Occupant / Stable)
-        "INDUSTRIAL": "#2f3542"    # Grey (Industrial Slop)
+        "ELITE": "#2ed573",
+        "CORE_GROWTH": "#ffa502",
+        "STABILITY": "#5f27cd",
+        "SPECULATIVE": "#ff7f50",
+        "HIGH_RISK": "#ff4757",
+        "NORMIE": "#1e90ff",
+        "INDUSTRIAL": "#2f3542"
     }
 
     features = []
 
-    # 1. ELITE (Pioneer/Southwest)
-    # Boundaries: South of Alabama Ave, West of 17th St down to Country Club Rd
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "Elite (Pioneer)", "color": COLORS["ELITE"], "label": "<b>ELITE</b><br>High owner-occupancy. Best schools. Low risk."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.970, 35.035], [-97.945, 35.035], [-97.945, 35.015], [-97.970, 35.015], [-97.970, 35.035]
-        ]]}
-    })
+    # HELPER: Generate small blocks ONLY inside a defined boundary
+    def add_tactical_grid(lon_start, lon_end, lat_start, lat_end, steps_x, steps_y, color, name, label):
+        dx = (lon_end - lon_start) / steps_x
+        dy = (lat_end - lat_start) / steps_y
+        for i in range(steps_x):
+            for j in range(steps_y):
+                x = lon_start + i * dx
+                y = lat_start + j * dy
+                # 0.0001 gap for a tight, high-tech grid look
+                gap = 0.0001
+                coords = [[
+                    [x + gap, y + gap],
+                    [x + dx - gap, y + gap],
+                    [x + dx - gap, y + dy - gap],
+                    [x + gap, y + dy - gap],
+                    [x + gap, y + gap]
+                ]]
+                features.append({
+                    "type": "Feature",
+                    "properties": {"name": name, "color": color, "label": label, "type": "tactical_block"},
+                    "geometry": {"type": "Polygon", "coordinates": coords}
+                })
 
-    # 2. USAO HALO (Stability)
-    # Boundaries: Around 17th to 9th, Iowa to Grand
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "USAO / University District", "color": COLORS["STABILITY"], "label": "<b>STABILITY (Uni)</b><br>Student/Faculty anchor. Reliable rental demand."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.955, 35.045], [-97.935, 35.045], [-97.935, 35.035], [-97.955, 35.035], [-97.955, 35.045]
-        ]]}
-    })
+    # 1. ELITE (SW Pioneer) - Tight 12x12 grid
+    add_tactical_grid(-97.970, -97.945, 35.015, 35.035, 12, 12, COLORS["ELITE"], "Elite Block", "<b>ELITE</b><br>South-West Pioneer area.")
 
-    # 3. CORE GROWTH (Downtown/Mid-Market)
-    # Boundaries: Grand Ave to Choctaw Ave, 9th St to 1st St
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "Core Growth (Downtown)", "color": COLORS["CORE_GROWTH"], "label": "<b>CORE GROWTH</b><br>Revitalization zone. High rental yield potential."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.935, 35.055], [-97.925, 35.055], [-97.925, 35.040], [-97.935, 35.040], [-97.935, 35.055]
-        ]]}
-    })
+    # 2. USAO HALO (Stability) - 10x10
+    add_tactical_grid(-97.955, -97.935, 35.035, 35.048, 10, 10, COLORS["STABILITY"], "Stability Block", "<b>STABILITY</b><br>University district.")
 
-    # 4. NORMIE (Owner-Occupant / Middle Class)
-    # Boundaries: West of 17th, North of Alabama up to Colorado
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "Normie Belt", "color": COLORS["NORMIE"], "label": "<b>NORMIES</b><br>Standard middle-class neighborhoods. Low appreciation, high stability."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.965, 35.050], [-97.945, 35.050], [-97.945, 35.035], [-97.965, 35.035], [-97.965, 35.050]
-        ]]}
-    })
+    # 3. CORE GROWTH (Downtown) - 8x12
+    add_tactical_grid(-97.935, -97.920, 35.040, 35.055, 8, 12, COLORS["CORE_GROWTH"], "Core Block", "<b>CORE GROWTH</b><br>Stable mid-market.")
 
-    # 5. SPECULATIVE (North Chickasha)
-    # Boundaries: North of Grand Ave, West side of town
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "Speculative North", "color": COLORS["SPECULATIVE"], "label": "<b>SPECULATIVE</b><br>Rehab heavy. Block-by-block risk/reward."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.965, 35.065], [-97.935, 35.065], [-97.935, 35.055], [-97.965, 35.055], [-97.965, 35.065]
-        ]]}
-    })
+    # 4. NORMIES (Stable Mid) - 12x10
+    add_tactical_grid(-97.970, -97.945, 35.035, 35.050, 12, 10, COLORS["NORMIE"], "Normie Block", "<b>NORMIE</b><br>Stable middle-class.")
 
-    # 6. HIGH RISK (3rd St Corridor / East)
-    # Boundaries: East of 4th St, North of Choctaw
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "High Risk / 3rd St", "color": COLORS["HIGH_RISK"], "label": "<b>HIGH RISK</b><br>Heavy blight. High crime indicators. Avoid or extreme yield."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.925, 35.075], [-97.910, 35.075], [-97.910, 35.045], [-97.925, 35.045], [-97.925, 35.075]
-        ]]}
-    })
+    # 5. SPECULATIVE (North Side) - 15x8
+    add_tactical_grid(-97.965, -97.930, 35.055, 35.070, 15, 8, COLORS["SPECULATIVE"], "Speculative Block", "<b>SPECULATIVE</b><br>North-side transition.")
 
-    # 7. INDUSTRIAL SLOP
-    # Boundaries: Far East side near tracks/turnpike
-    features.append({
-        "type": "Feature",
-        "properties": {"name": "Industrial Slop", "color": COLORS["INDUSTRIAL"], "label": "<b>INDUSTRIAL SLOP</b><br>Non-residential/Commercial blight."},
-        "geometry": {"type": "Polygon", "coordinates": [[
-            [-97.910, 35.075], [-97.895, 35.075], [-97.895, 35.045], [-97.910, 35.045], [-97.910, 35.075]
-        ]]}
-    })
+    # 6. HIGH RISK (3rd St Corridor) - 8x20 (Very granular)
+    add_tactical_grid(-97.925, -97.910, 35.045, 35.075, 8, 20, COLORS["HIGH_RISK"], "High Risk Block", "<b>HIGH RISK</b><br>East side / Industrial.")
+
+    # 7. INDUSTRIAL SLOP - 6x15
+    add_tactical_grid(-97.910, -97.895, 35.045, 35.075, 6, 15, COLORS["INDUSTRIAL"], "Industrial Block", "<b>INDUSTRIAL SLOP</b>")
 
     # 8. PORTFOLIO
     PORTFOLIO = [
@@ -115,4 +89,4 @@ def generate_tactical_data():
         json.dump({"type": "FeatureCollection", "features": features}, f, indent=2)
 
 if __name__ == "__main__":
-    generate_tactical_data()
+    generate_hybrid_data()
