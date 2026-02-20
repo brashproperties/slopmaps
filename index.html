@@ -43,7 +43,7 @@
 <body>
     <div class="ui-overlay header">
         <h1>CHICKASHA MAP 🧙‍♂️</h1>
-        <small>Tactical Slop Logic v0.8.1</small>
+        <small>Tactical Slop Logic v0.9</small>
     </div>
 
     <div id="map"></div>
@@ -66,8 +66,8 @@
             attributionControl: false 
         }).setView([35.045, -97.935], 14); 
 
-        // Simplified tile layer for stability
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+        // Use CartoDB Voyager for "Hoodmaps" style (yellow roads, blue water)
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
             maxZoom: 19
         }).addTo(map);
 
