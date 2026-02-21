@@ -1,0 +1,802 @@
+[
+    {
+        "id": "0-0",
+        "latitude": 35.035,
+        "longitude": -97.94,
+        "vibe_score": 0.5457754806390862,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "0-1",
+        "latitude": 35.035,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.3792191465357313,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "0-2",
+        "latitude": 35.035,
+        "longitude": -97.92,
+        "vibe_score": 0.9529321339887359,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "0-3",
+        "latitude": 35.035,
+        "longitude": -97.91,
+        "vibe_score": 0.24529236884843542,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "0-4",
+        "latitude": 35.035,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.6231443963111462,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "0-5",
+        "latitude": 35.035,
+        "longitude": -97.89,
+        "vibe_score": 0.5169655965046986,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "0-6",
+        "latitude": 35.035,
+        "longitude": -97.88,
+        "vibe_score": 0.9588202149355497,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "0-7",
+        "latitude": 35.035,
+        "longitude": -97.87,
+        "vibe_score": 0.8829882505901212,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "0-8",
+        "latitude": 35.035,
+        "longitude": -97.86,
+        "vibe_score": 0.14708441630255703,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "0-9",
+        "latitude": 35.035,
+        "longitude": -97.85,
+        "vibe_score": 0.14445280991156317,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "1-0",
+        "latitude": 35.044999999999995,
+        "longitude": -97.94,
+        "vibe_score": 0.7064218769072099,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "1-1",
+        "latitude": 35.044999999999995,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.609492036801003,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "1-2",
+        "latitude": 35.044999999999995,
+        "longitude": -97.92,
+        "vibe_score": 0.8085244558032562,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "1-3",
+        "latitude": 35.044999999999995,
+        "longitude": -97.91,
+        "vibe_score": 0.5405748587615253,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "1-4",
+        "latitude": 35.044999999999995,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.2085693688807197,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "1-5",
+        "latitude": 35.044999999999995,
+        "longitude": -97.89,
+        "vibe_score": 0.5579307739673712,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "1-6",
+        "latitude": 35.044999999999995,
+        "longitude": -97.88,
+        "vibe_score": 0.23780154004290438,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "1-7",
+        "latitude": 35.044999999999995,
+        "longitude": -97.87,
+        "vibe_score": 0.3709765986865373,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "1-8",
+        "latitude": 35.044999999999995,
+        "longitude": -97.86,
+        "vibe_score": 0.6300774450185397,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "1-9",
+        "latitude": 35.044999999999995,
+        "longitude": -97.85,
+        "vibe_score": 0.8421236796396987,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "2-0",
+        "latitude": 35.055,
+        "longitude": -97.94,
+        "vibe_score": 0.5925915037345997,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "2-1",
+        "latitude": 35.055,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.13047598871314556,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "2-2",
+        "latitude": 35.055,
+        "longitude": -97.92,
+        "vibe_score": 0.7809508578562758,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "2-3",
+        "latitude": 35.055,
+        "longitude": -97.91,
+        "vibe_score": 0.3184656178509343,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "2-4",
+        "latitude": 35.055,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.500675897865941,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "2-5",
+        "latitude": 35.055,
+        "longitude": -97.89,
+        "vibe_score": 0.4585165129917972,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "2-6",
+        "latitude": 35.055,
+        "longitude": -97.88,
+        "vibe_score": 0.2377349636068235,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "2-7",
+        "latitude": 35.055,
+        "longitude": -97.87,
+        "vibe_score": 0.9886370187363583,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "2-8",
+        "latitude": 35.055,
+        "longitude": -97.86,
+        "vibe_score": 0.8097939212084364,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "2-9",
+        "latitude": 35.055,
+        "longitude": -97.85,
+        "vibe_score": 0.4731515259205058,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "3-0",
+        "latitude": 35.065,
+        "longitude": -97.94,
+        "vibe_score": 0.24189860090029447,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "3-1",
+        "latitude": 35.065,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.19213055159287123,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "3-2",
+        "latitude": 35.065,
+        "longitude": -97.92,
+        "vibe_score": 0.12045761101891789,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "3-3",
+        "latitude": 35.065,
+        "longitude": -97.91,
+        "vibe_score": 0.31597575592636906,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "3-4",
+        "latitude": 35.065,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.689588782236833,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "3-5",
+        "latitude": 35.065,
+        "longitude": -97.89,
+        "vibe_score": 0.4930674507796087,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "3-6",
+        "latitude": 35.065,
+        "longitude": -97.88,
+        "vibe_score": 0.23225227899936102,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "3-7",
+        "latitude": 35.065,
+        "longitude": -97.87,
+        "vibe_score": 0.5574384122431336,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "3-8",
+        "latitude": 35.065,
+        "longitude": -97.86,
+        "vibe_score": 0.47263353047181433,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "3-9",
+        "latitude": 35.065,
+        "longitude": -97.85,
+        "vibe_score": 0.6275322405361456,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "4-0",
+        "latitude": 35.074999999999996,
+        "longitude": -97.94,
+        "vibe_score": 0.8905124158789917,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "4-1",
+        "latitude": 35.074999999999996,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.35864051429302324,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "4-2",
+        "latitude": 35.074999999999996,
+        "longitude": -97.92,
+        "vibe_score": 0.8273459016594436,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "4-3",
+        "latitude": 35.074999999999996,
+        "longitude": -97.91,
+        "vibe_score": 0.16191165401816796,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "4-4",
+        "latitude": 35.074999999999996,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.91955933923246,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "4-5",
+        "latitude": 35.074999999999996,
+        "longitude": -97.89,
+        "vibe_score": 0.7252342021649348,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "4-6",
+        "latitude": 35.074999999999996,
+        "longitude": -97.88,
+        "vibe_score": 0.7593841623601764,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "4-7",
+        "latitude": 35.074999999999996,
+        "longitude": -97.87,
+        "vibe_score": 0.5373017081627164,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "4-8",
+        "latitude": 35.074999999999996,
+        "longitude": -97.86,
+        "vibe_score": 0.8076544814884081,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "4-9",
+        "latitude": 35.074999999999996,
+        "longitude": -97.85,
+        "vibe_score": 0.8928749723531134,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "5-0",
+        "latitude": 35.084999999999994,
+        "longitude": -97.94,
+        "vibe_score": 0.9652600411847171,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "5-1",
+        "latitude": 35.084999999999994,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.5315014717856628,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "5-2",
+        "latitude": 35.084999999999994,
+        "longitude": -97.92,
+        "vibe_score": 0.37672256552052963,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "5-3",
+        "latitude": 35.084999999999994,
+        "longitude": -97.91,
+        "vibe_score": 0.654030122817262,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "5-4",
+        "latitude": 35.084999999999994,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.8653373291868302,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "5-5",
+        "latitude": 35.084999999999994,
+        "longitude": -97.89,
+        "vibe_score": 0.427049129353669,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "5-6",
+        "latitude": 35.084999999999994,
+        "longitude": -97.88,
+        "vibe_score": 0.7726094781486139,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "5-7",
+        "latitude": 35.084999999999994,
+        "longitude": -97.87,
+        "vibe_score": 0.19169663424475053,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "5-8",
+        "latitude": 35.084999999999994,
+        "longitude": -97.86,
+        "vibe_score": 0.9391349904050742,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "5-9",
+        "latitude": 35.084999999999994,
+        "longitude": -97.85,
+        "vibe_score": 0.8921057812138566,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "6-0",
+        "latitude": 35.095,
+        "longitude": -97.94,
+        "vibe_score": 0.1902722509703016,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "6-1",
+        "latitude": 35.095,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.3013414614373939,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "6-2",
+        "latitude": 35.095,
+        "longitude": -97.92,
+        "vibe_score": 0.15483837182320498,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "6-3",
+        "latitude": 35.095,
+        "longitude": -97.91,
+        "vibe_score": 0.3132454893553236,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "6-4",
+        "latitude": 35.095,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.9501826238193716,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "6-5",
+        "latitude": 35.095,
+        "longitude": -97.89,
+        "vibe_score": 0.11157128906666097,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "6-6",
+        "latitude": 35.095,
+        "longitude": -97.88,
+        "vibe_score": 0.8219539784597909,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "6-7",
+        "latitude": 35.095,
+        "longitude": -97.87,
+        "vibe_score": 0.7968237043390871,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "6-8",
+        "latitude": 35.095,
+        "longitude": -97.86,
+        "vibe_score": 0.22516009611262597,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "6-9",
+        "latitude": 35.095,
+        "longitude": -97.85,
+        "vibe_score": 0.421779613381948,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "7-0",
+        "latitude": 35.105,
+        "longitude": -97.94,
+        "vibe_score": 0.7395128436625373,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "7-1",
+        "latitude": 35.105,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.8097523744059479,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "7-2",
+        "latitude": 35.105,
+        "longitude": -97.92,
+        "vibe_score": 0.3086616365469813,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "7-3",
+        "latitude": 35.105,
+        "longitude": -97.91,
+        "vibe_score": 0.6129395115586797,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "7-4",
+        "latitude": 35.105,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.7442348985597194,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "7-5",
+        "latitude": 35.105,
+        "longitude": -97.89,
+        "vibe_score": 0.7038816143264217,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "7-6",
+        "latitude": 35.105,
+        "longitude": -97.88,
+        "vibe_score": 0.4235832457580382,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    },
+    {
+        "id": "7-7",
+        "latitude": 35.105,
+        "longitude": -97.87,
+        "vibe_score": 0.889056878157495,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "7-8",
+        "latitude": 35.105,
+        "longitude": -97.86,
+        "vibe_score": 0.29292433051762506,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "7-9",
+        "latitude": 35.105,
+        "longitude": -97.85,
+        "vibe_score": 0.9516057343438906,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "8-0",
+        "latitude": 35.114999999999995,
+        "longitude": -97.94,
+        "vibe_score": 0.38945820757550564,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "8-1",
+        "latitude": 35.114999999999995,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.6705927812572785,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "8-2",
+        "latitude": 35.114999999999995,
+        "longitude": -97.92,
+        "vibe_score": 0.5134921343334652,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "8-3",
+        "latitude": 35.114999999999995,
+        "longitude": -97.91,
+        "vibe_score": 0.18629480711742408,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "8-4",
+        "latitude": 35.114999999999995,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.8304769716949545,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "8-5",
+        "latitude": 35.114999999999995,
+        "longitude": -97.89,
+        "vibe_score": 0.48888371448614165,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "8-6",
+        "latitude": 35.114999999999995,
+        "longitude": -97.88,
+        "vibe_score": 0.7865447199284805,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "8-7",
+        "latitude": 35.114999999999995,
+        "longitude": -97.87,
+        "vibe_score": 0.5109755061544309,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "8-8",
+        "latitude": 35.114999999999995,
+        "longitude": -97.86,
+        "vibe_score": 0.9229235127285711,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "8-9",
+        "latitude": 35.114999999999995,
+        "longitude": -97.85,
+        "vibe_score": 0.5207560218546093,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "9-0",
+        "latitude": 35.125,
+        "longitude": -97.94,
+        "vibe_score": 0.8386676104672343,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "9-1",
+        "latitude": 35.125,
+        "longitude": -97.92999999999999,
+        "vibe_score": 0.8398756139333406,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "9-2",
+        "latitude": 35.125,
+        "longitude": -97.92,
+        "vibe_score": 0.37977084740667233,
+        "tier": "SPECULATIVE",
+        "color": "\ud83d\udfe0"
+    },
+    {
+        "id": "9-3",
+        "latitude": 35.125,
+        "longitude": -97.91,
+        "vibe_score": 0.9249538891846862,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "9-4",
+        "latitude": 35.125,
+        "longitude": -97.89999999999999,
+        "vibe_score": 0.534283963044784,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "9-5",
+        "latitude": 35.125,
+        "longitude": -97.89,
+        "vibe_score": 0.34355691400225497,
+        "tier": "HIGH_YIELD_RISK",
+        "color": "\ud83d\udd34"
+    },
+    {
+        "id": "9-6",
+        "latitude": 35.125,
+        "longitude": -97.88,
+        "vibe_score": 0.8222810167350973,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "9-7",
+        "latitude": 35.125,
+        "longitude": -97.87,
+        "vibe_score": 0.42857312829978045,
+        "tier": "CORE_GROWTH",
+        "color": "\ud83d\udfe1"
+    },
+    {
+        "id": "9-8",
+        "latitude": 35.125,
+        "longitude": -97.86,
+        "vibe_score": 0.36561869558446813,
+        "tier": "STABILITY",
+        "color": "\ud83d\udd35"
+    },
+    {
+        "id": "9-9",
+        "latitude": 35.125,
+        "longitude": -97.85,
+        "vibe_score": 0.15454440710276812,
+        "tier": "ELITE",
+        "color": "\ud83d\udfe2"
+    }
+]
