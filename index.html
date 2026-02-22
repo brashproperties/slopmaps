@@ -1,244 +1,1048 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chickasha Slopmap 🧙‍♂️</title>
+    <title>Chickasha Hoodmap</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; overflow: hidden; }
-        #map { height: 100vh; width: 100vw; background: #fff; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8f8f8;
+            color: #222;
+            overflow: hidden;
+        }
+
+        #map {
+            height: 100vh;
+            width: 100vw;
+            background: #f8f8f8;
+        }
+
         .ui-overlay {
-            position: absolute; z-index: 1000; background: white; 
-            padding: 12px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .header { top: 20px; left: 20px; width: 300px; }
-        .header h1 { margin: 0; font-size: 20px; font-weight: 900; letter-spacing: -0.5px; color: #000; text-transform: uppercase; }
-        .header small { color: #666; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-        
-        /* SEARCH BAR */
-        .search-container { margin-top: 12px; display: flex; gap: 8px; }
-        #address-input { 
-            flex: 1; padding: 8px; border: 2px solid #000; border-radius: 4px; 
-            font-size: 12px; font-weight: 700; outline: none;
-        }
-        #search-btn {
-            background: #000; color: #fff; border: none; padding: 0 12px; 
-            border-radius: 4px; cursor: pointer; font-weight: 800; font-size: 12px;
-        }
-        #search-btn:hover { background: #333; }
-        
-        .legend { bottom: 40px; left: 20px; min-width: 180px; }
-        .legend-title { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #999; margin-bottom: 10px; letter-spacing: 1px; }
-        .legend-item { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; transition: transform 0.1s; }
-        .swatch { width: 14px; height: 14px; margin-right: 12px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); }
-        .legend-label { font-size: 13px; font-weight: 600; color: #333; }
-        
-        .poi-tag {
-            display: flex; align-items: center; background: white; border: 2px solid #000;
-            padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 800;
-            color: #000; white-space: nowrap; box-shadow: 4px 4px 0px rgba(0,0,0,1);
-            transform: rotate(-1deg); transition: all 0.2s;
-        }
-        /* PORTFOLIO PIN STYLING */
-        .portfolio-marker {
-            position: relative;
-            width: 40px;
-            height: 40px;
-        }
-        .pin-body {
             position: absolute;
-            bottom: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 
+                        0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 32px;
-            height: 32px;
-            background: #000;
-            border: 3px solid #fff;
-            border-radius: 50% 50% 50% 0;
-            transform: translateX(-50%) rotate(-45deg);
-            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+            padding: 12px 24px;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        .header h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin: 0;
+            color: #222;
+        }
+
+        .header small {
+            display: block;
+            margin-top: 2px;
+            font-size: 10px;
+            color: #888;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .search-container {
+            top: 20px;
+            right: 20px;
+            left: auto;
+            transform: none;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10000;
+            overflow: hidden;
         }
-        .pin-body i {
-            transform: rotate(45deg);
-            color: #fff;
-            font-size: 16px;
-        }
-        .pin-address {
-            position: absolute;
-            left: 40px;
-            top: -5px;
-            background: #000;
-            color: #fff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 800;
-            white-space: nowrap;
-            border: 2px solid #fff;
-            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
-        }
-        .poi-tag i { margin-right: 6px; font-size: 14px; }
 
-        .leaflet-container { background: #fff !important; }
+        .search-container.expanded {
+            width: 300px;
+            height: auto;
+            padding: 10px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            cursor: default;
+        }
+
+        .search-toggle {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            background: #222;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .search-container.expanded .search-toggle {
+            display: none;
+        }
+
+        .search-toggle:hover {
+            background: #444;
+            transform: scale(1.05);
+        }
+
+        .search-form {
+            display: none;
+            width: 100%;
+        }
+
+        .search-container.expanded .search-form {
+            display: block;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            background: #fff;
+            color: #222;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #f7b731;
+            box-shadow: 0 0 0 3px rgba(247, 183, 49, 0.15);
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+
+        .autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1001;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .autocomplete-dropdown.active {
+            display: block;
+        }
+
+        .autocomplete-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #333;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: background 0.15s ease;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:hover {
+            background: rgba(247, 183, 49, 0.15);
+        }
+
+        .autocomplete-item .address-main {
+            font-weight: 500;
+        }
+
+        .autocomplete-item .address-detail {
+            font-size: 11px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .pinned-list {
+            top: 180px;
+            left: 20px;
+            width: 260px;
+            max-height: 340px;
+            padding: 12px;
+            overflow-y: auto;
+            border-radius: 16px;
+        }
+
+        .pinned-list h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .pinned-item {
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.2s ease;
+        }
+
+        .pinned-item:hover {
+            background: rgba(0, 0, 0, 0.04);
+            transform: translateX(4px);
+        }
+
+        .pinned-item h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+            line-height: 1.3;
+        }
+
+        .pinned-item p {
+            margin: 0;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .pinned-score {
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 6px;
+        }
+
+        .clear-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.05);
+            border: none;
+            border-radius: 50%;
+            color: #888;
+            cursor: pointer;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .clear-btn:hover {
+            background: #e55039;
+            color: #fff;
+        }
+
+        .legend {
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            min-width: 130px;
+        }
+
+        .legend h4 {
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .legend-gradient {
+            height: 8px;
+            border-radius: 2px;
+            background: linear-gradient(to right, #ff3300, #ff6600, #ff9900, #ffcc00, #ccff00, #66ff00, #33ff00);
+            margin-bottom: 4px;
+        }
+
+        .legend-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 8px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .legend-divider {
+            height: 1px;
+            background: rgba(0,0,0,0.1);
+            margin: 8px 0;
+        }
+
+        .legend-gradient-dir {
+            height: 8px;
+            border-radius: 2px;
+            background: linear-gradient(to right, #33ff00, #ffcc00, #ff3300);
+            margin-bottom: 4px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-top: 6px;
+            font-size: 9px;
+            color: #444;
+        }
+
+        .legend-marker {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 6px;
+            flex-shrink: 0;
+        }
+
+        .custom-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 11px;
+            color: #000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #fff;
+            transition: transform 0.2s ease;
+        }
+
+        .custom-marker:hover {
+            transform: scale(1.15);
+            z-index: 1000 !important;
+        }
+
+        .marker-brash-properties {
+            background: #2d3436;
+            color: #fff;
+        }
+
+        .marker-landmark {
+            background: #9b59b6;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            font-size: 14px;
+        }
+
+        .marker-usao {
+            background: #f39c12;
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
+            border: 3px solid #fff;
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.6);
+            animation: usao-pulse 2s infinite;
+        }
+
+        @keyframes usao-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(243, 156, 18, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
+        }
+
+        .leaflet-popup-content-wrapper {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .leaflet-popup-content {
+            margin: 14px;
+            color: #222;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .leaflet-popup-tip {
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .popup-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .popup-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 12px;
+        }
+
+        .popup-row:last-child {
+            border-bottom: none;
+        }
+
+        .popup-label {
+            color: #666;
+        }
+
+        .popup-value {
+            color: #222;
+            font-weight: 600;
+        }
+
+        .leaflet-control-zoom a {
+            background: #fff !important;
+            color: #333 !important;
+            border-color: #ddd !important;
+        }
+
+        .leaflet-control-zoom a:hover {
+            background: #f5f5f5 !important;
+        }
+
+        .leaflet-control-attribution {
+            background: rgba(255,255,255,0.8) !important;
+            color: #666;
+        }
+
+        .leaflet-control-attribution a {
+            color: #333;
+        }
+
+        .vibe-tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            pointer-events: none;
+            z-index: 1001;
+            white-space: nowrap;
+            transform: translate(-50%, -120%);
+            display: none;
+        }
+
+        .vibe-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.85);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-size: 12px;
+            color: #666;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 6px 12px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                top: 10px;
+                padding: 10px 16px;
+            }
+
+            .header h1 {
+                font-size: 16px;
+            }
+
+            .search-container {
+                top: 10px;
+                right: 10px;
+                width: 44px;
+                height: 44px;
+                left: auto;
+                transform: none;
+            }
+
+            .search-container.expanded {
+                top: 60px;
+                left: 10px;
+                right: 10px;
+                width: auto;
+            }
+
+            .pinned-list {
+                top: 140px;
+                left: 10px;
+                right: 10px;
+                width: auto;
+                max-height: 180px;
+            }
+
+            .legend {
+                bottom: 20px;
+                left: 10px;
+                right: 10px;
+                width: auto;
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="ui-overlay header">
-        <h1>CHICKASHA MAP 🧙‍♂️</h1>
-        <small>Tactical Slop Logic v1.1</small>
-        <div class="search-container">
-            <input type="text" id="address-input" placeholder="Enter address...">
-            <button id="search-btn">SCAN</button>
+        <h1 id="headerTitle">CHICKASHA HOODMAP</h1>
+        <div class="city-toggle" style="margin-top: 8px; display: flex; gap: 8px; justify-content: center;">
+            <button onclick="switchCity('chickasha')" id="btn-chickasha" style="padding: 4px 12px; border: 2px solid #222; background: #222; color: #fff; border-radius: 12px; font-size: 10px; font-weight: 700; cursor: pointer;">CHICKASHA</button>
+            <button onclick="switchCity('indiana')" id="btn-indiana" style="padding: 4px 12px; border: 2px solid #ddd; background: #fff; color: #888; border-radius: 12px; font-size: 10px; font-weight: 700; cursor: pointer;">INDIANA</button>
+        </div>
+    </div>
+
+    <div class="ui-overlay search-container" id="searchContainer">
+        <button class="search-toggle" id="searchToggle" title="Search address">
+            🔎
+        </button>
+        <div class="search-form">
+            <div class="search-input-wrapper">
+                <input type="text" id="addressInput" class="search-input" placeholder="Search address (e.g. 123 Main St, Chickasha, OK)">
+                <div id="autocompleteDropdown" class="autocomplete-dropdown"></div>
+            </div>
+            <button onclick="searchAddress()" class="search-btn">Analyze Property</button>
+        </div>
+    </div>
+
+    <div id="pinnedList" class="ui-overlay pinned-list" style="display:none;">
+        <h3>Pinned Properties</h3>
+        <div id="pinnedItems"></div>
+    </div>
+
+    <div class="ui-overlay legend">
+        <h4>Zones</h4>
+        <div class="legend-gradient" style="background: linear-gradient(to right, #02fc00, #7cfc00, #ffff00, #ff8800, #ff0000);"></div>
+        <div class="legend-labels">
+            <span>Best</span>
+            <span>Worst</span>
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item"><div class="legend-marker" style="background: #02fc00;"></div><span>Best</span></div>
+        <div class="legend-item"><div class="legend-marker" style="background: #7cfc00;"></div><span>Good</span></div>
+        <div class="legend-item"><div class="legend-marker" style="background: #ffff00;"></div><span>Middle</span></div>
+        <div class="legend-item"><div class="legend-marker" style="background: #ff8800;"></div><span>Bad</span></div>
+        <div class="legend-item"><div class="legend-marker" style="background: #ff0000;"></div><span>Worst</span></div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+            <div class="legend-marker" style="background: #2d3436;"></div>
+            <span>Your Properties</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-marker" style="background: #f39c12;"></div>
+            <span>USAO</span>
         </div>
     </div>
 
     <div id="map"></div>
-
-    <div class="ui-overlay legend">
-        <div class="legend-title">Tactical Layers</div>
-        <div class="legend-item"><div class="swatch" style="background: #ff4757;"></div> <span class="legend-label">Avoid / High Crime</span></div>
-        <div class="legend-item"><div class="swatch" style="background: #ffa502;"></div> <span class="legend-label">Cash Flow / Yield</span></div>
-        <div class="legend-item"><div class="swatch" style="background: #2ed573;"></div> <span class="legend-label">Appreciation / Rich</span></div>
-        <div class="legend-item"><div class="swatch" style="background: #1e90ff;"></div> <span class="legend-label">Normies (Stable Mid)</span></div>
-        <div class="legend-item"><div class="swatch" style="background: #ff7f50;"></div> <span class="legend-label">Speculative</span></div>
-        <div class="legend-item"><div class="swatch" style="background: #5f27cd;"></div> <span class="legend-label">Uni / Students</span></div>
-        <div class="legend-item"><div class="swatch" style="background: #2f3542;"></div> <span class="legend-label">Industrial Slop</span></div>
-    </div>
+    <div id="vibeTooltip" class="vibe-tooltip"></div>
+    <div class="footer">Powered by Slop Wizard 🧙</div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        const map = L.map('map', { 
-            zoomControl: true,
-            attributionControl: false 
-        }).setView([35.045, -97.935], 14); 
+        const CONFIG = {
+            city: 'Chickasha',
+            state: 'OK',
+            defaultCenter: [35.0526, -97.9364],
+            defaultZoom: 14
+        };
 
-        // Use CartoDB Voyager for "Hoodmaps" style (yellow roads, blue water)
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+        document.getElementById('headerTitle').textContent = `${CONFIG.city.toUpperCase()} HOODMAP`;
+        document.getElementById('addressInput').placeholder = `Search address (e.g. 123 Main St, ${CONFIG.city}, ${CONFIG.state})`;
+
+        const map = L.map('map', { zoomControl: true }).setView(CONFIG.defaultCenter, CONFIG.defaultZoom);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
             maxZoom: 19
         }).addTo(map);
 
-        map.createPane('slopPane');
-        map.getPane('slopPane').style.zIndex = 400;
+        let gridData = [];
+        let pinnedAddresses = [];
+        let gridLayer = null;
 
-        map.createPane('labelPane');
-        map.getPane('labelPane').style.zIndex = 650;
-        map.getPane('labelPane').style.pointerEvents = 'none';
+        document.getElementById('searchToggle').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.getElementById('searchContainer').classList.add('expanded');
+            document.getElementById('addressInput').focus();
+        });
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-            maxZoom: 19,
-            pane: 'labelPane'
-        }).addTo(map);
+        document.getElementById('searchContainer').addEventListener('click', function(e) {
+            if (e.target.closest('.search-form')) return;
+            if (document.getElementById('searchContainer').classList.contains('expanded')) {
+                document.getElementById('searchContainer').classList.remove('expanded');
+            }
+        });
 
-        const getIcon = (name) => {
-            name = name.toLowerCase();
-            if (name.includes('university') || name.includes('usao')) return 'fa-graduation-cap';
-            if (name.includes('lamp')) return 'fa-lightbulb';
-            if (name.includes('park')) return 'fa-tree';
-            if (name.includes('school')) return 'fa-school';
-            if (name.includes('walmart')) return 'fa-cart-shopping';
-            return 'fa-location-dot';
-        };
+        const portfolioData = [
+            { address: "1922 S 21st St, Chickasha, OK", lat: 35.0314, lon: -97.9601 },
+            { address: "728 S 17th St, Chickasha, OK", lat: 35.0437, lon: -97.9544 },
+            { address: "925 S 3rd St, Chickasha, OK", lat: 35.0417, lon: -97.9353 },
+            { address: "1219 W Colorado, Chickasha, OK", lat: 35.0487, lon: -97.9485 }
+        ];
 
-        fetch('data.json?t=' + new Date().getTime())
+        const landmarkData = [
+            { name: "USAO", address: "700 W Chickasha Ave, Chickasha, OK 73018", type: "usao", lat: 35.0322101, lon: -97.9549629, icon: "🎓" },
+            { name: "The Leg Lamp", address: "414 Chickasha Ave, Chickasha, OK 73023", type: "landmark", lat: 35.0512370, lon: -97.9372019, icon: "💡" },
+            { name: "Mars Petcare", address: "3000 S 9th St, Chickasha, OK 73018", type: "landmark", lat: 35.0170490, lon: -97.9438490, icon: "🏭" }
+        ];
+
+        function createCustomIcon(icon, className) {
+            return L.divIcon({
+                className: 'custom-marker-wrapper',
+                html: `<div class="custom-marker ${className} marker-pulse">${icon}</div>`,
+                iconSize: [36, 36],
+                iconAnchor: [18, 18],
+                popupAnchor: [0, -18]
+            });
+        }
+
+        const brashPropertiesIcon = createCustomIcon('🏠', 'marker-brash-properties');
+        const usaoIcon = createCustomIcon('🎓', 'marker-usao');
+        const landmarkIcon = createCustomIcon('📍', 'marker-landmark');
+
+        portfolioData.forEach(property => {
+            const marker = L.marker([property.lat, property.lon], { icon: brashPropertiesIcon }).addTo(map);
+            
+            marker.bindPopup(`
+                <div class="popup-title">${property.address}</div>
+                <div class="popup-row">
+                    <span class="popup-label">Owner</span>
+                    <span class="popup-value">Brash Properties</span>
+                </div>
+            `);
+        });
+
+        landmarkData.forEach(landmark => {
+            let icon;
+            if (landmark.type === "usao") {
+                icon = usaoIcon;
+            } else {
+                icon = landmarkIcon;
+            }
+            const marker = L.marker([landmark.lat, landmark.lon], { icon }).addTo(map);
+            
+            marker.bindPopup(`
+                <div class="popup-title">${landmark.icon} ${landmark.name}</div>
+                <div class="popup-row">
+                    <span class="popup-label">Type</span>
+                    <span class="popup-value">${landmark.type === "usao" ? "University" : "Landmark"}</span>
+                </div>
+                <div class="popup-row">
+                    <span class="popup-label">Address</span>
+                    <span class="popup-value">${landmark.address}</span>
+                </div>
+            `);
+        });
+
+        const tooltip = document.getElementById('vibeTooltip');
+
+        function showTooltip(e, props) {
+            if (props.color === 'transparent') {
+                tooltip.innerHTML = 'No data';
+            } else {
+                const zoneNames = {
+                    'best': 'Best',
+                    'good': 'Good',
+                    'middle': 'Middle',
+                    'bad': 'Bad',
+                    'worst': 'Worst'
+                };
+                const zoneName = zoneNames[props.zone] || props.zone;
+                tooltip.innerHTML = `Zone: ${zoneName}`;
+            }
+            tooltip.style.display = 'block';
+            tooltip.style.left = e.containerPoint.x + 'px';
+            tooltip.style.top = e.containerPoint.y + 'px';
+        }
+
+        function hideTooltip() {
+            tooltip.style.display = 'none';
+        }
+
+        let currentCity = 'chickasha';
+        
+        function switchCity(city) {
+            currentCity = city;
+            document.getElementById('btn-chickasha').style.background = city === 'chickasha' ? '#222' : '#fff';
+            document.getElementById('btn-chickasha').style.color = city === 'chickasha' ? '#fff' : '#888';
+            document.getElementById('btn-chickasha').style.borderColor = city === 'chickasha' ? '#222' : '#ddd';
+            document.getElementById('btn-indiana').style.background = city === 'indiana' ? '#222' : '#fff';
+            document.getElementById('btn-indiana').style.color = city === 'indiana' ? '#fff' : '#888';
+            document.getElementById('btn-indiana').style.borderColor = city === 'indiana' ? '#222' : '#ddd';
+            document.getElementById('headerTitle').textContent = city === 'chickasha' ? 'CHICKASHA HOODMAP' : 'INDIANA HOODMAP';
+            
+            // Reload grid data
+            loadGridData();
+        }
+
+        function loadGridData() {
+            const gridFile = currentCity === 'chickasha' ? 'grid_data.json' : 'grid_indiana.json';
+            fetch(gridFile + '?cache_buster=' + new Date().getTime())
             .then(res => res.json())
             .then(data => {
-                L.geoJSON(data, {
-                    style: (feature) => {
-                        if (feature.geometry.type === 'Polygon') {
-                            return {
-                                fillColor: feature.properties.color,
-                                color: '#000',
-                                weight: 0.15,
-                                fillOpacity: 0.45,
-                                pane: 'slopPane'
-                            };
-                        }
-                    },
-                    pointToLayer: (feature, latlng) => {
-                        if (feature.properties.type === 'portfolio') {
-                            const icon = L.divIcon({
-                                className: 'portfolio-marker',
-                                html: '<div class="pin-body"><i class="fas fa-briefcase"></i></div><div class="pin-address">' + feature.properties.name + '</div>',
-                                iconSize: [40, 40],
-                                iconAnchor: [20, 40]
-                            });
-                            return L.marker(latlng, { icon: icon, zIndexOffset: 2000 });
-                        }
-                        
-                        const iconClass = getIcon(feature.properties.name);
-                        const label = L.divIcon({
-                            className: 'poi-tag-container',
-                            html: '<div class="poi-tag"><i class="fas ' + iconClass + '"></i>' + feature.properties.name + '</div>',
-                            iconSize: null,
-                            iconAnchor: [0, 0]
-                        });
-                        return L.marker(latlng, { icon: label, zIndexOffset: 1000 });
+                gridData = data.features;
+                renderGrid(data);
+            })
+            .catch(err => console.error('Error loading grid data:', err));
+        }
+
+        function renderGrid(data) {
+            if (gridLayer) {
+                map.removeLayer(gridLayer);
+            }
+
+            gridLayer = L.geoJSON(data, {
+                style: function(feature) {
+                    const color = feature.properties.color;
+                    if (color === 'transparent') {
+                        return {
+                            fillColor: '#cccccc',
+                            fillOpacity: 0,
+                            color: 'transparent',
+                            weight: 0
+                        };
                     }
-                }).addTo(map);
-            });
-            
-        map.zoomControl.setPosition('topright');
-
-        // SEARCH LOGIC
-        const searchInput = document.getElementById('address-input');
-        const searchBtn = document.getElementById('search-btn');
-        let tempMarker = null;
-
-        const scanVibe = (lat, lng) => {
-            // Find the tactical zone at this coordinate
-            let vibe = "UNKNOWN SLOP";
-            let color = "#666";
-            
-            // Simple spatial check against our major zones (approximate)
-            if (lng < -97.945 && lat < 35.035) { vibe = "ELITE (Pioneer)"; color = "#2ed573"; }
-            else if (lng > -97.925 && lat > 35.045) { vibe = "HIGH RISK (3rd St)"; color = "#ff4757"; }
-            else if (lat > 35.035 && lat < 35.048 && lng > -97.955 && lng < -97.935) { vibe = "STABILITY (Uni)"; color = "#5f27cd"; }
-            else if (lat > 35.055) { vibe = "SPECULATIVE (North)"; color = "#ff7f50"; }
-            else { vibe = "CORE GROWTH / NORMIE"; color = "#ffa502"; }
-
-            return { vibe, color };
-        };
-
-        searchBtn.onclick = () => {
-            const addr = searchInput.value;
-            if (!addr) return;
-            
-            // Geocode via Nominatim (Free)
-            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(addr + ' Chickasha OK')}`)
-                .then(res => res.json())
-                .then(results => {
-                    if (results.length > 0) {
-                        const top = results[0];
-                        const lat = parseFloat(top.lat);
-                        const lon = parseFloat(top.lon);
-                        
-                        if (tempMarker) map.removeLayer(tempMarker);
-                        
-                        const info = scanVibe(lat, lon);
-                        
-                        tempMarker = L.marker([lat, lon], {
-                            icon: L.divIcon({
-                                className: 'poi-tag-container',
-                                html: `<div class="poi-tag" style="background:${info.color}; color:#fff;"><i class="fas fa-crosshairs"></i>SCAN: ${info.vibe}</div>`,
-                                iconSize: null,
-                                iconAnchor: [0, 0]
-                            })
-                        }).addTo(map);
-                        
-                        map.setView([lat, lon], 16);
-                        tempMarker.bindPopup(`<strong>VIBE CHECK:</strong><br>${info.vibe}`).openPopup();
+                    return {
+                        fillColor: color,
+                        fillOpacity: 0.7,
+                        color: 'transparent',
+                        weight: 0
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    const props = feature.properties;
+                    
+                    const zoneNames = {
+                        'best': 'Best',
+                        'good': 'Good',
+                        'middle': 'Middle',
+                        'bad': 'Bad',
+                        'worst': 'Worst'
+                    };
+                    
+                    if (props.color === 'transparent') {
+                        layer.bindPopup(`
+                            <div class="popup-title">No Data</div>
+                            <div class="popup-row">
+                                <span class="popup-label">No nearby properties</span>
+                            </div>
+                        `);
                     } else {
-                        alert("Address not found in Chickasha logic.");
+                        const zoneName = zoneNames[props.zone] || props.zone;
+                        layer.bindPopup(`
+                            <div class="popup-title">Zone: ${zoneName}</div>
+                        `);
                     }
-                });
-        };
+
+                    layer.on({
+                        mouseover: function(e) {
+                            if (props.color !== 'transparent') {
+                                layer.setStyle({ fillOpacity: 0.9 });
+                                showTooltip(e, props);
+                            }
+                        },
+                        mouseout: function() {
+                            if (props.color !== 'transparent') {
+                                layer.setStyle({ fillOpacity: 0.7 });
+                            }
+                            hideTooltip();
+                        },
+                        mousemove: function(e) {
+                            if (props.color !== 'transparent') {
+                                showTooltip(e, props);
+                            }
+                        }
+                    });
+                }
+            }).addTo(map);
+        }
+
+        let autocompleteTimeout = null;
+        let lastAutocompleteQuery = '';
+
+        async function fetchAddressAutocomplete(query) {
+            const dropdown = document.getElementById('autocompleteDropdown');
+            
+            if (!query || query.length < 3) {
+                dropdown.classList.remove('active');
+                return;
+            }
+
+            if (query === lastAutocompleteQuery) return;
+            lastAutocompleteQuery = query;
+
+            clearTimeout(autocompleteTimeout);
+            autocompleteTimeout = setTimeout(async () => {
+                try {
+                    const cityState = `${CONFIG.city}, ${CONFIG.state}`;
+                    const searchQuery = `${query}, ${cityState}`;
+                    
+                    const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&addressdetails=1&limit=5&countrycodes=us`, {
+                        headers: { 'User-Agent': 'BrashMaps/1.0' }
+                    });
+                    
+                    if (!res.ok) {
+                        dropdown.classList.remove('active');
+                        return;
+                    }
+                    
+                    const data = await res.json();
+                    
+                    if (!data || data.length === 0) {
+                        dropdown.classList.remove('active');
+                        return;
+                    }
+
+                    dropdown.innerHTML = data.map(item => {
+                        const displayName = item.display_name.split(',').slice(0, 3).join(', ');
+                        const detail = item.display_name.split(',').slice(3).join(', ').trim();
+                        return `
+                            <div class="autocomplete-item" data-lat="${item.lat}" data-lon="${item.lon}" data-address="${item.display_name}">
+                                <div class="address-main">${displayName}</div>
+                                ${detail ? `<div class="address-detail">${detail}</div>` : ''}
+                            </div>
+                        `;
+                    }).join('');
+
+                    dropdown.querySelectorAll('.autocomplete-item').forEach(item => {
+                        item.addEventListener('click', () => {
+                            document.getElementById('addressInput').value = item.dataset.address;
+                            dropdown.classList.remove('active');
+                            searchAddress();
+                        });
+                    });
+
+                    dropdown.classList.add('active');
+                } catch (e) {
+                    console.error('Autocomplete error:', e);
+                    dropdown.classList.remove('active');
+                }
+            }, 300);
+        }
+
+        document.getElementById('addressInput').addEventListener('input', function(e) {
+            lastAutocompleteQuery = '';
+            fetchAddressAutocomplete(e.target.value);
+        });
+
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('autocompleteDropdown');
+            const input = document.getElementById('addressInput');
+            if (!e.target.closest('.search-input-wrapper')) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        async function searchAddress() {
+            const address = document.getElementById('addressInput').value;
+            if (!address) return;
+
+            document.getElementById('autocompleteDropdown').classList.remove('active');
+
+            try {
+                const cityState = `${CONFIG.city}, ${CONFIG.state}`;
+                const searchQuery = address.includes(CONFIG.city) ? address : `${address}, ${cityState}`;
+                const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&limit=1`);
+                const data = await res.json();
+
+                if (data && data.length > 0) {
+                    const lat = parseFloat(data[0].lat);
+                    const lon = parseFloat(data[0].lon);
+                    analyzeProperty(lat, lon, data[0].display_name);
+                    document.getElementById('searchContainer').classList.remove('expanded');
+                    document.getElementById('addressInput').value = '';
+                    lastAutocompleteQuery = '';
+                } else {
+                    alert(`Address not found in ${CONFIG.city}. Try a more specific address.`);
+                }
+            } catch (e) {
+                console.error(e);
+                alert("Error searching address. Please try again.");
+            }
+        }
+
+        function analyzeProperty(lat, lon, address) {
+            let nearest = null;
+            let minDist = Infinity;
+
+            gridData.forEach(cell => {
+                const props = cell.properties;
+                const cellLat = props.center_lat;
+                const cellLon = props.center_lon;
+                const dist = Math.sqrt(Math.pow(lat - cellLat, 2) + Math.pow(lon - cellLon, 2));
+                if (dist < minDist) {
+                    minDist = dist;
+                    nearest = props;
+                }
+            });
+
+            if (nearest) {
+                addPinnedProperty(address, nearest);
+                
+                const marker = L.marker([lat, lon], {
+                    icon: createCustomIcon('📍', 'marker-brash-yellow')
+                }).addTo(map);
+                
+                const zoneNames = {
+                    'best': 'Best (USAO/West)',
+                    'good': 'Good (New Growth)',
+                    'middle': 'Middle (Central)',
+                    'bad': 'Bad (North)',
+                    'worst': 'Worst (Industrial)'
+                };
+                const zoneName = zoneNames[nearest.zone] || nearest.zone;
+                
+                const zoneTakes = {
+                    'best': 'Excellent area near USAO - solid investment opportunity',
+                    'good': 'Good area with new growth - solid investment',
+                    'middle': 'Average area - consider carefully',
+                    'bad': 'North side - higher risk, check comps carefully',
+                    'worst': 'Industrial area - likely not suitable for residential'
+                };
+                const take = zoneTakes[nearest.zone] || 'Check local market conditions';
+                
+                marker.bindPopup(`
+                    <div class="popup-title">${address}</div>
+                    <div class="popup-row">
+                        <span class="popup-label">Zone</span>
+                        <span class="popup-value">${zoneName}</span>
+                    </div>
+                    <div class="popup-row">
+                        <span class="popup-label">Take</span>
+                        <span class="popup-value">${take}</span>
+                    </div>
+                `).openPopup();
+                
+                map.setView([lat, lon], 16);
+            }
+        }
+
+        function addPinnedProperty(address, props) {
+            pinnedAddresses.push({ address, props });
+            renderPinnedList();
+        }
+
+        function removePinned(index) {
+            pinnedAddresses.splice(index, 1);
+            renderPinnedList();
+        }
+
+        function renderPinnedList() {
+            const container = document.getElementById('pinnedItems');
+            const listDiv = document.getElementById('pinnedList');
+            if (pinnedAddresses.length === 0) {
+                listDiv.style.display = 'none';
+                return;
+            }
+
+            listDiv.style.display = 'block';
+            container.innerHTML = '';
+
+            const zoneNames = {
+                'best': 'Best',
+                'good': 'Good',
+                'middle': 'Middle',
+                'bad': 'Bad',
+                'worst': 'Worst'
+            };
+
+            pinnedAddresses.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'pinned-item';
+                
+                const zoneName = zoneNames[item.props.zone] || item.props.zone;
+
+                div.innerHTML = `
+                    <span class="clear-btn" onclick="removePinned(${index})">✕</span>
+                    <h4>${item.address}</h4>
+                    <div class="pinned-score brash-yellow">Zone: ${zoneName}</div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        document.getElementById('addressInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchAddress();
+            }
+        });
     </script>
 </body>
 </html>

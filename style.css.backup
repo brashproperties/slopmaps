@@ -1,0 +1,802 @@
+/***********************************************
+ * THE SLOPULATOR - Retro Geocities Style CSS
+ * Early 2000s Internet Aesthetic
+ ***********************************************/
+
+/* ============================================
+   BASE STYLES & BACKGROUND
+   ============================================ */
+
+/* Animated starfield background */
+body {
+    background-color: #000000;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: starfield 100s linear infinite;
+    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Papyrus', cursive, sans-serif;
+    color: #00FF00;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='24' font-size='24'%3E💎%3C/text%3E%3C/svg%3E"), auto;
+    margin: 0;
+    padding: 10px;
+    min-height: 100vh;
+}
+
+@keyframes starfield {
+    0% { background-position: 0 0, 40px 60px, 130px 270px; }
+    100% { background-position: 550px 550px, 390px 410px, 380px 820px; }
+}
+
+/* ============================================
+   BLINK TAG (for browsers that don't support)
+   ============================================ */
+
+blink {
+    animation: blink-animation 0.5s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to { visibility: hidden; }
+}
+
+/* ============================================
+   BOUNCING EMOJIS
+   ============================================ */
+
+#bouncing-emojis {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bouncing-emoji {
+    position: absolute;
+    font-size: 2rem;
+    animation: bounce-around 8s ease-in-out infinite;
+    pointer-events: auto;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.bouncing-emoji:nth-child(1) { animation-delay: 0s; left: 5%; top: 10%; }
+.bouncing-emoji:nth-child(2) { animation-delay: 1s; left: 85%; top: 15%; }
+.bouncing-emoji:nth-child(3) { animation-delay: 2s; left: 15%; top: 70%; }
+.bouncing-emoji:nth-child(4) { animation-delay: 3s; left: 75%; top: 60%; }
+.bouncing-emoji:nth-child(5) { animation-delay: 4s; left: 50%; top: 80%; }
+.bouncing-emoji:nth-child(6) { animation-delay: 5s; left: 30%; top: 20%; }
+
+@keyframes bounce-around {
+    0%, 100% { 
+        transform: translate(0, 0) rotate(0deg) scale(1); 
+    }
+    20% { 
+        transform: translate(100px, -50px) rotate(72deg) scale(1.2); 
+    }
+    40% { 
+        transform: translate(-50px, 100px) rotate(144deg) scale(0.8); 
+    }
+    60% { 
+        transform: translate(80px, 80px) rotate(216deg) scale(1.1); 
+    }
+    80% { 
+        transform: translate(-100px, -80px) rotate(288deg) scale(0.9); 
+    }
+}
+
+/* ============================================
+   SPARKLES EFFECT
+   ============================================ */
+
+#sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.sparkle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #FFFF00 0%, transparent 70%);
+    animation: sparkle-fade 1s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes sparkle-fade {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.5) rotate(180deg); opacity: 1; }
+    100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+/* ============================================
+   VISITOR COUNTER
+   ============================================ */
+
+.digital-counter {
+    background: #000;
+    border: 3px inset #666;
+    padding: 10px 20px;
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+.digit {
+    background: linear-gradient(180deg, #330000 0%, #000 50%, #330000 100%);
+    color: #FF0000;
+    padding: 5px 8px;
+    margin: 0 2px;
+    border: 2px outset #666;
+    text-shadow: 0 0 10px #FF0000;
+    box-shadow: inset 0 0 10px rgba(255,0,0,0.5);
+    display: inline-block;
+    animation: digit-glow 2s ease-in-out infinite;
+}
+
+@keyframes digit-glow {
+    0%, 100% { text-shadow: 0 0 10px #FF0000; }
+    50% { text-shadow: 0 0 20px #FF0000, 0 0 30px #FF6600; }
+}
+
+.hit-counter {
+    font-family: 'Courier New', monospace;
+    color: #00FF00;
+    background: #000;
+    padding: 5px 15px;
+    border: 2px inset #333;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* ============================================
+   TABLE STYLES
+   ============================================ */
+
+.main-table {
+    border-collapse: separate;
+}
+
+.header-table {
+    border-color: #FF00FF;
+    box-shadow: 0 0 20px #FF00FF, inset 0 0 20px rgba(255,0,255,0.3);
+}
+
+.content-table {
+    border-color: #00FFFF;
+    box-shadow: 0 0 30px rgba(0,255,255,0.5);
+}
+
+.counter-table {
+    border-color: #00FF00;
+    box-shadow: 0 0 15px #00FF00;
+}
+
+.footer-table {
+    border-color: #FFFF00;
+    box-shadow: 0 0 15px rgba(255,255,0,0.5);
+}
+
+/* ============================================
+   INPUT STYLES
+   ============================================ */
+
+.retro-input {
+    background: #000;
+    color: #00FF00;
+    border: 3px inset #666;
+    padding: 12px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    box-shadow: inset 0 0 10px rgba(0,255,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.retro-input:focus {
+    outline: none;
+    border-color: #00FFFF;
+    box-shadow: 0 0 15px #00FFFF, inset 0 0 10px rgba(0,255,255,0.3);
+}
+
+.retro-input::placeholder {
+    color: #006600;
+}
+
+.retro-input-small {
+    background: #000;
+    color: #00FF00;
+    border: 3px inset #666;
+    padding: 8px 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    width: 150px;
+}
+
+.retro-input-small:focus {
+    outline: none;
+    border-color: #00FFFF;
+    box-shadow: 0 0 10px #00FFFF;
+}
+
+.api-field {
+    background: #001100;
+    border-color: #00FF00;
+    color: #00FF00;
+}
+
+.api-field:focus {
+    background: #002200;
+    color: #00FFFF;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.retro-button {
+    background: linear-gradient(180deg, #FF00FF 0%, #990099 50%, #FF00FF 100%);
+    color: #FFFF00;
+    border: 4px outset #FF66FF;
+    padding: 15px 40px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px #000;
+    box-shadow: 0 0 20px rgba(255,0,255,0.7);
+    transition: all 0.2s ease;
+    animation: button-pulse 2s ease-in-out infinite;
+}
+
+@keyframes button-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,255,0.7); }
+    50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,0,255,1); }
+}
+
+.retro-button:hover {
+    background: linear-gradient(180deg, #00FFFF 0%, #009999 50%, #00FFFF 100%);
+    border-color: #66FFFF;
+    box-shadow: 0 0 30px #00FFFF;
+    color: #000;
+    transform: scale(1.1) rotate(-2deg);
+}
+
+.retro-button:active {
+    border-style: inset;
+    transform: scale(0.95);
+}
+
+.retro-button-calculate {
+    background: linear-gradient(180deg, #FF0000 0%, #990000 50%, #FF0000 100%);
+    color: #FFFF00;
+    border: 5px outset #FF6666;
+    padding: 20px 60px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-shadow: 3px 3px 6px #000;
+    box-shadow: 0 0 30px rgba(255,0,0,0.8);
+    animation: calculate-glow 1s ease-in-out infinite;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+@keyframes calculate-glow {
+    0%, 100% { 
+        box-shadow: 0 0 30px rgba(255,0,0,0.8);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 50px rgba(255,0,0,1), 0 0 70px rgba(255,255,0,0.5);
+        transform: scale(1.02);
+    }
+}
+
+.retro-button-calculate:hover {
+    background: linear-gradient(180deg, #FFFF00 0%, #999900 50%, #FFFF00 100%);
+    border-color: #FFFF66;
+    color: #FF0000;
+    transform: scale(1.15) rotate(3deg);
+}
+
+.retro-button-small {
+    background: linear-gradient(180deg, #00FF00 0%, #009900 50%, #00FF00 100%);
+    color: #000;
+    border: 3px outset #66FF66;
+    padding: 10px 20px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.retro-button-small:hover {
+    background: linear-gradient(180deg, #FFFF00 0%, #999900 50%, #FFFF00 100%);
+    border-color: #FFFF00;
+    transform: scale(1.1);
+}
+
+/* ============================================
+   COMP ME DADDY BUTTON
+   ============================================ */
+
+.retro-button-comp {
+    background: linear-gradient(45deg, #FF00FF, #00FFFF, #FF00FF);
+    background-size: 200% 200%;
+    color: #FFFF00;
+    border: 4px outset #FF00FF;
+    padding: 12px 30px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px #000;
+    box-shadow: 0 0 25px rgba(255,0,255,0.8);
+    animation: comp-button-shimmer 2s linear infinite, comp-button-pulse 1.5s ease-in-out infinite;
+    margin-top: 10px;
+}
+
+@keyframes comp-button-shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes comp-button-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(255,0,255,0.8); }
+    50% { transform: scale(1.08); box-shadow: 0 0 40px rgba(0,255,255,1); }
+}
+
+.retro-button-comp:hover {
+    background: linear-gradient(45deg, #00FFFF, #FF00FF, #00FFFF);
+    background-size: 200% 200%;
+    border-color: #00FFFF;
+    box-shadow: 0 0 40px #00FFFF;
+    color: #000;
+    transform: scale(1.15) rotate(-3deg);
+}
+
+.retro-button-comp:active {
+    border-style: inset;
+    transform: scale(0.95);
+}
+
+/* ============================================
+   BIG BLINKING NUMBERS
+   ============================================ */
+
+.big-blinking-number {
+    font-family: 'Papyrus', 'Comic Sans MS', fantasy;
+    font-size: 4rem;
+    color: #00FF00;
+    text-shadow: 
+        0 0 10px #00FF00,
+        0 0 20px #00FF00,
+        0 0 30px #00FF00,
+        0 0 40px #00FFFF;
+    animation: big-number-blink 1s ease-in-out infinite, number-glow 2s ease-in-out infinite;
+}
+
+@keyframes big-number-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes number-glow {
+    0%, 100% { 
+        text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
+    }
+    50% { 
+        text-shadow: 0 0 20px #00FF00, 0 0 40px #00FF00, 0 0 60px #00FFFF, 0 0 80px #00FFFF;
+    }
+}
+
+/* ============================================
+   MARQUEE STYLING
+   ============================================ */
+
+marquee {
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.news-marquee {
+    border: 3px ridge #FFFF00;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255,255,0,0.5);
+}
+
+/* ============================================
+   SUGGESTIONS DROPDOWN
+   ============================================ */
+
+.suggestions {
+    position: absolute;
+    background: #000;
+    border: 3px outset #00FF00;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 0 20px rgba(0,255,0,0.5);
+}
+
+.suggestion-item {
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #003300;
+    color: #00FF00;
+    font-family: 'Courier New', monospace;
+    transition: all 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background: #003300;
+    color: #00FFFF;
+    padding-left: 25px;
+    text-shadow: 0 0 10px #00FFFF;
+}
+
+/* ============================================
+   COMPS TABLE
+   ============================================ */
+
+.comps-table {
+    border-collapse: collapse;
+    font-family: 'Courier New', monospace;
+}
+
+.comps-table th {
+    background: linear-gradient(180deg, #660000 0%, #330000 100%);
+    color: #FFFF00;
+    padding: 12px;
+    border: 2px outset #FF0000;
+}
+
+.comps-table td {
+    padding: 10px;
+    border: 1px solid #330000;
+    color: #00FF00;
+    text-align: center;
+}
+
+.comps-table tr:nth-child(even) {
+    background: rgba(51, 0, 0, 0.5);
+}
+
+.comps-table tr:hover {
+    background: rgba(255, 0, 0, 0.3);
+}
+
+/* ============================================
+   RESULTS TABLES
+   ============================================ */
+
+.results-table {
+    font-family: 'Courier New', monospace;
+    width: 100%;
+}
+
+.results-table td {
+    padding: 8px;
+}
+
+/* ============================================
+   INPUT TABLE
+   ============================================ */
+
+.input-table {
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+.input-table td {
+    border: 2px inset #333;
+}
+
+/* ============================================
+   MODAL STYLES
+   ============================================ */
+
+.retro-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-table {
+    box-shadow: 0 0 50px rgba(0,255,255,0.8);
+    animation: modal-appear 0.3s ease-out;
+}
+
+@keyframes modal-appear {
+    0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.close-modal {
+    color: #FF0000;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.close-modal:hover {
+    color: #FFFF00;
+    text-shadow: 0 0 10px #FFFF00;
+}
+
+/* ============================================
+   LOADING OVERLAY
+   ============================================ */
+
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 20000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loading-gif {
+    animation: loading-bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes loading-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ============================================
+   EVALUATION ITEMS
+   ============================================ */
+
+.evaluation-item {
+    background: #000033;
+    border: 3px outset #00FFFF;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.evaluation-item:hover {
+    background: #000066;
+    border-color: #FFFF00;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255,255,0,0.5);
+}
+
+.evaluation-item h4 {
+    color: #00FFFF;
+    margin: 0 0 10px 0;
+}
+
+.evaluation-item p {
+    color: #00FF00;
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   CONSTRUCTION GIFS
+   ============================================ */
+
+.construction-gif {
+    margin: 10px;
+    filter: drop-shadow(0 0 10px #FFFF00);
+}
+
+.netscape-badge {
+    margin: 10px;
+    filter: drop-shadow(0 0 5px #66FFFF);
+}
+
+/* ============================================
+   CONFETTI CANVAS
+   ============================================ */
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 99999;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (for those "modern" devices)
+   ============================================ */
+
+@media (max-width: 768px) {
+    body {
+        background-size: 300px 300px, 200px 200px, 150px 150px;
+    }
+    
+    .big-blinking-number {
+        font-size: 2.5rem;
+    }
+    
+    .retro-input {
+        width: 90%;
+        font-size: 1rem;
+    }
+    
+    .retro-button, .retro-button-calculate {
+        width: 90%;
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+    
+    .digit {
+        font-size: 1.5rem;
+        padding: 3px 5px;
+    }
+    
+    .bouncing-emoji {
+        font-size: 1.5rem;
+    }
+    
+    table {
+        width: 100% !important;
+    }
+    
+    td {
+        display: block;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .big-blinking-number {
+        font-size: 1.8rem;
+    }
+    
+    marquee font[size="7"] {
+        font-size: 1.5rem;
+    }
+    
+    .retro-button-calculate {
+        font-size: 1rem;
+        padding: 15px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    #bouncing-emojis,
+    #sparkles,
+    .retro-button,
+    .retro-button-calculate,
+    .retro-button-small,
+    marquee,
+    .loading-overlay,
+    #visitor-counter,
+    .hit-counter,
+    .construction-gif,
+    .netscape-badge,
+    #midi-player {
+        display: none !important;
+    }
+    
+    .content-table {
+        border: 1px solid #333;
+        box-shadow: none;
+    }
+    
+    font[color="#00FF00"] { color: #000; }
+    font[color="#FF0000"] { color: #000; }
+    font[color="#FFFF00"] { color: #000; }
+    font[color="#00FFFF"] { color: #000; }
+    font[color="#FF00FF"] { color: #000; }
+}
+
+/* ============================================
+   CUSTOM CURSORS FOR DIFFERENT ELEMENTS
+   ============================================ */
+
+button:hover, input:hover {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='24' font-size='24'%3E👆%3C/text%3E%3C/svg%3E"), pointer;
+}
+
+input:focus {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='24' font-size='24'%3E✏️%3C/text%3E%3C/svg%3E"), text;
+}
+
+/* ============================================
+   LINK STYLES
+   ============================================ */
+
+a {
+    color: #FF00FF;
+    text-decoration: underline wavy;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #FFFF00;
+    text-shadow: 0 0 10px #FFFF00;
+    text-decoration: underline overline;
+}
+
+a:visited {
+    color: #990099;
+}
+
+/* ============================================
+   HORIZONTAL RULE
+   ============================================ */
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00FF00, transparent);
+    margin: 10px 0;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 15px;
+    background: #000;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+    border: 2px inset #333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00FF00, #008800);
+    border: 2px outset #00FF00;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00FFFF, #008888);
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+/* Selection styling */
+::selection {
+    background: #FF00FF;
+    color: #FFFF00;
+}

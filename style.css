@@ -1,0 +1,335 @@
+/* TERMINAL HACKER VIBE - Clean, Fast, Premium */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0a;
+    color: #00ff00;
+    font-family: 'Courier New', 'Fira Code', 'Source Code Pro', monospace;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+/* Scanline effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 9999;
+}
+
+h1, h2, h3 {
+    color: #00ff00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 15px 0;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #003300;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.header p {
+    color: #008800;
+    margin: 5px 0 0 0;
+    font-size: 12px;
+}
+
+/* Input fields - terminal style */
+input, select, textarea {
+    background: #000;
+    color: #00ff00;
+    border: 1px solid #003300;
+    padding: 10px 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+input::placeholder {
+    color: #004400;
+}
+
+/* Larger inputs for key fields */
+#purchasePrice, #repairCost, #rentEstimate, #zestimate {
+    font-size: 18px;
+    padding: 12px 15px;
+    font-weight: bold;
+    background: #050505;
+    border: 2px solid #004400;
+}
+
+#purchasePrice:focus, #repairCost:focus, #rentEstimate:focus, #zestimate:focus {
+    border-color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+/* Buttons - terminal style */
+button {
+    background: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Primary action button */
+#slopMyDealBtn {
+    background: #00ff00;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: 2px solid #00ff00;
+}
+
+#slopMyDealBtn:hover {
+    background: #00cc00;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+td, th {
+    padding: 8px 10px;
+    border: 1px solid #003300;
+    font-size: 13px;
+}
+
+/* Section headers */
+.section-header {
+    background: #001a00;
+    color: #00ff00;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid #003300;
+    border-left: 4px solid #00ff00;
+    margin: 20px 0 10px 0;
+}
+
+/* Results display */
+#resultsSection {
+    background: #000;
+    border: 1px solid #003300;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #001a00;
+}
+
+.result-label {
+    color: #008800;
+}
+
+.result-value {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.result-value.positive {
+    color: #00ff00;
+}
+
+.result-value.negative {
+    color: #ff3300;
+}
+
+/* Rating stars */
+#dealRating {
+    color: #00ff00;
+    font-size: 18px;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+/* Suggestions dropdown */
+.suggestions {
+    position: absolute;
+    background: #000;
+    border: 1px solid #00ff00;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #001a00;
+}
+
+.suggestions div:hover {
+    background: #001a00;
+    color: #00ff00;
+}
+
+/* Labels */
+label {
+    color: #008800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td[align="right"] label {
+    color: #00ff00;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: #000;
+    border: 2px solid #00ff00;
+    margin: 5% auto;
+    padding: 30px;
+    max-width: 800px;
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.3);
+}
+
+.close-modal {
+    float: right;
+    cursor: pointer;
+    color: #00ff00;
+    font-size: 20px;
+}
+
+.close-modal:hover {
+    color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #003300;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00ff00;
+}
+
+/* Hide gaudy elements */
+#bouncing-emojis, #sparkles, .easter-egg {
+    display: none !important;
+}
+
+/* Animations */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+    }
+    
+    input, select {
+        padding: 8px;
+    }
+    
+    #purchasePrice, #repairCost, #rentEstimate, #zestimate {
+        font-size: 16px;
+    }
+}
+
+/* API Field indicator */
+.api-field {
+    border-left: 3px solid #008800;
+}
+
+/* Loading state */
+.loading {
+    color: #008800;
+}
+
+.loading::after {
+    content: '...';
+    animation: blink 0.5s infinite;
+}

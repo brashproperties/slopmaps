@@ -1,0 +1,16 @@
+{
+    "name": "The Slopulator",
+    "short_name": "Slopulator",
+    "description": "🏠 Property Analysis Tool 💰 - COMP ME DADDY!",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#FF00FF",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

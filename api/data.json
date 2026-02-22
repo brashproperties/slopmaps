@@ -1,0 +1,3570 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9343032836914,
+          35.041255950927734
+        ]
+      },
+      "properties": {
+        "id": "real-0",
+        "tier": "STABILITY",
+        "vibe_score": 4.38,
+        "property_value": 116000,
+        "sale_price": 162900,
+        "square_footage": 1108,
+        "crime_rate": 6.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.38/10 | $116k | 1108ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9343032836914,
+          35.04153060913086
+        ]
+      },
+      "properties": {
+        "id": "real-1",
+        "tier": "STABILITY",
+        "vibe_score": 4.62,
+        "property_value": 55000,
+        "sale_price": 62000,
+        "square_footage": 1008,
+        "crime_rate": 4.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.62/10 | $55k | 1008ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9343032836914,
+          35.04094696044922
+        ]
+      },
+      "properties": {
+        "id": "real-2",
+        "tier": "STABILITY",
+        "vibe_score": 4.24,
+        "property_value": 124000,
+        "sale_price": 123500,
+        "square_footage": 1138,
+        "crime_rate": 6.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.24/10 | $124k | 1138ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93429565429688,
+          35.043243408203125
+        ]
+      },
+      "properties": {
+        "id": "real-3",
+        "tier": "STABILITY",
+        "vibe_score": 4.58,
+        "property_value": 364000,
+        "sale_price": 384000,
+        "square_footage": 783,
+        "crime_rate": 6.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.58/10 | $364k | 783ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93716430664062,
+          35.04053497314453
+        ]
+      },
+      "properties": {
+        "id": "real-4",
+        "tier": "STABILITY",
+        "vibe_score": 4.38,
+        "property_value": 163000,
+        "sale_price": 70000,
+        "square_footage": 924,
+        "crime_rate": 6.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.38/10 | $163k | 924ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93778228759766,
+          35.040802001953125
+        ]
+      },
+      "properties": {
+        "id": "real-5",
+        "tier": "STABILITY",
+        "vibe_score": 4.84,
+        "property_value": 125000,
+        "sale_price": 27500,
+        "square_footage": 1080,
+        "crime_rate": 4.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.84/10 | $125k | 1080ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93777465820312,
+          35.042781829833984
+        ]
+      },
+      "properties": {
+        "id": "real-6",
+        "tier": "STABILITY",
+        "vibe_score": 4.69,
+        "property_value": 54000,
+        "sale_price": 57500,
+        "square_footage": 1072,
+        "crime_rate": 4.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.69/10 | $54k | 1072ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93859100341797,
+          35.043365478515625
+        ]
+      },
+      "properties": {
+        "id": "real-7",
+        "tier": "STABILITY",
+        "vibe_score": 2.52,
+        "property_value": 137000,
+        "sale_price": 132000,
+        "square_footage": 1090,
+        "crime_rate": 5.6,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.52/10 | $137k | 1090ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93514251708984,
+          35.04613494873047
+        ]
+      },
+      "properties": {
+        "id": "real-8",
+        "tier": "STABILITY",
+        "vibe_score": 2.51,
+        "property_value": 117000,
+        "sale_price": 6500,
+        "square_footage": 924,
+        "crime_rate": 5.5,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.51/10 | $117k | 924ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93922424316406,
+          35.0373420715332
+        ]
+      },
+      "properties": {
+        "id": "real-9",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 4.49,
+        "property_value": 121000,
+        "sale_price": 498000,
+        "square_footage": 1123,
+        "crime_rate": 5.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.49/10 | $121k | 1123ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93922424316406,
+          35.0369987487793
+        ]
+      },
+      "properties": {
+        "id": "real-10",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 2.38,
+        "property_value": 93000,
+        "sale_price": 14312,
+        "square_footage": 1152,
+        "crime_rate": 5.8,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.38/10 | $93k | 1152ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93722534179688,
+          35.04731369018555
+        ]
+      },
+      "properties": {
+        "id": "real-11",
+        "tier": "STABILITY",
+        "vibe_score": 2.2,
+        "property_value": 111000,
+        "sale_price": 197000,
+        "square_footage": 1030,
+        "crime_rate": 6.5,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.2/10 | $111k | 1030ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94086456298828,
+          35.04599380493164
+        ]
+      },
+      "properties": {
+        "id": "real-12",
+        "tier": "ELITE",
+        "vibe_score": 4.87,
+        "property_value": 106000,
+        "sale_price": 92000,
+        "square_footage": 812,
+        "crime_rate": 4.3,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.87/10 | $106k | 812ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9328842163086,
+          35.034706115722656
+        ]
+      },
+      "properties": {
+        "id": "real-13",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 3.21,
+        "property_value": 105000,
+        "sale_price": 7500,
+        "square_footage": 923,
+        "crime_rate": 3.1,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 3.21/10 | $105k | 923ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93881225585938,
+          35.03488540649414
+        ]
+      },
+      "properties": {
+        "id": "real-14",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 4.92,
+        "property_value": 104000,
+        "sale_price": 97000,
+        "square_footage": 1092,
+        "crime_rate": 4.1,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.92/10 | $104k | 1092ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93492126464844,
+          35.0413932800293
+        ]
+      },
+      "properties": {
+        "id": "real-15",
+        "tier": "STABILITY",
+        "vibe_score": 4.2,
+        "property_value": 165000,
+        "sale_price": 17500,
+        "square_footage": 968,
+        "crime_rate": 6.8,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.2/10 | $165k | 968ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9400863647461,
+          35.04169845581055
+        ]
+      },
+      "properties": {
+        "id": "real-16",
+        "tier": "ELITE",
+        "vibe_score": 4.31,
+        "property_value": 126000,
+        "sale_price": 108000,
+        "square_footage": 1298,
+        "crime_rate": 6.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.31/10 | $126k | 1298ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94295501708984,
+          35.04069519042969
+        ]
+      },
+      "properties": {
+        "id": "real-17",
+        "tier": "ELITE",
+        "vibe_score": 4.86,
+        "property_value": 169000,
+        "sale_price": 175000,
+        "square_footage": 2372,
+        "crime_rate": 4.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.86/10 | $169k | 2372ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94438171386719,
+          35.041255950927734
+        ]
+      },
+      "properties": {
+        "id": "real-18",
+        "tier": "ELITE",
+        "vibe_score": 2.7,
+        "property_value": 247000,
+        "sale_price": 294000,
+        "square_footage": 1939,
+        "crime_rate": 5.5,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.7/10 | $247k | 1939ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94438171386719,
+          35.041744232177734
+        ]
+      },
+      "properties": {
+        "id": "real-19",
+        "tier": "ELITE",
+        "vibe_score": 4.36,
+        "property_value": 210000,
+        "sale_price": 305000,
+        "square_footage": 1784,
+        "crime_rate": 6.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.36/10 | $210k | 1784ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93848419189453,
+          35.04094314575195
+        ]
+      },
+      "properties": {
+        "id": "real-20",
+        "tier": "STABILITY",
+        "vibe_score": 5.28,
+        "property_value": 173000,
+        "sale_price": 165000,
+        "square_footage": 2244,
+        "crime_rate": 3.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.28/10 | $173k | 2244ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94707489013672,
+          35.041812896728516
+        ]
+      },
+      "properties": {
+        "id": "real-21",
+        "tier": "ELITE",
+        "vibe_score": 4.93,
+        "property_value": 291000,
+        "sale_price": 286000,
+        "square_footage": 1913,
+        "crime_rate": 5.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.93/10 | $291k | 1913ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94735717773438,
+          35.04130172729492
+        ]
+      },
+      "properties": {
+        "id": "real-22",
+        "tier": "ELITE",
+        "vibe_score": 4.97,
+        "property_value": 199000,
+        "sale_price": 377000,
+        "square_footage": 2282,
+        "crime_rate": 4.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.97/10 | $199k | 2282ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93842315673828,
+          35.036930084228516
+        ]
+      },
+      "properties": {
+        "id": "real-23",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 4.44,
+        "property_value": 86000,
+        "sale_price": 90000,
+        "square_footage": 1988,
+        "crime_rate": 5.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.44/10 | $86k | 1988ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94296264648438,
+          35.036376953125
+        ]
+      },
+      "properties": {
+        "id": "real-24",
+        "tier": "ELITE",
+        "vibe_score": 4.32,
+        "property_value": 180000,
+        "sale_price": 185000,
+        "square_footage": 1771,
+        "crime_rate": 6.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.32/10 | $180k | 1771ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94571685791016,
+          35.03746795654297
+        ]
+      },
+      "properties": {
+        "id": "real-25",
+        "tier": "ELITE",
+        "vibe_score": 4.75,
+        "property_value": 179000,
+        "sale_price": 168000,
+        "square_footage": 2050,
+        "crime_rate": 5.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.75/10 | $179k | 2050ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94326782226562,
+          35.04680252075195
+        ]
+      },
+      "properties": {
+        "id": "real-26",
+        "tier": "ELITE",
+        "vibe_score": 4.6,
+        "property_value": 178000,
+        "sale_price": 183500,
+        "square_footage": 1857,
+        "crime_rate": 5.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.6/10 | $178k | 1857ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9481430053711,
+          35.03839874267578
+        ]
+      },
+      "properties": {
+        "id": "real-27",
+        "tier": "ELITE",
+        "vibe_score": 4.34,
+        "property_value": 213000,
+        "sale_price": 15000,
+        "square_footage": 2078,
+        "crime_rate": 6.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.34/10 | $213k | 2078ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94873046875,
+          35.03877258300781
+        ]
+      },
+      "properties": {
+        "id": "real-28",
+        "tier": "ELITE",
+        "vibe_score": 4.41,
+        "property_value": 119000,
+        "sale_price": 15000,
+        "square_footage": 1794,
+        "crime_rate": 5.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.41/10 | $119k | 1794ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94893646240234,
+          35.03877258300781
+        ]
+      },
+      "properties": {
+        "id": "real-29",
+        "tier": "ELITE",
+        "vibe_score": 5.28,
+        "property_value": 162000,
+        "sale_price": 15000,
+        "square_footage": 2274,
+        "crime_rate": 3.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.28/10 | $162k | 2274ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94937896728516,
+          35.04336166381836
+        ]
+      },
+      "properties": {
+        "id": "real-30",
+        "tier": "ELITE",
+        "vibe_score": 2.7,
+        "property_value": 176000,
+        "sale_price": 70000,
+        "square_footage": 1803,
+        "crime_rate": 5.2,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.7/10 | $176k | 1803ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94535064697266,
+          35.04798126220703
+        ]
+      },
+      "properties": {
+        "id": "real-31",
+        "tier": "ELITE",
+        "vibe_score": 2.66,
+        "property_value": 158000,
+        "sale_price": 92000,
+        "square_footage": 2046,
+        "crime_rate": 5.2,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.66/10 | $158k | 2046ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93778228759766,
+          35.04053497314453
+        ]
+      },
+      "properties": {
+        "id": "real-32",
+        "tier": "STABILITY",
+        "vibe_score": 4.52,
+        "property_value": 158000,
+        "sale_price": 112535,
+        "square_footage": 1626,
+        "crime_rate": 5.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.52/10 | $158k | 1626ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93778991699219,
+          35.0395393371582
+        ]
+      },
+      "properties": {
+        "id": "real-33",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 4.1,
+        "property_value": 117000,
+        "sale_price": 120000,
+        "square_footage": 1596,
+        "crime_rate": 6.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.1/10 | $117k | 1596ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94487762451172,
+          35.03600311279297
+        ]
+      },
+      "properties": {
+        "id": "real-34",
+        "tier": "ELITE",
+        "vibe_score": 4.26,
+        "property_value": 124000,
+        "sale_price": 130000,
+        "square_footage": 1730,
+        "crime_rate": 6.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.26/10 | $124k | 1730ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93938446044922,
+          35.03493881225586
+        ]
+      },
+      "properties": {
+        "id": "real-35",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 2.85,
+        "property_value": 165000,
+        "sale_price": 172100,
+        "square_footage": 1642,
+        "crime_rate": 4.6,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.85/10 | $165k | 1642ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94452667236328,
+          35.04680252075195
+        ]
+      },
+      "properties": {
+        "id": "real-36",
+        "tier": "ELITE",
+        "vibe_score": 4.57,
+        "property_value": 164000,
+        "sale_price": 160000,
+        "square_footage": 1599,
+        "crime_rate": 5.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.57/10 | $164k | 1599ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94891357421875,
+          35.04035568237305
+        ]
+      },
+      "properties": {
+        "id": "real-37",
+        "tier": "ELITE",
+        "vibe_score": 4.82,
+        "property_value": 122000,
+        "sale_price": 117000,
+        "square_footage": 1285,
+        "crime_rate": 4.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.82/10 | $122k | 1285ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94518280029297,
+          35.041316986083984
+        ]
+      },
+      "properties": {
+        "id": "real-38",
+        "tier": "ELITE",
+        "vibe_score": 4.65,
+        "property_value": 168000,
+        "sale_price": 140000,
+        "square_footage": 1419,
+        "crime_rate": 5.3,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.65/10 | $168k | 1419ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94803619384766,
+          35.04433059692383
+        ]
+      },
+      "properties": {
+        "id": "real-39",
+        "tier": "ELITE",
+        "vibe_score": 2.42,
+        "property_value": 172000,
+        "sale_price": 172000,
+        "square_footage": 1470,
+        "crime_rate": 6.1,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.42/10 | $172k | 1470ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94740295410156,
+          35.03877639770508
+        ]
+      },
+      "properties": {
+        "id": "real-40",
+        "tier": "ELITE",
+        "vibe_score": 5.05,
+        "property_value": 138000,
+        "sale_price": 498000,
+        "square_footage": 1384,
+        "crime_rate": 3.8,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.05/10 | $138k | 1384ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94795989990234,
+          35.03877258300781
+        ]
+      },
+      "properties": {
+        "id": "real-41",
+        "tier": "ELITE",
+        "vibe_score": 2.75,
+        "property_value": 35000,
+        "sale_price": 35000,
+        "square_footage": 1518,
+        "crime_rate": 4.3,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.75/10 | $35k | 1518ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94892883300781,
+          35.04494857788086
+        ]
+      },
+      "properties": {
+        "id": "real-42",
+        "tier": "ELITE",
+        "vibe_score": 4.45,
+        "property_value": 120000,
+        "sale_price": 97500,
+        "square_footage": 1344,
+        "crime_rate": 5.8,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.45/10 | $120k | 1344ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9481430053711,
+          35.03824996948242
+        ]
+      },
+      "properties": {
+        "id": "real-43",
+        "tier": "ELITE",
+        "vibe_score": 5.08,
+        "property_value": 134000,
+        "sale_price": 15000,
+        "square_footage": 1319,
+        "crime_rate": 3.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.08/10 | $134k | 1319ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94476318359375,
+          35.04494857788086
+        ]
+      },
+      "properties": {
+        "id": "real-44",
+        "tier": "ELITE",
+        "vibe_score": 4.71,
+        "property_value": 53000,
+        "sale_price": 60000,
+        "square_footage": 1268,
+        "crime_rate": 4.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.71/10 | $53k | 1268ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95105743408203,
+          35.04435348510742
+        ]
+      },
+      "properties": {
+        "id": "real-45",
+        "tier": "ELITE",
+        "vibe_score": 4.31,
+        "property_value": 279000,
+        "sale_price": 396000,
+        "square_footage": 1686,
+        "crime_rate": 7.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.31/10 | $279k | 1686ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94366455078125,
+          35.04448318481445
+        ]
+      },
+      "properties": {
+        "id": "real-46",
+        "tier": "ELITE",
+        "vibe_score": 4.78,
+        "property_value": 109000,
+        "sale_price": 1400,
+        "square_footage": 1449,
+        "crime_rate": 4.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.78/10 | $109k | 1449ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94518280029297,
+          35.04561996459961
+        ]
+      },
+      "properties": {
+        "id": "real-47",
+        "tier": "ELITE",
+        "vibe_score": 4.4,
+        "property_value": 181000,
+        "sale_price": 184000,
+        "square_footage": 1472,
+        "crime_rate": 6.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.4/10 | $181k | 1472ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94664001464844,
+          35.04612731933594
+        ]
+      },
+      "properties": {
+        "id": "real-48",
+        "tier": "ELITE",
+        "vibe_score": 4.75,
+        "property_value": 141000,
+        "sale_price": 45000,
+        "square_footage": 1402,
+        "crime_rate": 4.8,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.75/10 | $141k | 1402ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94434356689453,
+          35.04549789428711
+        ]
+      },
+      "properties": {
+        "id": "real-49",
+        "tier": "ELITE",
+        "vibe_score": 4.56,
+        "property_value": 130000,
+        "sale_price": 144000,
+        "square_footage": 1330,
+        "crime_rate": 5.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.56/10 | $130k | 1330ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94570922851562,
+          35.04612731933594
+        ]
+      },
+      "properties": {
+        "id": "real-50",
+        "tier": "ELITE",
+        "vibe_score": 2.52,
+        "property_value": 104000,
+        "sale_price": 90000,
+        "square_footage": 1292,
+        "crime_rate": 5.4,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.52/10 | $104k | 1292ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94213104248047,
+          35.04365158081055
+        ]
+      },
+      "properties": {
+        "id": "real-51",
+        "tier": "ELITE",
+        "vibe_score": 5.3,
+        "property_value": 182000,
+        "sale_price": 172000,
+        "square_footage": 1512,
+        "crime_rate": 3.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.3/10 | $182k | 1512ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9534683227539,
+          35.041656494140625
+        ]
+      },
+      "properties": {
+        "id": "real-52",
+        "tier": "ELITE",
+        "vibe_score": 4.94,
+        "property_value": 141000,
+        "sale_price": 498000,
+        "square_footage": 1328,
+        "crime_rate": 4.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.94/10 | $141k | 1328ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95347595214844,
+          35.04124450683594
+        ]
+      },
+      "properties": {
+        "id": "real-53",
+        "tier": "ELITE",
+        "vibe_score": 2.24,
+        "property_value": 86000,
+        "sale_price": 48000,
+        "square_footage": 1346,
+        "crime_rate": 6.3,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.24/10 | $86k | 1346ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95347595214844,
+          35.040283203125
+        ]
+      },
+      "properties": {
+        "id": "real-54",
+        "tier": "ELITE",
+        "vibe_score": 5.35,
+        "property_value": 189000,
+        "sale_price": 180000,
+        "square_footage": 1748,
+        "crime_rate": 3.1,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.35/10 | $189k | 1748ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94668579101562,
+          35.03632736206055
+        ]
+      },
+      "properties": {
+        "id": "real-55",
+        "tier": "ELITE",
+        "vibe_score": 4.77,
+        "property_value": 86000,
+        "sale_price": 82000,
+        "square_footage": 1552,
+        "crime_rate": 4.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.77/10 | $86k | 1552ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94971466064453,
+          35.04679870605469
+        ]
+      },
+      "properties": {
+        "id": "real-56",
+        "tier": "ELITE",
+        "vibe_score": 2.53,
+        "property_value": 120000,
+        "sale_price": 240000,
+        "square_footage": 1639,
+        "crime_rate": 5.5,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.53/10 | $120k | 1639ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95401000976562,
+          35.04093551635742
+        ]
+      },
+      "properties": {
+        "id": "real-57",
+        "tier": "ELITE",
+        "vibe_score": 4.48,
+        "property_value": 173000,
+        "sale_price": 158800,
+        "square_footage": 1646,
+        "crime_rate": 5.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.48/10 | $173k | 1646ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.949951171875,
+          35.04679870605469
+        ]
+      },
+      "properties": {
+        "id": "real-58",
+        "tier": "ELITE",
+        "vibe_score": 2.73,
+        "property_value": 74000,
+        "sale_price": 8000,
+        "square_footage": 1664,
+        "crime_rate": 4.6,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.73/10 | $74k | 1664ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95487976074219,
+          35.042598724365234
+        ]
+      },
+      "properties": {
+        "id": "real-59",
+        "tier": "ELITE",
+        "vibe_score": 4.65,
+        "property_value": 139000,
+        "sale_price": 498000,
+        "square_footage": 1478,
+        "crime_rate": 5.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.65/10 | $139k | 1478ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9540023803711,
+          35.04292678833008
+        ]
+      },
+      "properties": {
+        "id": "real-60",
+        "tier": "ELITE",
+        "vibe_score": 4.67,
+        "property_value": 125000,
+        "sale_price": 145000,
+        "square_footage": 1472,
+        "crime_rate": 5.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.67/10 | $125k | 1472ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95330810546875,
+          35.038841247558594
+        ]
+      },
+      "properties": {
+        "id": "real-61",
+        "tier": "ELITE",
+        "vibe_score": 5.02,
+        "property_value": 133000,
+        "sale_price": 117000,
+        "square_footage": 1491,
+        "crime_rate": 3.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.02/10 | $133k | 1491ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95763397216797,
+          35.03938293457031
+        ]
+      },
+      "properties": {
+        "id": "real-62",
+        "tier": "ELITE",
+        "vibe_score": 4.34,
+        "property_value": 141000,
+        "sale_price": 129000,
+        "square_footage": 1544,
+        "crime_rate": 6.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.34/10 | $141k | 1544ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95291900634766,
+          35.044437408447266
+        ]
+      },
+      "properties": {
+        "id": "real-63",
+        "tier": "ELITE",
+        "vibe_score": 4.31,
+        "property_value": 79000,
+        "sale_price": 40000,
+        "square_footage": 1210,
+        "crime_rate": 6.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.31/10 | $79k | 1210ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95602416992188,
+          35.044944763183594
+        ]
+      },
+      "properties": {
+        "id": "real-64",
+        "tier": "ELITE",
+        "vibe_score": 4.41,
+        "property_value": 167000,
+        "sale_price": 380000,
+        "square_footage": 1248,
+        "crime_rate": 6.1,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.41/10 | $167k | 1248ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9542465209961,
+          35.0450553894043
+        ]
+      },
+      "properties": {
+        "id": "real-65",
+        "tier": "ELITE",
+        "vibe_score": 4.59,
+        "property_value": 173000,
+        "sale_price": 159000,
+        "square_footage": 1256,
+        "crime_rate": 5.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.59/10 | $173k | 1256ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95635986328125,
+          35.044944763183594
+        ]
+      },
+      "properties": {
+        "id": "real-66",
+        "tier": "ELITE",
+        "vibe_score": 2.49,
+        "property_value": 123000,
+        "sale_price": 498000,
+        "square_footage": 1292,
+        "crime_rate": 5.6,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.49/10 | $123k | 1292ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95347595214844,
+          35.03767395019531
+        ]
+      },
+      "properties": {
+        "id": "real-67",
+        "tier": "ELITE",
+        "vibe_score": 4.67,
+        "property_value": 210000,
+        "sale_price": 230000,
+        "square_footage": 1458,
+        "crime_rate": 5.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.67/10 | $210k | 1458ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95347595214844,
+          35.037261962890625
+        ]
+      },
+      "properties": {
+        "id": "real-68",
+        "tier": "ELITE",
+        "vibe_score": 2.64,
+        "property_value": 90000,
+        "sale_price": 53000,
+        "square_footage": 1458,
+        "crime_rate": 5.0,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.64/10 | $90k | 1458ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95378875732422,
+          35.04612731933594
+        ]
+      },
+      "properties": {
+        "id": "real-69",
+        "tier": "ELITE",
+        "vibe_score": 3.0,
+        "property_value": 43000,
+        "sale_price": 40000,
+        "square_footage": 1604,
+        "crime_rate": 3.5,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 3.0/10 | $43k | 1604ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95084381103516,
+          35.03654479980469
+        ]
+      },
+      "properties": {
+        "id": "real-70",
+        "tier": "ELITE",
+        "vibe_score": 2.36,
+        "property_value": 154000,
+        "sale_price": 145000,
+        "square_footage": 1563,
+        "crime_rate": 6.2,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.36/10 | $154k | 1563ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94742584228516,
+          35.04170227050781
+        ]
+      },
+      "properties": {
+        "id": "real-71",
+        "tier": "ELITE",
+        "vibe_score": 4.11,
+        "property_value": 116000,
+        "sale_price": 326000,
+        "square_footage": 1581,
+        "crime_rate": 6.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.11/10 | $116k | 1581ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95542907714844,
+          35.034996032714844
+        ]
+      },
+      "properties": {
+        "id": "real-72",
+        "tier": "ELITE",
+        "vibe_score": 4.38,
+        "property_value": 111000,
+        "sale_price": 118000,
+        "square_footage": 1326,
+        "crime_rate": 5.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.38/10 | $111k | 1326ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9576416015625,
+          35.03523635864258
+        ]
+      },
+      "properties": {
+        "id": "real-73",
+        "tier": "ELITE",
+        "vibe_score": 5.28,
+        "property_value": 200000,
+        "sale_price": 210500,
+        "square_footage": 1398,
+        "crime_rate": 3.3,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.28/10 | $200k | 1398ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95072174072266,
+          35.047306060791016
+        ]
+      },
+      "properties": {
+        "id": "real-74",
+        "tier": "ELITE",
+        "vibe_score": 4.8,
+        "property_value": 103000,
+        "sale_price": 84000,
+        "square_footage": 1568,
+        "crime_rate": 4.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.8/10 | $103k | 1568ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9576416015625,
+          35.03293228149414
+        ]
+      },
+      "properties": {
+        "id": "real-75",
+        "tier": "ELITE",
+        "vibe_score": 2.36,
+        "property_value": 104000,
+        "sale_price": 113000,
+        "square_footage": 1950,
+        "crime_rate": 6.0,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.36/10 | $104k | 1950ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95817565917969,
+          35.03355026245117
+        ]
+      },
+      "properties": {
+        "id": "real-76",
+        "tier": "ELITE",
+        "vibe_score": 4.15,
+        "property_value": 159000,
+        "sale_price": 145000,
+        "square_footage": 1624,
+        "crime_rate": 6.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.15/10 | $159k | 1624ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9576416015625,
+          35.033992767333984
+        ]
+      },
+      "properties": {
+        "id": "real-77",
+        "tier": "ELITE",
+        "vibe_score": 4.65,
+        "property_value": 188000,
+        "sale_price": 195000,
+        "square_footage": 1912,
+        "crime_rate": 5.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.65/10 | $188k | 1912ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.96260833740234,
+          35.02815628051758
+        ]
+      },
+      "properties": {
+        "id": "real-78",
+        "tier": "SPECULATIVE",
+        "vibe_score": 5.13,
+        "property_value": 170000,
+        "sale_price": 100000,
+        "square_footage": 1579,
+        "crime_rate": 3.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.13/10 | $170k | 1579ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.96134948730469,
+          35.026676177978516
+        ]
+      },
+      "properties": {
+        "id": "real-79",
+        "tier": "SPECULATIVE",
+        "vibe_score": 5.13,
+        "property_value": 202000,
+        "sale_price": 240000,
+        "square_footage": 1446,
+        "crime_rate": 3.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.13/10 | $202k | 1446ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95838928222656,
+          35.02667236328125
+        ]
+      },
+      "properties": {
+        "id": "real-80",
+        "tier": "SPECULATIVE",
+        "vibe_score": 2.63,
+        "property_value": 169000,
+        "sale_price": 161500,
+        "square_footage": 1664,
+        "crime_rate": 5.4,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.63/10 | $169k | 1664ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95524597167969,
+          35.0286865234375
+        ]
+      },
+      "properties": {
+        "id": "real-81",
+        "tier": "SPECULATIVE",
+        "vibe_score": 5.02,
+        "property_value": 205000,
+        "sale_price": 224000,
+        "square_footage": 1830,
+        "crime_rate": 4.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.02/10 | $205k | 1830ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.96611785888672,
+          35.02989959716797
+        ]
+      },
+      "properties": {
+        "id": "real-82",
+        "tier": "SPECULATIVE",
+        "vibe_score": 4.66,
+        "property_value": 314000,
+        "sale_price": 270000,
+        "square_footage": 2095,
+        "crime_rate": 5.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.66/10 | $314k | 2095ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95927429199219,
+          35.02545166015625
+        ]
+      },
+      "properties": {
+        "id": "real-83",
+        "tier": "SPECULATIVE",
+        "vibe_score": 4.43,
+        "property_value": 166000,
+        "sale_price": 150000,
+        "square_footage": 1582,
+        "crime_rate": 6.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.43/10 | $166k | 1582ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95445251464844,
+          35.0271110534668
+        ]
+      },
+      "properties": {
+        "id": "real-84",
+        "tier": "SPECULATIVE",
+        "vibe_score": 5.0,
+        "property_value": 175000,
+        "sale_price": 122500,
+        "square_footage": 1776,
+        "crime_rate": 4.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.0/10 | $175k | 1776ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95346069335938,
+          35.028160095214844
+        ]
+      },
+      "properties": {
+        "id": "real-85",
+        "tier": "SPECULATIVE",
+        "vibe_score": 4.52,
+        "property_value": 174000,
+        "sale_price": 200000,
+        "square_footage": 1620,
+        "crime_rate": 5.8,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.52/10 | $174k | 1620ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9542007446289,
+          35.0271110534668
+        ]
+      },
+      "properties": {
+        "id": "real-86",
+        "tier": "SPECULATIVE",
+        "vibe_score": 4.42,
+        "property_value": 188000,
+        "sale_price": 200500,
+        "square_footage": 1818,
+        "crime_rate": 6.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.42/10 | $188k | 1818ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95882415771484,
+          35.02449417114258
+        ]
+      },
+      "properties": {
+        "id": "real-87",
+        "tier": "SPECULATIVE",
+        "vibe_score": 2.54,
+        "property_value": 179000,
+        "sale_price": 175000,
+        "square_footage": 1613,
+        "crime_rate": 5.7,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.54/10 | $179k | 1613ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95658111572266,
+          35.02500534057617
+        ]
+      },
+      "properties": {
+        "id": "real-88",
+        "tier": "SPECULATIVE",
+        "vibe_score": 5.22,
+        "property_value": 169000,
+        "sale_price": 197000,
+        "square_footage": 1607,
+        "crime_rate": 3.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.22/10 | $169k | 1607ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94813537597656,
+          35.03877639770508
+        ]
+      },
+      "properties": {
+        "id": "real-89",
+        "tier": "ELITE",
+        "vibe_score": 4.3,
+        "property_value": 155000,
+        "sale_price": 15000,
+        "square_footage": 3420,
+        "crime_rate": 6.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.3/10 | $155k | 3420ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94742584228516,
+          35.041893005371094
+        ]
+      },
+      "properties": {
+        "id": "real-90",
+        "tier": "ELITE",
+        "vibe_score": 4.79,
+        "property_value": 299000,
+        "sale_price": 305000,
+        "square_footage": 2856,
+        "crime_rate": 5.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.79/10 | $299k | 2856ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9481430053711,
+          35.04180908203125
+        ]
+      },
+      "properties": {
+        "id": "real-91",
+        "tier": "ELITE",
+        "vibe_score": 4.55,
+        "property_value": 301000,
+        "sale_price": 334500,
+        "square_footage": 3487,
+        "crime_rate": 6.3,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.55/10 | $301k | 3487ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94154357910156,
+          35.03187942504883
+        ]
+      },
+      "properties": {
+        "id": "real-92",
+        "tier": "ELITE",
+        "vibe_score": 4.65,
+        "property_value": 322000,
+        "sale_price": 345000,
+        "square_footage": 3067,
+        "crime_rate": 6.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.65/10 | $322k | 3067ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9567642211914,
+          35.039249420166016
+        ]
+      },
+      "properties": {
+        "id": "real-93",
+        "tier": "ELITE",
+        "vibe_score": 5.34,
+        "property_value": 191000,
+        "sale_price": 203500,
+        "square_footage": 1772,
+        "crime_rate": 3.1,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.34/10 | $191k | 1772ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95084381103516,
+          35.03514099121094
+        ]
+      },
+      "properties": {
+        "id": "real-94",
+        "tier": "ELITE",
+        "vibe_score": 4.49,
+        "property_value": 140000,
+        "sale_price": 50000,
+        "square_footage": 1406,
+        "crime_rate": 5.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.49/10 | $140k | 1406ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94451141357422,
+          35.0461311340332
+        ]
+      },
+      "properties": {
+        "id": "real-95",
+        "tier": "ELITE",
+        "vibe_score": 2.37,
+        "property_value": 56000,
+        "sale_price": 50000,
+        "square_footage": 1108,
+        "crime_rate": 5.7,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.37/10 | $56k | 1108ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94434356689453,
+          35.04680252075195
+        ]
+      },
+      "properties": {
+        "id": "real-96",
+        "tier": "ELITE",
+        "vibe_score": 5.24,
+        "property_value": 147000,
+        "sale_price": 181500,
+        "square_footage": 1307,
+        "crime_rate": 3.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.24/10 | $147k | 1307ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94500732421875,
+          35.04730987548828
+        ]
+      },
+      "properties": {
+        "id": "real-97",
+        "tier": "ELITE",
+        "vibe_score": 4.2,
+        "property_value": 101000,
+        "sale_price": 20000,
+        "square_footage": 1218,
+        "crime_rate": 6.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.2/10 | $101k | 1218ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94467163085938,
+          35.04730987548828
+        ]
+      },
+      "properties": {
+        "id": "real-98",
+        "tier": "ELITE",
+        "vibe_score": 4.17,
+        "property_value": 115000,
+        "sale_price": 100000,
+        "square_footage": 1414,
+        "crime_rate": 6.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.17/10 | $115k | 1414ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94606018066406,
+          35.04798126220703
+        ]
+      },
+      "properties": {
+        "id": "real-99",
+        "tier": "ELITE",
+        "vibe_score": 4.83,
+        "property_value": 374000,
+        "sale_price": 411500,
+        "square_footage": 1202,
+        "crime_rate": 5.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.83/10 | $374k | 1202ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94743347167969,
+          35.04798126220703
+        ]
+      },
+      "properties": {
+        "id": "real-100",
+        "tier": "ELITE",
+        "vibe_score": 5.02,
+        "property_value": 227000,
+        "sale_price": 370000,
+        "square_footage": 1378,
+        "crime_rate": 4.3,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.02/10 | $227k | 1378ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94483947753906,
+          35.048492431640625
+        ]
+      },
+      "properties": {
+        "id": "real-101",
+        "tier": "ELITE",
+        "vibe_score": 3.11,
+        "property_value": 189000,
+        "sale_price": 25000,
+        "square_footage": 1214,
+        "crime_rate": 3.9,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 3.11/10 | $189k | 1214ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94879913330078,
+          35.047386169433594
+        ]
+      },
+      "properties": {
+        "id": "real-102",
+        "tier": "ELITE",
+        "vibe_score": 4.7,
+        "property_value": 76000,
+        "sale_price": 50000,
+        "square_footage": 1208,
+        "crime_rate": 4.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.7/10 | $76k | 1208ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94857788085938,
+          35.04798126220703
+        ]
+      },
+      "properties": {
+        "id": "real-103",
+        "tier": "ELITE",
+        "vibe_score": 4.24,
+        "property_value": 103000,
+        "sale_price": 120000,
+        "square_footage": 1419,
+        "crime_rate": 6.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.24/10 | $103k | 1419ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94586944580078,
+          35.049163818359375
+        ]
+      },
+      "properties": {
+        "id": "real-104",
+        "tier": "ELITE",
+        "vibe_score": 3.11,
+        "property_value": 54000,
+        "sale_price": 47500,
+        "square_footage": 1403,
+        "crime_rate": 3.2,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 3.11/10 | $54k | 1403ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94214630126953,
+          35.04737854003906
+        ]
+      },
+      "properties": {
+        "id": "real-105",
+        "tier": "ELITE",
+        "vibe_score": 5.2,
+        "property_value": 76000,
+        "sale_price": 75000,
+        "square_footage": 1295,
+        "crime_rate": 3.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.2/10 | $76k | 1295ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94856262207031,
+          35.04848861694336
+        ]
+      },
+      "properties": {
+        "id": "real-106",
+        "tier": "ELITE",
+        "vibe_score": 4.81,
+        "property_value": 58000,
+        "sale_price": 65500,
+        "square_footage": 1144,
+        "crime_rate": 4.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.81/10 | $58k | 1144ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9498062133789,
+          35.04561996459961
+        ]
+      },
+      "properties": {
+        "id": "real-107",
+        "tier": "ELITE",
+        "vibe_score": 4.17,
+        "property_value": 121000,
+        "sale_price": 112000,
+        "square_footage": 1041,
+        "crime_rate": 6.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.17/10 | $121k | 1041ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94140625,
+          35.04624938964844
+        ]
+      },
+      "properties": {
+        "id": "real-108",
+        "tier": "ELITE",
+        "vibe_score": 5.22,
+        "property_value": 103000,
+        "sale_price": 109000,
+        "square_footage": 1337,
+        "crime_rate": 3.1,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.22/10 | $103k | 1337ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94339752197266,
+          35.0496711730957
+        ]
+      },
+      "properties": {
+        "id": "real-109",
+        "tier": "ELITE",
+        "vibe_score": 4.85,
+        "property_value": 424000,
+        "sale_price": 409000,
+        "square_footage": 1476,
+        "crime_rate": 5.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.85/10 | $424k | 1476ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94281768798828,
+          35.04951477050781
+        ]
+      },
+      "properties": {
+        "id": "real-110",
+        "tier": "ELITE",
+        "vibe_score": 4.89,
+        "property_value": 115000,
+        "sale_price": 335000,
+        "square_footage": 1210,
+        "crime_rate": 4.3,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.89/10 | $115k | 1210ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94290161132812,
+          35.049739837646484
+        ]
+      },
+      "properties": {
+        "id": "real-111",
+        "tier": "ELITE",
+        "vibe_score": 2.94,
+        "property_value": 56000,
+        "sale_price": 54000,
+        "square_footage": 1093,
+        "crime_rate": 3.8,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.94/10 | $56k | 1093ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94731903076172,
+          35.05034255981445
+        ]
+      },
+      "properties": {
+        "id": "real-112",
+        "tier": "ELITE",
+        "vibe_score": 4.75,
+        "property_value": 356000,
+        "sale_price": 315000,
+        "square_footage": 1110,
+        "crime_rate": 5.8,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.75/10 | $356k | 1110ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94438171386719,
+          35.04155731201172
+        ]
+      },
+      "properties": {
+        "id": "real-113",
+        "tier": "ELITE",
+        "vibe_score": 4.87,
+        "property_value": 158000,
+        "sale_price": 356000,
+        "square_footage": 1144,
+        "crime_rate": 4.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.87/10 | $158k | 1144ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94356536865234,
+          35.0412483215332
+        ]
+      },
+      "properties": {
+        "id": "real-114",
+        "tier": "ELITE",
+        "vibe_score": 4.62,
+        "property_value": 201000,
+        "sale_price": 287000,
+        "square_footage": 1176,
+        "crime_rate": 5.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.62/10 | $201k | 1176ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94356536865234,
+          35.04152297973633
+        ]
+      },
+      "properties": {
+        "id": "real-115",
+        "tier": "ELITE",
+        "vibe_score": 3.47,
+        "property_value": 290000,
+        "sale_price": 346000,
+        "square_footage": 1188,
+        "crime_rate": 3.1,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 3.47/10 | $290k | 1188ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94010925292969,
+          35.0351448059082
+        ]
+      },
+      "properties": {
+        "id": "real-116",
+        "tier": "ELITE",
+        "vibe_score": 4.2,
+        "property_value": 128000,
+        "sale_price": 21000,
+        "square_footage": 1163,
+        "crime_rate": 6.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.2/10 | $128k | 1163ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9435806274414,
+          35.03627395629883
+        ]
+      },
+      "properties": {
+        "id": "real-117",
+        "tier": "ELITE",
+        "vibe_score": 4.76,
+        "property_value": 54000,
+        "sale_price": 50000,
+        "square_footage": 925,
+        "crime_rate": 4.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.76/10 | $54k | 925ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94358825683594,
+          35.036136627197266
+        ]
+      },
+      "properties": {
+        "id": "real-118",
+        "tier": "ELITE",
+        "vibe_score": 4.96,
+        "property_value": 140000,
+        "sale_price": 137500,
+        "square_footage": 1152,
+        "crime_rate": 4.1,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.96/10 | $140k | 1152ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93922424316406,
+          35.03648376464844
+        ]
+      },
+      "properties": {
+        "id": "real-119",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 4.2,
+        "property_value": 89000,
+        "sale_price": 95000,
+        "square_footage": 770,
+        "crime_rate": 6.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.2/10 | $89k | 770ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94499969482422,
+          35.041316986083984
+        ]
+      },
+      "properties": {
+        "id": "real-120",
+        "tier": "ELITE",
+        "vibe_score": 2.74,
+        "property_value": 116000,
+        "sale_price": 364000,
+        "square_footage": 784,
+        "crime_rate": 4.7,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.74/10 | $116k | 784ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94512176513672,
+          35.04265594482422
+        ]
+      },
+      "properties": {
+        "id": "real-121",
+        "tier": "ELITE",
+        "vibe_score": 3.02,
+        "property_value": 103000,
+        "sale_price": 23000,
+        "square_footage": 792,
+        "crime_rate": 3.8,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 3.02/10 | $103k | 792ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9342041015625,
+          35.03655242919922
+        ]
+      },
+      "properties": {
+        "id": "real-122",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 4.47,
+        "property_value": 167000,
+        "sale_price": 145000,
+        "square_footage": 1404,
+        "crime_rate": 5.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.47/10 | $167k | 1404ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95266723632812,
+          35.035926818847656
+        ]
+      },
+      "properties": {
+        "id": "real-123",
+        "tier": "ELITE",
+        "vibe_score": 2.06,
+        "property_value": 111000,
+        "sale_price": 90000,
+        "square_footage": 2096,
+        "crime_rate": 7.0,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.06/10 | $111k | 2096ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94454193115234,
+          35.049163818359375
+        ]
+      },
+      "properties": {
+        "id": "real-124",
+        "tier": "ELITE",
+        "vibe_score": 5.56,
+        "property_value": 374000,
+        "sale_price": 482500,
+        "square_footage": 1570,
+        "crime_rate": 3.1,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.56/10 | $374k | 1570ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9539566040039,
+          35.044437408447266
+        ]
+      },
+      "properties": {
+        "id": "real-125",
+        "tier": "ELITE",
+        "vibe_score": 3.2,
+        "property_value": 157000,
+        "sale_price": 55000,
+        "square_footage": 2129,
+        "crime_rate": 3.4,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 3.2/10 | $157k | 2129ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95097351074219,
+          35.04798126220703
+        ]
+      },
+      "properties": {
+        "id": "real-126",
+        "tier": "ELITE",
+        "vibe_score": 5.11,
+        "property_value": 109000,
+        "sale_price": 104000,
+        "square_footage": 1859,
+        "crime_rate": 3.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.11/10 | $109k | 1859ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.93942260742188,
+          35.0330810546875
+        ]
+      },
+      "properties": {
+        "id": "real-127",
+        "tier": "HIGH_YIELD_RISK",
+        "vibe_score": 2.53,
+        "property_value": 186000,
+        "sale_price": 179900,
+        "square_footage": 1428,
+        "crime_rate": 5.8,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.53/10 | $186k | 1428ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94439697265625,
+          35.03504180908203
+        ]
+      },
+      "properties": {
+        "id": "real-128",
+        "tier": "ELITE",
+        "vibe_score": 4.9,
+        "property_value": 127000,
+        "sale_price": 115000,
+        "square_footage": 1452,
+        "crime_rate": 4.3,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.9/10 | $127k | 1452ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94833374023438,
+          35.03877639770508
+        ]
+      },
+      "properties": {
+        "id": "real-129",
+        "tier": "ELITE",
+        "vibe_score": 4.21,
+        "property_value": 127000,
+        "sale_price": 15000,
+        "square_footage": 1141,
+        "crime_rate": 6.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.21/10 | $127k | 1141ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94603729248047,
+          35.03717041015625
+        ]
+      },
+      "properties": {
+        "id": "real-130",
+        "tier": "ELITE",
+        "vibe_score": 5.23,
+        "property_value": 127000,
+        "sale_price": 135000,
+        "square_footage": 1128,
+        "crime_rate": 3.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.23/10 | $127k | 1128ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94877624511719,
+          35.034420013427734
+        ]
+      },
+      "properties": {
+        "id": "real-131",
+        "tier": "ELITE",
+        "vibe_score": 2.96,
+        "property_value": 138000,
+        "sale_price": 26000,
+        "square_footage": 1227,
+        "crime_rate": 4.1,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.96/10 | $138k | 1227ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95266723632812,
+          35.035377502441406
+        ]
+      },
+      "properties": {
+        "id": "real-132",
+        "tier": "ELITE",
+        "vibe_score": 2.53,
+        "property_value": 42000,
+        "sale_price": 40000,
+        "square_footage": 1128,
+        "crime_rate": 5.1,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.53/10 | $42k | 1128ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95085144042969,
+          35.03314971923828
+        ]
+      },
+      "properties": {
+        "id": "real-133",
+        "tier": "ELITE",
+        "vibe_score": 4.25,
+        "property_value": 123000,
+        "sale_price": 119000,
+        "square_footage": 1204,
+        "crime_rate": 6.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.25/10 | $123k | 1204ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.958984375,
+          35.033992767333984
+        ]
+      },
+      "properties": {
+        "id": "real-134",
+        "tier": "ELITE",
+        "vibe_score": 4.69,
+        "property_value": 160000,
+        "sale_price": 140000,
+        "square_footage": 1242,
+        "crime_rate": 5.1,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.69/10 | $160k | 1242ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95401763916016,
+          35.03455352783203
+        ]
+      },
+      "properties": {
+        "id": "real-135",
+        "tier": "ELITE",
+        "vibe_score": 4.12,
+        "property_value": 92000,
+        "sale_price": 39000,
+        "square_footage": 1254,
+        "crime_rate": 6.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.12/10 | $92k | 1254ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94294738769531,
+          35.042755126953125
+        ]
+      },
+      "properties": {
+        "id": "real-136",
+        "tier": "ELITE",
+        "vibe_score": 4.52,
+        "property_value": 290000,
+        "sale_price": 245000,
+        "square_footage": 3909,
+        "crime_rate": 6.3,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.52/10 | $290k | 3909ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94743347167969,
+          35.03838348388672
+        ]
+      },
+      "properties": {
+        "id": "real-137",
+        "tier": "ELITE",
+        "vibe_score": 4.55,
+        "property_value": 101000,
+        "sale_price": 33500,
+        "square_footage": 1094,
+        "crime_rate": 5.3,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.55/10 | $101k | 1094ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94853210449219,
+          35.03877258300781
+        ]
+      },
+      "properties": {
+        "id": "real-138",
+        "tier": "ELITE",
+        "vibe_score": 4.75,
+        "property_value": 97000,
+        "sale_price": 15000,
+        "square_footage": 1096,
+        "crime_rate": 4.6,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.75/10 | $97k | 1096ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95401000976562,
+          35.04079818725586
+        ]
+      },
+      "properties": {
+        "id": "real-139",
+        "tier": "ELITE",
+        "vibe_score": 4.18,
+        "property_value": 82000,
+        "sale_price": 68000,
+        "square_footage": 1092,
+        "crime_rate": 6.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.18/10 | $82k | 1092ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95406341552734,
+          35.035003662109375
+        ]
+      },
+      "properties": {
+        "id": "real-140",
+        "tier": "ELITE",
+        "vibe_score": 4.77,
+        "property_value": 80000,
+        "sale_price": 498000,
+        "square_footage": 1096,
+        "crime_rate": 4.5,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.77/10 | $80k | 1096ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95763397216797,
+          35.03989791870117
+        ]
+      },
+      "properties": {
+        "id": "real-141",
+        "tier": "ELITE",
+        "vibe_score": 4.79,
+        "property_value": 82000,
+        "sale_price": 91000,
+        "square_footage": 2279,
+        "crime_rate": 4.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.79/10 | $82k | 2279ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95951843261719,
+          35.03526306152344
+        ]
+      },
+      "properties": {
+        "id": "real-142",
+        "tier": "ELITE",
+        "vibe_score": 2.99,
+        "property_value": 139000,
+        "sale_price": 132000,
+        "square_footage": 1180,
+        "crime_rate": 4.0,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.99/10 | $139k | 1180ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95940399169922,
+          35.033477783203125
+        ]
+      },
+      "properties": {
+        "id": "real-143",
+        "tier": "ELITE",
+        "vibe_score": 2.58,
+        "property_value": 114000,
+        "sale_price": 97000,
+        "square_footage": 1178,
+        "crime_rate": 5.3,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 2.58/10 | $114k | 1178ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94142150878906,
+          35.03336715698242
+        ]
+      },
+      "properties": {
+        "id": "real-144",
+        "tier": "ELITE",
+        "vibe_score": 4.16,
+        "property_value": 111000,
+        "sale_price": 359000,
+        "square_footage": 980,
+        "crime_rate": 6.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.16/10 | $111k | 980ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94088745117188,
+          35.031410217285156
+        ]
+      },
+      "properties": {
+        "id": "real-145",
+        "tier": "ELITE",
+        "vibe_score": 4.45,
+        "property_value": 51000,
+        "sale_price": 50000,
+        "square_footage": 1044,
+        "crime_rate": 5.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.45/10 | $51k | 1044ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94788360595703,
+          35.0496711730957
+        ]
+      },
+      "properties": {
+        "id": "real-146",
+        "tier": "ELITE",
+        "vibe_score": 3.21,
+        "property_value": 227000,
+        "sale_price": 237000,
+        "square_footage": 1700,
+        "crime_rate": 3.7,
+        "vacancy_rate": 15.0,
+        "vacancy_indicator": true,
+        "color": "#ff6b6b",
+        "label": "Vibe: 3.21/10 | $227k | 1700ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94644165039062,
+          35.0496711730957
+        ]
+      },
+      "properties": {
+        "id": "real-147",
+        "tier": "ELITE",
+        "vibe_score": 5.21,
+        "property_value": 164000,
+        "sale_price": 163500,
+        "square_footage": 1692,
+        "crime_rate": 3.4,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.21/10 | $164k | 1692ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95362854003906,
+          35.05165481567383
+        ]
+      },
+      "properties": {
+        "id": "real-148",
+        "tier": "ELITE",
+        "vibe_score": 4.62,
+        "property_value": 221000,
+        "sale_price": 878000,
+        "square_footage": 1945,
+        "crime_rate": 5.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.62/10 | $221k | 1945ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.954345703125,
+          35.05162811279297
+        ]
+      },
+      "properties": {
+        "id": "real-149",
+        "tier": "ELITE",
+        "vibe_score": 4.91,
+        "property_value": 114000,
+        "sale_price": 116000,
+        "square_footage": 1327,
+        "crime_rate": 4.2,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.91/10 | $114k | 1327ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94953918457031,
+          35.03095626831055
+        ]
+      },
+      "properties": {
+        "id": "real-150",
+        "tier": "ELITE",
+        "vibe_score": 5.24,
+        "property_value": 251000,
+        "sale_price": 256000,
+        "square_footage": 1918,
+        "crime_rate": 3.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.24/10 | $251k | 1918ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94306945800781,
+          35.0496711730957
+        ]
+      },
+      "properties": {
+        "id": "real-151",
+        "tier": "ELITE",
+        "vibe_score": 4.36,
+        "property_value": 82000,
+        "sale_price": 67500,
+        "square_footage": 1554,
+        "crime_rate": 5.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.36/10 | $82k | 1554ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94327545166016,
+          35.05050277709961
+        ]
+      },
+      "properties": {
+        "id": "real-152",
+        "tier": "ELITE",
+        "vibe_score": 5.0,
+        "property_value": 280000,
+        "sale_price": 393000,
+        "square_footage": 1872,
+        "crime_rate": 4.7,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#54a0ff",
+        "label": "Vibe: 5.0/10 | $280k | 1872ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94356536865234,
+          35.05085372924805
+        ]
+      },
+      "properties": {
+        "id": "real-153",
+        "tier": "ELITE",
+        "vibe_score": 4.9,
+        "property_value": 69000,
+        "sale_price": 58000,
+        "square_footage": 1337,
+        "crime_rate": 4.0,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.9/10 | $69k | 1337ft\u00b2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94452667236328,
+          35.02931213378906
+        ]
+      },
+      "properties": {
+        "id": "real-154",
+        "tier": "SPECULATIVE",
+        "vibe_score": 4.46,
+        "property_value": 163000,
+        "sale_price": 174900,
+        "square_footage": 1580,
+        "crime_rate": 5.9,
+        "vacancy_rate": 5.0,
+        "vacancy_indicator": false,
+        "color": "#ff9900",
+        "label": "Vibe: 4.46/10 | $163k | 1580ft\u00b2"
+      }
+    }
+  ]
+}
