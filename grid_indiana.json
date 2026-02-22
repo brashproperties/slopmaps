@@ -3,48 +3,43 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {"name": "McCutchanville", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.6200, 37.9450], [-87.5950, 37.9450], [-87.5950, 37.9650], [-87.6200, 37.9650], [-87.6200, 37.9450]]]}
+      "properties": {"name": "Far North", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6500, 37.9800], [-87.5500, 37.9800], [-87.5500, 38.0200], [-87.6500, 38.0200], [-87.6500, 37.9800]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "Melody Hill", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.6050, 37.9550], [-87.5900, 37.9550], [-87.5900, 37.9750], [-87.6050, 37.9750], [-87.6050, 37.9550]]]}
+      "properties": {"name": "North Central", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6000, 37.9650], [-87.5300, 37.9650], [-87.5300, 37.9850], [-87.6000, 37.9850], [-87.6000, 37.9650]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "North", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5800, 37.9800], [-87.5550, 37.9800], [-87.5550, 38.0100], [-87.5800, 38.0100], [-87.5800, 37.9800]]]}
+      "properties": {"name": "Northeast", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5300, 37.9600], [-87.4800, 37.9600], [-87.4800, 37.9850], [-87.5300, 37.9850], [-87.5300, 37.9600]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "Eastside", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5300, 37.9600], [-87.5000, 37.9600], [-87.5000, 37.9900], [-87.5300, 37.9900], [-87.5300, 37.9600]]]}
-    },
-    {
-      "type": "Feature",
-      "properties": {"name": "Jacobsville", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5550, 37.9650], [-87.5350, 37.9650], [-87.5350, 37.9800], [-87.5550, 37.9800], [-87.5550, 37.9650]]]}
-    },
-    {
-      "type": "Feature",
-      "properties": {"name": "Central/Downtown", "color": "#ffff00", "label": "<b>MIDDLE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5850, 37.9650], [-87.5650, 37.9650], [-87.5650, 37.9800], [-87.5850, 37.9800], [-87.5850, 37.9650]]]}
+      "properties": {"name": "Central", "color": "#ffff00", "label": "<b>MIDDLE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5900, 37.9500], [-87.5500, 37.9500], [-87.5500, 37.9700], [-87.5900, 37.9700], [-87.5900, 37.9500]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "Westside", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.6000, 37.9350], [-87.5700, 37.9350], [-87.5700, 37.9600], [-87.6000, 37.9600], [-87.6000, 37.9350]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6100, 37.9350], [-87.5700, 37.9350], [-87.5700, 37.9600], [-87.6100, 37.9600], [-87.6100, 37.9350]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "Southside", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5800, 37.9250], [-87.5500, 37.9250], [-87.5500, 37.9450], [-87.5800, 37.9450], [-87.5800, 37.9250]]]}
+      "properties": {"name": "South Central", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5700, 37.9200], [-87.5300, 37.9200], [-87.5300, 37.9500], [-87.5700, 37.9500], [-87.5700, 37.9200]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "East Central", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5500, 37.9450], [-87.5300, 37.9450], [-87.5300, 37.9650], [-87.5500, 37.9650], [-87.5500, 37.9450]]]}
+      "properties": {"name": "Southeast", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5300, 37.9000], [-87.4800, 37.9000], [-87.4800, 37.9500], [-87.5300, 37.9500], [-87.5300, 37.9000]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Southwest", "color": "#ff0000", "label": "<b>AVOID</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6100, 37.9000], [-87.5500, 37.9000], [-87.5500, 37.9350], [-87.6100, 37.9350], [-87.6100, 37.9000]]]}
     },
     {
       "type": "Feature",
