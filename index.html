@@ -750,6 +750,13 @@
             
             // Reload grid data
             loadGridData();
+            
+            // Pan to city center
+            if (city === 'indiana') {
+                map.flyTo([37.9716, -87.5500], 12); // Evansville center
+            } else {
+                map.flyTo([35.0421, -97.9365], 14); // Chickasha center
+            }
         }
 
         function loadGridData() {
