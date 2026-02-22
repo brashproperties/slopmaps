@@ -808,7 +808,7 @@
 
         function loadGridData() {
             const gridFile = currentCity === 'chickasha' ? 'grid_data.json' : 'grid_indiana.json';
-            fetch(gridFile + '?cache_buster=' + new Date().getTime())
+            fetch(gridFile + '?v=' + Math.random().toString(36).substring(7))
             .then(res => res.json())
             .then(data => {
                 gridData = data.features;
