@@ -1,200 +1,81 @@
 {
   "type": "FeatureCollection",
   "features": [
+    // EVANSVILLE ELITE ZONES
     {
       "type": "Feature",
-      "properties": {
-        "name": "Haynie's Corner",
-        "color": "#02fc00",
-        "label": "<b>ELITE</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.5770, 37.9750], [-87.5650, 37.9750], [-87.5650, 37.9850], [-87.5770, 37.9850], [-87.5770, 37.9750]
-        ]]
-      }
+      "properties": {"name": "Haynie's Corner", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5850, 37.9680], [-87.5650, 37.9680], [-87.5650, 37.9850], [-87.5850, 37.9850], [-87.5850, 37.9680]]]}
     },
     {
       "type": "Feature",
-      "properties": {
-        "name": "North Park",
-        "color": "#02fc00",
-        "label": "<b>ELITE</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.5700, 37.9900], [-87.5600, 37.9900], [-87.5600, 38.0000], [-87.5700, 38.0000], [-87.5700, 37.9900]
-        ]]
-      }
+      "properties": {"name": "North Park", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5750, 37.9850], [-87.5550, 37.9850], [-87.5550, 38.0050], [-87.5750, 38.0050], [-87.5750, 37.9850]]]}
     },
     {
       "type": "Feature",
-      "properties": {
-        "name": "Melody Hill",
-        "color": "#02fc00",
-        "label": "<b>ELITE</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.5900, 37.9700], [-87.5800, 37.9700], [-87.5800, 37.9800], [-87.5900, 37.9800], [-87.5900, 37.9700]
-        ]]
-      }
+      "properties": {"name": "Melody Hill", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6000, 37.9600], [-87.5800, 37.9600], [-87.5800, 37.9800], [-87.6000, 37.9800], [-87.6000, 37.9600]]]}
     },
     {
       "type": "Feature",
-      "properties": {
-        "name": "Jacobsville",
-        "color": "#02fc00",
-        "label": "<b>ELITE</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.5580, 37.9750], [-87.5500, 37.9750], [-87.5500, 37.9850], [-87.5580, 37.9850], [-87.5580, 37.9750]
-        ]]
-      }
+      "properties": {"name": "Jacobsville", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5600, 37.9700], [-87.5450, 37.9700], [-87.5450, 37.9850], [-87.5600, 37.9850], [-87.5600, 37.9700]]]}
+    },
+    // EVANSVILLE GOOD ZONES
+    {
+      "type": "Feature",
+      "properties": {"name": "McCutchanville", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6100, 37.9500], [-87.5900, 37.9500], [-87.5900, 37.9700], [-87.6100, 37.9700], [-87.6100, 37.9500]]]}
     },
     {
       "type": "Feature",
-      "properties": {
-        "name": "McCutchanville",
-        "color": "#7cfc00",
-        "label": "<b>GOOD</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.6000, 37.9600], [-87.5900, 37.9600], [-87.5900, 37.9700], [-87.6000, 37.9700], [-87.6000, 37.9600]
-        ]]
-      }
+      "properties": {"name": "Lamasco", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5550, 37.9600], [-87.5400, 37.9600], [-87.5400, 37.9750], [-87.5550, 37.9750], [-87.5550, 37.9600]]]}
     },
     {
       "type": "Feature",
-      "properties": {
-        "name": "Lamasco",
-        "color": "#7cfc00",
-        "label": "<b>GOOD</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.5550, 37.9650], [-87.5480, 37.9650], [-87.5480, 37.9750], [-87.5550, 37.9750], [-87.5550, 37.9650]
-        ]]
-      }
+      "properties": {"name": "Oaklyn", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5900, 37.9550], [-87.5750, 37.9550], [-87.5750, 37.9680], [-87.5900, 37.9680], [-87.5900, 37.9550]]]}
     },
     {
       "type": "Feature",
-      "properties": {
-        "name": "Oaklyn",
-        "color": "#7cfc00",
-        "label": "<b>GOOD</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.5820, 37.9600], [-87.5750, 37.9600], [-87.5750, 37.9700], [-87.5820, 37.9700], [-87.5820, 37.9600]
-        ]]
-      }
+      "properties": {"name": "Riverside", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5650, 37.9550], [-87.5500, 37.9550], [-87.5500, 37.9700], [-87.5650, 37.9700], [-87.5650, 37.9550]]]}
+    },
+    // EVANSVILLE AVOID ZONES
+    {
+      "type": "Feature",
+      "properties": {"name": "West Side Industrial", "color": "#ff0000", "label": "<b>AVOID</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6200, 37.9300], [-87.5900, 37.9300], [-87.5900, 37.9550], [-87.6200, 37.9550], [-87.6200, 37.9300]]]}
+    },
+    // MT VERNON ELITE ZONES
+    {
+      "type": "Feature",
+      "properties": {"name": "Mt Vernon Central", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.9100, 37.9250], [-87.8850, 37.9250], [-87.8850, 37.9450], [-87.9100, 37.9450], [-87.9100, 37.9250]]]}
     },
     {
       "type": "Feature",
-      "properties": {
-        "name": "West Side Industrial",
-        "color": "#ff0000",
-        "label": "<b>AVOID</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.6000, 37.9500], [-87.5800, 37.9500], [-87.5800, 37.9600], [-87.6000, 37.9600], [-87.6000, 37.9500]
-        ]]
-      }
+      "properties": {"name": "Downtown Mt Vernon", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.9050, 37.9280], [-87.8900, 37.9280], [-87.8900, 37.9450], [-87.9050, 37.9450], [-87.9050, 37.9280]]]}
+    },
+    // MT VERNON GOOD ZONES
+    {
+      "type": "Feature",
+      "properties": {"name": "Tanglewood", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.9150, 37.9200], [-87.9000, 37.9200], [-87.9000, 37.9350], [-87.9150, 37.9350], [-87.9150, 37.9200]]]}
     },
     {
       "type": "Feature",
-      "properties": {
-        "name": "Mt Vernon Central",
-        "color": "#02fc00",
-        "label": "<b>ELITE</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.8950, 37.9300], [-87.8850, 37.9300], [-87.8850, 37.9400], [-87.8950, 37.9400], [-87.8950, 37.9300]
-        ]]
-      }
+      "properties": {"name": "Kennedy", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.8900, 37.9150], [-87.8750, 37.9150], [-87.8750, 37.9300], [-87.8900, 37.9300], [-87.8900, 37.9150]]]}
     },
+    // MT VERNON AVOID
     {
       "type": "Feature",
-      "properties": {
-        "name": "Mt Vernon Downtown",
-        "color": "#02fc00",
-        "label": "<b>ELITE</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.9000, 37.9320], [-87.8900, 37.9320], [-87.8900, 37.9420], [-87.9000, 37.9420], [-87.9000, 37.9320]
-        ]]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Tanglewood Mt Vernon",
-        "color": "#7cfc00",
-        "label": "<b>GOOD</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.9100, 37.9250], [-87.9000, 37.9250], [-87.9000, 37.9350], [-87.9100, 37.9350], [-87.9100, 37.9250]
-        ]]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Kennedy Mt Vernon",
-        "color": "#7cfc00",
-        "label": "<b>GOOD</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.8850, 37.9200], [-87.8750, 37.9200], [-87.8750, 37.9300], [-87.8850, 37.9300], [-87.8850, 37.9200]
-        ]]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Rural Mt Vernon",
-        "color": "#ff8800",
-        "label": "<b>AVOID</b>",
-        "type": "tactical_block"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [-87.9200, 37.9100], [-87.8800, 37.9100], [-87.8800, 37.9400], [-87.9200, 37.9400], [-87.9200, 37.9100]
-        ]]
-      }
+      "properties": {"name": "Rural Mt Vernon", "color": "#ff8800", "label": "<b>AVOID</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.9300, 37.9000], [-87.8700, 37.9000], [-87.8700, 37.9500], [-87.9300, 37.9500], [-87.9300, 37.9000]]]}
     }
   ]
 }

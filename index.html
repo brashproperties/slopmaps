@@ -636,6 +636,28 @@
         let gridData = [];
         let pinnedAddresses = [];
         let gridLayer = null;
+        let portfolioLayer = null;
+
+        function renderPortfolio() {
+            if (portfolioLayer) {
+                map.removeLayer(portfolioLayer);
+            }
+            portfolioLayer = L.layerGroup().addTo(map);
+            
+            portfolioData
+                .filter(p => currentCity === 'chickasha' ? p.city === 'chickasha' : p.city === 'indiana')
+                .forEach(property => {
+                    const marker = L.marker([property.lat, property.lon], { icon: brashPropertiesIcon }).addTo(portfolioLayer);
+                    
+                    marker.bindPopup(`
+                        <div class="popup-title">${property.address}</div>
+                        <div class="popup-row">
+                            <span class="popup-label">Owner</span>
+                            <span class="popup-value">Brash Properties</span>
+                        </div>
+                    `);
+                });
+        }
 
         document.getElementById('searchToggle').addEventListener('click', function(e) {
             e.stopPropagation();
@@ -651,10 +673,32 @@
         });
 
         const portfolioData = [
-            { address: "1922 S 21st St, Chickasha, OK", lat: 35.0314, lon: -97.9601 },
-            { address: "728 S 17th St, Chickasha, OK", lat: 35.0437, lon: -97.9544 },
-            { address: "925 S 3rd St, Chickasha, OK", lat: 35.0417, lon: -97.9353 },
-            { address: "1219 W Colorado, Chickasha, OK", lat: 35.0487, lon: -97.9485 }
+            // Chickasha
+            { address: "1922 S 21st St, Chickasha, OK", lat: 35.0314, lon: -97.9601, city: "chickasha" },
+            { address: "728 S 17th St, Chickasha, OK", lat: 35.0437, lon: -97.9544, city: "chickasha" },
+            { address: "925 S 3rd St, Chickasha, OK", lat: 35.0417, lon: -97.9353, city: "chickasha" },
+            { address: "1219 W Colorado, Chickasha, OK", lat: 35.0487, lon: -97.9485, city: "chickasha" },
+            // Evansville
+            { address: "1200-1204 1st St, Evansville, IN", lat: 37.9748, lon: -87.5700, city: "indiana" },
+            { address: "20 E Campground Rd, Evansville, IN", lat: 37.9670, lon: -87.5850, city: "indiana" },
+            { address: "2416 Margybeth, Evansville, IN", lat: 37.9750, lon: -87.5600, city: "indiana" },
+            { address: "1805 N Main St, Evansville, IN", lat: 37.9785, lon: -87.5715, city: "indiana" },
+            { address: "920 Canal St, Evansville, IN", lat: 37.9720, lon: -87.5650, city: "indiana" },
+            { address: "921 W Oregon, Evansville, IN", lat: 37.9710, lon: -87.5750, city: "indiana" },
+            { address: "908 N 1st Ave, Evansville, IN", lat: 37.9770, lon: -87.5720, city: "indiana" },
+            { address: "703 E Columbia A/B, Evansville, IN", lat: 37.9690, lon: -87.5680, city: "indiana" },
+            { address: "515 S Grand St, Evansville, IN", lat: 37.9680, lon: -87.5740, city: "indiana" },
+            { address: "1320 N Fares, Evansville, IN", lat: 37.9800, lon: -87.5680, city: "indiana" },
+            { address: "230 W 3rd St, Evansville, IN", lat: 37.9750, lon: -87.5800, city: "indiana" },
+            { address: "2004 S Taft, Evansville, IN", lat: 37.9650, lon: -87.5600, city: "indiana" },
+            { address: "220 NW 4th, Evansville, IN", lat: 37.9760, lon: -87.5820, city: "indiana" },
+            // Mt Vernon
+            { address: "311 Vine St, Mt Vernon, IN", lat: 37.9320, lon: -87.8920, city: "indiana" },
+            { address: "354/358 Audubon, Mt Vernon, IN", lat: 37.9350, lon: -87.8880, city: "indiana" },
+            { address: "527-531 W 2nd, Mt Vernon, IN", lat: 37.9340, lon: -87.8950, city: "indiana" },
+            { address: "Kimball, Mt Vernon, IN", lat: 37.9300, lon: -87.8900, city: "indiana" },
+            { address: "9th St, Mt Vernon, IN", lat: 37.9280, lon: -87.8850, city: "indiana" },
+            { address: "619 College Ave, Mt Vernon, IN", lat: 37.9360, lon: -87.8870, city: "indiana" }
         ];
 
         const landmarkData = [
@@ -757,6 +801,9 @@
             } else {
                 map.flyTo([35.0421, -97.9365], 14); // Chickasha center
             }
+            
+            // Re-render portfolio for the selected city
+            renderPortfolio();
         }
 
         function loadGridData() {
@@ -772,6 +819,7 @@
 
         // Initial load
         loadGridData();
+        renderPortfolio();
 
         function renderGrid(data) {
             if (gridLayer) {
