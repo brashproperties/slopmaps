@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brash Properties Slopmap 🧙‍♂️</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; overflow: hidden; }
+        #map { height: 100vh; width: 100vw; background: #fff; }
+        
+        .ui-overlay {
+            position: absolute; z-index: 1000; background: white; 
+            padding: 12px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .header { top: 20px; left: 20px; width: 320px; }
+        .header h1 { margin: 0; font-size: 20px; font-weight: 900; letter-spacing: -0.5px; color: #000; text-transform: uppercase; }
+        .header small { color: #666; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* CITY TOGGLE */
+        .city-toggle {
+            display: flex; gap: 8px; margin-top: 12px;
+        }
+        .city-btn {
+            flex: 1; padding: 8px 12px; border: 2px solid #000; border-radius: 4px;
+            background: #fff; color: #000; font-size: 12px; font-weight: 800;
+            cursor: pointer; transition: all 0.2s; text-transform: uppercase;
+        }
+        .city-btn:hover { background: #f0f0f0; }
+        .city-btn.active {
+            background: #000; color: #fff;
+        }
+        
+        /* SEARCH BAR */
+        .search-container { margin-top: 12px; display: flex; gap: 8px; }
+        #address-input { 
+            flex: 1; padding: 8px; border: 2px solid #000; border-radius: 4px; 
+            font-size: 12px; font-weight: 700; outline: none;
+        }
+        #search-btn {
+            background: #000; color: #fff; border: none; padding: 0 12px; 
+            border-radius: 4px; cursor: pointer; font-weight: 800; font-size: 12px;
+        }
+        #search-btn:hover { background: #333; }
+        
+        .legend { bottom: 40px; left: 20px; min-width: 180px; }
+        .legend-title { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #999; margin-bottom: 10px; letter-spacing: 1px; }
+        .legend-item { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; transition: transform 0.1s; }
+        .swatch { width: 14px; height: 14px; margin-right: 12px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); }
+        .legend-label { font-size: 13px; font-weight: 600; color: #333; }
+        
+        .poi-tag {
+            display: flex; align-items: center; background: white; border: 2px solid #000;
+            padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 800;
+            color: #000; white-space: nowrap; box-shadow: 4px 4px 0px rgba(0,0,0,1);
+            transform: rotate(-1deg); transition: all 0.2s;
+        }
+        /* PORTFOLIO PIN STYLING */
+        .portfolio-marker {
+            position: relative;
+            width: 40px;
+            height: 40px;
+        }
+        .pin-body {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 32px;
+            background: #000;
+            border: 3px solid #fff;
+            border-radius: 50% 50% 50% 0;
+            transform: translateX(-50%) rotate(-45deg);
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pin-body i {
+            transform: rotate(45deg);
+            color: #fff;
+            font-size: 16px;
+        }
+        .pin-address {
+            position: absolute;
+            left: 40px;
+            top: -5px;
+            background: #000;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 800;
+            white-space: nowrap;
+            border: 2px solid #fff;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+        }
+        .poi-tag i { margin-right: 6px; font-size: 14px; }
+
+        .leaflet-container { background: #fff !important; }
+        
+        /* City selector for search */
+        #city-select {
+            padding: 8px; border: 2px solid #000; border-radius: 4px;
+            font-size: 12px; font-weight: 700; outline: none; background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui-overlay header">
+        <h1 id="map-title">CHICKASHA MAP 🧙‍♂️</h1>
+        <small>Tactical Slop Logic v1.2</small>
+        
+        <div class="city-toggle">
+            <button class="city-btn" data-city="chickasha" onclick="switchCity('chickasha')">Chickasha</button>
+            <button class="city-btn active" data-city="indiana" onclick="switchCity('indiana')">Indiana</button>
+        </div>
+        
+        <div class="search-container">
+            <select id="city-select" onchange="updateSearchCity()">
+                <option value="chickasha">Chickasha</option>
+                <option value="evansville">Evansville</option>
+                <option value="mtvernon">Mt Vernon</option>
+                <option value="newburgh">Newburgh</option>
+            </select>
+            <input type="text" id="address-input" placeholder="Enter address...">
+            <button id="search-btn">SCAN</button>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="ui-overlay legend">
+        <div class="legend-title">Tactical Layers</div>
+        <div class="legend-item"><div class="swatch" style="background: #ff4757;"></div> <span class="legend-label">Avoid / High Crime</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #ffa502;"></div> <span class="legend-label">Cash Flow / Yield</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #2ed573;"></div> <span class="legend-label">Appreciation / Rich</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #1e90ff;"></div> <span class="legend-label">Normies (Stable Mid)</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #ff7f50;"></div> <span class="legend-label">Speculative</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #5f27cd;"></div> <span class="legend-label">Uni / Students</span></div>
+        <div class="legend-item"><div class="swatch" style="background: #2f3542;"></div> <span class="legend-label">Industrial Slop</span></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // City configurations
+        const CITIES = {
+            chickasha: {
+                name: "Chickasha",
+                center: [35.045, -97.935],
+                zoom: 14,
+                dataFile: 'data.json',
+                searchState: 'OK'
+            },
+            indiana: {
+                name: "Indiana Portfolio",
+                center: [37.955, -87.500],
+                zoom: 11,
+                dataFile: 'data_indiana.json',
+                searchState: 'IN'
+            }
+        };
+        
+        const INDIANA_CITIES = {
+            evansville: { name: "Evansville", center: [37.9772, -87.5506], zoom: 13, state: 'IN' },
+            mtvernon: { name: "Mt Vernon", center: [37.932, -87.895], zoom: 14, state: 'IN' },
+            newburgh: { name: "Newburgh", center: [37.9471, -87.4003], zoom: 14, state: 'IN' }
+        };
+        
+        let currentCity = 'indiana';
+        let map, geoJsonLayer, tempMarker;
+        
+        // Initialize map
+        map = L.map('map', { 
+            zoomControl: true,
+            attributionControl: false 
+        }).setView(CITIES.indiana.center, CITIES.indiana.zoom); 
+
+        // Use CartoDB Voyager for "Hoodmaps" style
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+            maxZoom: 19
+        }).addTo(map);
+
+        map.createPane('slopPane');
+        map.getPane('slopPane').style.zIndex = 400;
+
+        map.createPane('labelPane');
+        map.getPane('labelPane').style.zIndex = 650;
+        map.getPane('labelPane').style.pointerEvents = 'none';
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+            maxZoom: 19,
+            pane: 'labelPane'
+        }).addTo(map);
+
+        const getIcon = (name, type) => {
+            if (type === 'portfolio') return 'fa-briefcase';
+            name = name.toLowerCase();
+            if (name.includes('university') || name.includes('usao')) return 'fa-graduation-cap';
+            if (name.includes('hospital') || name.includes('deaconess')) return 'fa-hospital';
+            if (name.includes('temple') || name.includes('church')) return 'fa-church';
+            if (name.includes('river')) return 'fa-water';
+            if (name.includes('park')) return 'fa-tree';
+            if (name.includes('school')) return 'fa-school';
+            if (name.includes('walmart')) return 'fa-cart-shopping';
+            return 'fa-location-dot';
+        };
+
+        function loadMapData(cityKey) {
+            const config = CITIES[cityKey];
+            
+            // Remove existing layer
+            if (geoJsonLayer) {
+                map.removeLayer(geoJsonLayer);
+            }
+            
+            // Update view
+            map.setView(config.center, config.zoom);
+            
+            // Load data
+            fetch(config.dataFile + '?t=' + new Date().getTime())
+                .then(res => res.json())
+                .then(data => {
+                    geoJsonLayer = L.geoJSON(data, {
+                        style: (feature) => {
+                            if (feature.geometry.type === 'Polygon') {
+                                return {
+                                    fillColor: feature.properties.color,
+                                    color: '#000',
+                                    weight: 0.15,
+                                    fillOpacity: 0.45,
+                                    pane: 'slopPane'
+                                };
+                            }
+                        },
+                        pointToLayer: (feature, latlng) => {
+                            const props = feature.properties;
+                            const iconClass = getIcon(props.name, props.type);
+                            
+                            if (props.type === 'portfolio') {
+                                const icon = L.divIcon({
+                                    className: 'portfolio-marker',
+                                    html: '<div class="pin-body"><i class="fas ' + iconClass + '"></i></div><div class="pin-address">' + props.name + '</div>',
+                                    iconSize: [40, 40],
+                                    iconAnchor: [20, 40]
+                                });
+                                return L.marker(latlng, { icon: icon, zIndexOffset: 2000 });
+                            }
+                            
+                            const label = L.divIcon({
+                                className: 'poi-tag-container',
+                                html: '<div class="poi-tag"><i class="fas ' + iconClass + '"></i>' + props.name + '</div>',
+                                iconSize: null,
+                                iconAnchor: [0, 0]
+                            });
+                            return L.marker(latlng, { icon: label, zIndexOffset: 1000 });
+                        }
+                    }).addTo(map);
+                });
+        }
+
+        function switchCity(cityKey) {
+            currentCity = cityKey;
+            
+            // Update buttons
+            document.querySelectorAll('.city-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.city === cityKey);
+            });
+            
+            // Update title
+            document.getElementById('map-title').textContent = CITIES[cityKey].name + ' MAP 🧙‍♂️';
+            
+            // Update city select for search
+            const select = document.getElementById('city-select');
+            if (cityKey === 'chickasha') {
+                select.value = 'chickasha';
+            } else {
+                select.value = 'evansville';  // Default to Evansville for Indiana
+            }
+            
+            // Load data
+            loadMapData(cityKey);
+        }
+
+        function updateSearchCity() {
+            const select = document.getElementById('city-select');
+            const city = select.value;
+            
+            if (city === 'chickasha') {
+                switchCity('chickasha');
+            } else {
+                // For Indiana cities, switch to Indiana map and zoom to specific city
+                const config = INDIANA_CITIES[city];
+                if (config) {
+                    currentCity = 'indiana';
+                    document.querySelectorAll('.city-btn').forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.city === 'indiana');
+                    });
+                    document.getElementById('map-title').textContent = config.name + ' MAP 🧙‍♂️';
+                    map.setView(config.center, config.zoom);
+                }
+            }
+        }
+            
+        map.zoomControl.setPosition('topright');
+
+        // SEARCH LOGIC
+        const searchInput = document.getElementById('address-input');
+        const searchBtn = document.getElementById('search-btn');
+        
+        const scanVibe = (lat, lng, city) => {
+            let vibe = "UNKNOWN SLOP";
+            let color = "#666";
+            
+            if (city === 'chickasha') {
+                // Chickasha logic
+                if (lng < -97.945 && lat < 35.035) { vibe = "ELITE (Pioneer)"; color = "#2ed573"; }
+                else if (lng > -97.925 && lat > 35.045) { vibe = "HIGH RISK (3rd St)"; color = "#ff4757"; }
+                else if (lat > 35.035 && lat < 35.048 && lng > -97.955 && lng < -97.935) { vibe = "STABILITY (Uni)"; color = "#5f27cd"; }
+                else if (lat > 35.055) { vibe = "SPECULATIVE (North)"; color = "#ff7f50"; }
+                else { vibe = "CORE GROWTH / NORMIE"; color = "#ffa502"; }
+            } else {
+                // Indiana logic - Evansville area
+                if (lat > 37.955 && lng < -87.560) { vibe = "ELITE (Haynie's Corner)"; color = "#2ed573"; }
+                else if (lat > 37.985 && lng > -87.560 && lng < -87.520) { vibe = "GOOD (North Park/Melody Hill)"; color = "#2ed573"; }
+                else if (lat > 37.975 && lng > -87.540 && lng < -87.510) { vibe = "GOOD (Jacobsville)"; color = "#ffa502"; }
+                else if (lng < -87.580) { vibe = "AVOID (West Side Industrial)"; color = "#2f3542"; }
+                else if (lng > -87.400) { vibe = "NEWBURGH AREA"; color = "#1e90ff"; }
+                else if (lat < 37.940 && lng < -87.870) { vibe = "MT VERNON"; color = "#5f27cd"; }
+                else { vibe = "CORE CASH FLOW"; color = "#ffa502"; }
+            }
+
+            return { vibe, color };
+        };
+
+        searchBtn.onclick = () => {
+            const addr = searchInput.value;
+            if (!addr) return;
+            
+            const select = document.getElementById('city-select');
+            const city = select.value;
+            
+            let searchState = 'OK';
+            let searchCity = 'Chickasha';
+            
+            if (city === 'evansville') { searchState = 'IN'; searchCity = 'Evansville'; }
+            else if (city === 'mtvernon') { searchState = 'IN'; searchCity = 'Mount Vernon'; }
+            else if (city === 'newburgh') { searchState = 'IN'; searchCity = 'Newburgh'; }
+            
+            // Geocode via Nominatim (Free)
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(addr + ' ' + searchCity + ' ' + searchState)}`)
+                .then(res => res.json())
+                .then(results => {
+                    if (results.length > 0) {
+                        const top = results[0];
+                        const lat = parseFloat(top.lat);
+                        const lon = parseFloat(top.lon);
+                        
+                        if (tempMarker) map.removeLayer(tempMarker);
+                        
+                        const info = scanVibe(lat, lon, city);
+                        
+                        tempMarker = L.marker([lat, lon], {
+                            icon: L.divIcon({
+                                className: 'poi-tag-container',
+                                html: `<div class="poi-tag" style="background:${info.color}; color:#fff;"><i class="fas fa-crosshairs"></i>SCAN: ${info.vibe}</div>`,
+                                iconSize: null,
+                                iconAnchor: [0, 0]
+                            })
+                        }).addTo(map);
+                        
+                        map.setView([lat, lon], 16);
+                        tempMarker.bindPopup(`<strong>VIBE CHECK:</strong><br>${info.vibe}`).openPopup();
+                    } else {
+                        alert("Address not found.");
+                    }
+                });
+        };
+
+        // Initialize with Indiana
+        loadMapData('indiana');
+    </script>
+</body>
+</html>
