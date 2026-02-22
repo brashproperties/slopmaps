@@ -4,52 +4,57 @@
     {
       "type": "Feature",
       "properties": {"name": "Far North", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.6500, 37.9800], [-87.5500, 37.9800], [-87.5500, 38.0200], [-87.6500, 38.0200], [-87.6500, 37.9800]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.65, 37.98], [-87.55, 37.98], [-87.55, 38.02], [-87.65, 38.02], [-87.65, 37.98]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "North Central", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.6000, 37.9650], [-87.5300, 37.9650], [-87.5300, 37.9850], [-87.6000, 37.9850], [-87.6000, 37.9650]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.60, 37.965], [-87.53, 37.965], [-87.53, 37.98], [-87.60, 37.98], [-87.60, 37.965]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "Northeast", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5300, 37.9600], [-87.4800, 37.9600], [-87.4800, 37.9850], [-87.5300, 37.9850], [-87.5300, 37.9600]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.53, 37.96], [-87.48, 37.96], [-87.48, 37.98], [-87.53, 37.98], [-87.53, 37.96]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "Central", "color": "#ffff00", "label": "<b>MIDDLE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5900, 37.9500], [-87.5500, 37.9500], [-87.5500, 37.9700], [-87.5900, 37.9700], [-87.5900, 37.9500]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.59, 37.95], [-87.55, 37.95], [-87.55, 37.965], [-87.59, 37.965], [-87.59, 37.95]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "Westside", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.6100, 37.9350], [-87.5700, 37.9350], [-87.5700, 37.9600], [-87.6100, 37.9600], [-87.6100, 37.9350]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.61, 37.935], [-87.57, 37.935], [-87.57, 37.95], [-87.61, 37.95], [-87.61, 37.935]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "South Central", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5700, 37.9200], [-87.5300, 37.9200], [-87.5300, 37.9500], [-87.5700, 37.9500], [-87.5700, 37.9200]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.57, 37.92], [-87.53, 37.92], [-87.53, 37.935], [-87.57, 37.935], [-87.57, 37.92]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "Southeast", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5300, 37.9000], [-87.4800, 37.9000], [-87.4800, 37.9500], [-87.5300, 37.9500], [-87.5300, 37.9000]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.53, 37.90], [-87.48, 37.90], [-87.48, 37.92], [-87.53, 37.92], [-87.53, 37.90]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "Southwest", "color": "#ff0000", "label": "<b>AVOID</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.6100, 37.9000], [-87.5500, 37.9000], [-87.5500, 37.9350], [-87.6100, 37.9350], [-87.6100, 37.9000]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.61, 37.90], [-87.55, 37.90], [-87.55, 37.92], [-87.61, 37.92], [-87.61, 37.90]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "East", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.53, 37.95], [-87.48, 37.95], [-87.48, 37.96], [-87.53, 37.96], [-87.53, 37.95]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "Mt Vernon Central", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.9100, 37.9250], [-87.8800, 37.9250], [-87.8800, 37.9450], [-87.9100, 37.9450], [-87.9100, 37.9250]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.91, 37.925], [-87.88, 37.925], [-87.88, 37.945], [-87.91, 37.945], [-87.91, 37.925]]]}
     },
     {
       "type": "Feature",
       "properties": {"name": "Mt Vernon Rural", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.9500, 37.9000], [-87.8700, 37.9000], [-87.8700, 37.9500], [-87.9500, 37.9500], [-87.9500, 37.9000]]]}
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.95, 37.90], [-87.87, 37.90], [-87.87, 37.95], [-87.95, 37.95], [-87.95, 37.90]]]}
     }
   ]
 }
