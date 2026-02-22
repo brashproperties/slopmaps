@@ -3,33 +3,58 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {"name": "Evansville East", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5400, 37.9500], [-87.5000, 37.9500], [-87.5000, 38.0000], [-87.5400, 38.0000], [-87.5400, 37.9500]]]}
+      "properties": {"name": "McCutchanville", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6200, 37.9450], [-87.5950, 37.9450], [-87.5950, 37.9650], [-87.6200, 37.9650], [-87.6200, 37.9450]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "Evansville Central", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5900, 37.9500], [-87.5400, 37.9500], [-87.5400, 38.0000], [-87.5900, 38.0000], [-87.5900, 37.9500]]]}
+      "properties": {"name": "Melody Hill", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6050, 37.9550], [-87.5900, 37.9550], [-87.5900, 37.9750], [-87.6050, 37.9750], [-87.6050, 37.9550]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "Evansville West", "color": "#ff0000", "label": "<b>AVOID</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.6500, 37.9300], [-87.5900, 37.9300], [-87.5900, 37.9700], [-87.6500, 37.9700], [-87.6500, 37.9300]]]}
+      "properties": {"name": "North", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5800, 37.9800], [-87.5550, 37.9800], [-87.5550, 38.0100], [-87.5800, 38.0100], [-87.5800, 37.9800]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "Evansville South", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.5900, 37.9100], [-87.5400, 37.9100], [-87.5400, 37.9500], [-87.5900, 37.9500], [-87.5900, 37.9100]]]}
+      "properties": {"name": "Eastside", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5300, 37.9600], [-87.5000, 37.9600], [-87.5000, 37.9900], [-87.5300, 37.9900], [-87.5300, 37.9600]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "Mt Vernon Central", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.9200, 37.9200], [-87.8700, 37.9200], [-87.8700, 37.9500], [-87.9200, 37.9500], [-87.9200, 37.9200]]]}
+      "properties": {"name": "Jacobsville", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5550, 37.9650], [-87.5350, 37.9650], [-87.5350, 37.9800], [-87.5550, 37.9800], [-87.5550, 37.9650]]]}
     },
     {
       "type": "Feature",
-      "properties": {"name": "Mt Vernon Rural", "color": "#ff8800", "label": "<b>AVOID</b>", "type": "tactical_block"},
-      "geometry": {"type": "Polygon", "coordinates": [[[-87.9500, 37.9000], [-87.8700, 37.9000], [-87.8700, 37.9600], [-87.9500, 37.9600], [-87.9500, 37.9000]]]}
+      "properties": {"name": "Central/Downtown", "color": "#ffff00", "label": "<b>MIDDLE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5850, 37.9650], [-87.5650, 37.9650], [-87.5650, 37.9800], [-87.5850, 37.9800], [-87.5850, 37.9650]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Westside", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.6000, 37.9350], [-87.5700, 37.9350], [-87.5700, 37.9600], [-87.6000, 37.9600], [-87.6000, 37.9350]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Southside", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5800, 37.9250], [-87.5500, 37.9250], [-87.5500, 37.9450], [-87.5800, 37.9450], [-87.5800, 37.9250]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "East Central", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.5500, 37.9450], [-87.5300, 37.9450], [-87.5300, 37.9650], [-87.5500, 37.9650], [-87.5500, 37.9450]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Mt Vernon Central", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.9100, 37.9250], [-87.8800, 37.9250], [-87.8800, 37.9450], [-87.9100, 37.9450], [-87.9100, 37.9250]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Mt Vernon Rural", "color": "#ff8800", "label": "<b>QUESTIONABLE</b>", "type": "tactical_block"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-87.9500, 37.9000], [-87.8700, 37.9000], [-87.8700, 37.9500], [-87.9500, 37.9500], [-87.9500, 37.9000]]]}
     }
   ]
 }
