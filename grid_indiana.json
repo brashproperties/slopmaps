@@ -1,7 +1,6 @@
 {
   "type": "FeatureCollection",
   "features": [
-    // EVANSVILLE ELITE ZONES
     {
       "type": "Feature",
       "properties": {"name": "Haynie's Corner", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
@@ -22,7 +21,6 @@
       "properties": {"name": "Jacobsville", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
       "geometry": {"type": "Polygon", "coordinates": [[[-87.5600, 37.9700], [-87.5450, 37.9700], [-87.5450, 37.9850], [-87.5600, 37.9850], [-87.5600, 37.9700]]]}
     },
-    // EVANSVILLE GOOD ZONES
     {
       "type": "Feature",
       "properties": {"name": "McCutchanville", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
@@ -43,13 +41,11 @@
       "properties": {"name": "Riverside", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
       "geometry": {"type": "Polygon", "coordinates": [[[-87.5650, 37.9550], [-87.5500, 37.9550], [-87.5500, 37.9700], [-87.5650, 37.9700], [-87.5650, 37.9550]]]}
     },
-    // EVANSVILLE AVOID ZONES
     {
       "type": "Feature",
       "properties": {"name": "West Side Industrial", "color": "#ff0000", "label": "<b>AVOID</b>", "type": "tactical_block"},
       "geometry": {"type": "Polygon", "coordinates": [[[-87.6200, 37.9300], [-87.5900, 37.9300], [-87.5900, 37.9550], [-87.6200, 37.9550], [-87.6200, 37.9300]]]}
     },
-    // MT VERNON ELITE ZONES
     {
       "type": "Feature",
       "properties": {"name": "Mt Vernon Central", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
@@ -60,7 +56,6 @@
       "properties": {"name": "Downtown Mt Vernon", "color": "#02fc00", "label": "<b>ELITE</b>", "type": "tactical_block"},
       "geometry": {"type": "Polygon", "coordinates": [[[-87.9050, 37.9280], [-87.8900, 37.9280], [-87.8900, 37.9450], [-87.9050, 37.9450], [-87.9050, 37.9280]]]}
     },
-    // MT VERNON GOOD ZONES
     {
       "type": "Feature",
       "properties": {"name": "Tanglewood", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
@@ -71,7 +66,6 @@
       "properties": {"name": "Kennedy", "color": "#7cfc00", "label": "<b>GOOD</b>", "type": "tactical_block"},
       "geometry": {"type": "Polygon", "coordinates": [[[-87.8900, 37.9150], [-87.8750, 37.9150], [-87.8750, 37.9300], [-87.8900, 37.9300], [-87.8900, 37.9150]]]}
     },
-    // MT VERNON AVOID
     {
       "type": "Feature",
       "properties": {"name": "Rural Mt Vernon", "color": "#ff8800", "label": "<b>AVOID</b>", "type": "tactical_block"},
